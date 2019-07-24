@@ -45,8 +45,8 @@
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Community</a>
 								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
 									<li class="active"><a href="../../browse-job.jsp">학생 게시판</a></li>
-									<li><a href="/skc/company-detail.jsp">학부모 게시판</a></li>
-									<li><a href="/skc/resume.jsp">학원 홍보 게시판</a></li>
+									<li><a href="../../company-detail.jsp">학부모 게시판</a></li>
+									<li><a href="../../resume.jsp">학원 홍보 게시판</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -112,6 +112,7 @@
                         <th scope="row"/>
                         <td><input Class="txt" type="file" name="img3"  accept="image/*"/></td>
                      </tr>
+                     
 	
 	
 		

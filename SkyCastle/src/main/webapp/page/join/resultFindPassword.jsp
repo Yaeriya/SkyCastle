@@ -70,7 +70,7 @@
 				
 					<form>
 					
-					<img class="img-responsive" alt="logo" src="../../img/logo.png">
+					<img class="img-responsive" alt="logo" src="/skc/img/logo.png">
 					<section class="jobs">
 				
 				<div class="row heading">
