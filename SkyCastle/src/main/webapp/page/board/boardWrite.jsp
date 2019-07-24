@@ -9,12 +9,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
         <!-- All Plugin Css --> 
-		<link rel="stylesheet" href="../../css/plugins.css">
+		<link rel="stylesheet" href="/skc/css/plugins.css">
 		
 		<!-- Style & Common Css --> 
-		<link rel="stylesheet" href="../../css/common.css">
-        <link rel="stylesheet" href="../../css/main.css">
-        <link rel="stylesheet" href="../../css/boardwrite.css">
+		<link rel="stylesheet" href="/skc/css/common.css">
+        <link rel="stylesheet" href="/skc/ss/main.css">
+        <link rel="stylesheet" href="/skc/css/boardwrite.css">
 
     </head>
 	
@@ -30,7 +30,7 @@
 						<i class="fa fa-bars"></i>
 					</button>
 					<position=fixed>
-					<a class="navbar-brand" href="index.jsp"><img src="../../img/logo.png" class="logo" alt=""></a>
+					<a class="navbar-brand" href="index.jsp"><img src="/skc/img/logo.png" class="logo" alt=""></a>
 					</position>
 				</div>
 				<!-- End Header Navigation -->
@@ -112,6 +112,7 @@
                         <th scope="row"/>
                         <td><input Class="txt" type="file" name="img3"  accept="image/*"/></td>
                      </tr>
+                     
 	
 	
 		

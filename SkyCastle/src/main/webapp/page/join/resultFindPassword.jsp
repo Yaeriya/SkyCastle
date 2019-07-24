@@ -10,11 +10,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- All Plugin Css -->
-<link rel="stylesheet" href="../../css/plugins.css">
+<link rel="stylesheet" href="/skc/css/plugins.css">
 
 <!-- Style & Common Css -->
-<link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="/skc/css/common.css">
+<link rel="stylesheet" href="/skc/css/main.css">
 </head>
 
 <body>
@@ -31,7 +31,7 @@
 
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 					<a class="navbar-brand" href="../index.jsp"><img
-						src="../../img/Navilogo.png" class="logo" alt=""></a>
+						src="/skc/img/Navilogo.png" class="logo" alt=""></a>
 				</div>
 			</div>
 			<!-- End Header Navigation -->
@@ -70,7 +70,7 @@
 				
 					<form>
 					
-					<img class="img-responsive" alt="logo" src="../../img/logo.png">
+					<img class="img-responsive" alt="logo" src="/skc/img/logo.png">
 					<section class="jobs">
 				
 				<div class="row heading">
@@ -150,10 +150,10 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="../../js/jquery.min.js"></script>
-	<script src="../../js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
-	<script src="../../js/bootsnav.js"></script>
-	<script src="../../js/main.js"></script>
+	<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+	<script src="/skc/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+	<script src="/skc/js/bootsnav.js"></script>
+	<script src="/skc/js/main.js"></script>
 </body>
 </html>

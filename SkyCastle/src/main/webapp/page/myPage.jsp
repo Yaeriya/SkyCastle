@@ -7,12 +7,12 @@
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- All Plugin Css --> 
-<link rel="stylesheet" href="../css/plugins.css">
+<link rel="stylesheet" href="/skc/css/plugins.css">
 
 <!-- Style & Common Css --> 
-<link rel="stylesheet" href="../css/common.css">
-<link rel="stylesheet" href="../css/main.css">
-<link rel="stylesheet" href="../css/mypage.css">
+<link rel="stylesheet" href="/skc/css/common.css">
+<link rel="stylesheet" href="/skc/css/main.css">
+<link rel="stylesheet" href="/skc/css/mypage.css">
 </head>
 	
 <body>
@@ -308,12 +308,12 @@
 </div>
 </footer>
 		 
-<script type="text/javascript" src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../js/owl.carousel.min.js"></script>
-<script src="../js/bootsnav.js"></script>
-<script src="../js/main.js"></script>
-<script src="../js/mypage.js"></script>	
+<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+<script src="/skc/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+<script src="/skc/js/bootsnav.js"></script>
+<script src="/skc/js/main.js"></script>
+<script src="/skc/js/mypage.js"></script>	
 		
 </body>
 </html>

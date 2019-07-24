@@ -10,11 +10,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- All Plugin Css -->
-<link rel="stylesheet" href="css/plugins.css">
+<link rel="stylesheet" href="/skc/css/plugins.css">
 
 <!-- Style & Common Css -->
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="/skc/css/common.css">
+<link rel="stylesheet" href="/skc/css/main.css">
 
 </head>
 
@@ -30,7 +30,7 @@
 					data-target="#navbar-menu">
 					<i class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><img src="img/logo.png"
+				<a class="navbar-brand" href="index.jsp"><img src="/skc/img/logo.png"
 					class="logo" alt=""></a>
 			</div>
 			<!-- End Header Navigation -->
@@ -62,7 +62,7 @@
 		<div class="container">
 			<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
 				<form>
-					<img class="img-responsive" alt="logo" src="img/logo.png"> <input
+					<img class="img-responsive" alt="logo" src="/skc/img/logo.png"> <input
 						type="text" class="form-control input-lg" placeholder="User Name">
 					<input type="password" class="form-control input-lg"
 						placeholder="Password"> <label><a href="">Forget
@@ -141,10 +141,10 @@
 		</div>
 	</footer>
 
-	<script type="text/javascript" src="js/jquery.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-	<script src="js/bootsnav.js"></script>
-	<script src="js/main.js"></script>
+	<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+	<script src="/skc/js/bootstrap.min.js"></script>
+	<script type="/skc/js/javascript" src="/skc/js//owl.carousel.min.js"></script>
+	<script src="/skc/js/bootsnav.js"></script>
+	<script src="/skc/js/main.js"></script>
 </body>
 </html>
