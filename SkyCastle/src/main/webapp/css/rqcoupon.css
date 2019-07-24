@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+*{margin: 0; padding: 0;}
+
+
+ #whole {float:left}
+ #whole table{border-collapse: collapse;}
+ #whole .k1{font-size:23px; font-weight:bold;margin-bottom:22px;width:660px;color:#292929}
+ #whole .p2{font-size:13px;margin-bottom:41px;color:#666;margin-left:15px;}
+ #whole .z1{border-top:1px solid #adadad;background-color:#f2f2f2;width:131px;height:48px; font-weight:bold;color:#2d2d2d;padding-left:25px;font-size:14px;border-bottom:1px solid #adadad; border-right:1px solid #ccc}
+ #whole .z0{border-top:2px solid #4e4e4e;}
+ #whole .z2{border-top:1px solid #adadad; width:614px;border-bottom:1px solid #adadad;padding-left:23px;font-size:13px;color:#666}
+ #whole .z3 {height:198px}
+ #whole .z4 {height:79px;}
+ #whole .z5 {width:496px;height:30px;padding:5px;}
+ #whole .inp {padding:5px 5px 5px 12px;width:510px;height:32px;color:#333;font-size:13px;}
+ #whole textarea{width:498px;height:130px;padding:20px;resize:none;font-size:13px;color:#666}
+ #whole select {background:url("../img/select1.jpg") no-repeat 97% 50%;-webkit-appearance: none;}
+
+/**box 시작 17.03.03 박상준**/
+ #whole .z12 {width:198px;height:34px}
+ #whole .z12 .n1 {background:url("/images/n1.jpg") no-repeat; width:96px;height:34px;float:left;margin-right:6px;}
+ #whole .z12 .n1 a{line-height: 34px;font-size: 13px;font-weight: bold;color: #46484f;text-align: center; display: block; padding-left: 20px;}
+ #whole .z12 .n2 {background:url("/images/n2.jpg") no-repeat; width:96px;height:34px;font-size:13px; font-weight:bold; color:#46484f;float:left}
+ #whole .z12 .n2 a{ line-height: 34px;font-size: 13px;font-weight: bold;color: #46484f;text-align: center; display: block; padding-left: 20px;}
+
+ #whole .z13 {width:307px;height:40px; }
+ #whole .z13 .n3 {background:url("../img/n3.jpg") no-repeat;width:146px;height:46px;float:left;}
+ #whole .z13 .n3 a{text-align:Center;color:#fff;font-size:14px;font-weight:500;display:block;line-height:46px;}
+ #whole .z13 .n4 {background:url("../img/n4.jpg") no-repeat;width:146px;height:46px;float:left;margin-right:15px;}
+ #whole .z13 .n4 a{text-align:Center;color:#fff;font-size:14px;font-weight:500;display:block;line-height:46px;}
+/**box 끝**/
+ #whole #select_box { position: relative; width: 498px; height: 30px; background: url("../img/select1.jpg") 470px center no-repeat; /* 화살표 이미지 */ border: 1px solid #adadad;padding:5px;}
+ #whole #select_box label { position: absolute;font-size: 13px; color: #333; left: 12px; letter-spacing: 1px;}
+ #whole #select_box select#color { width: 100%; height: 32px; min-height:32px; line-height: 32px; padding: 0 10px; opacity: 0; filter: alpha(opacity=0); /* IE 8 */}
+
+ #whole #select_box2 {line-height: 24px;float:left; position: relative; width: 113px; height: 24px; background: url("../img/select1.jpg") 95px center no-repeat; /* 화살표 이미지 */ border: 1px solid #adadad;padding:5px;}
+ #whole #select_box2 label { position: absolute;font-size: 13px; color: #666; left: 12px; letter-spacing: 1px;}
+ #whole #select_box2 select#color2 { width: 100%; height: 32px; min-height:32px; line-height: 32px; padding: 0 10px; opacity: 0; filter: alpha(opacity=0); /* IE 8 */}
+
+ #whole .z6{color:#ff4e00;font-size:12px;letter-spacing:-0.05em;padding-top:6px;}
+ #whole .z7{width:123px;height:18px;padding:7px 0 7px 15px;margin-lefT:28px;}
+ #whole .z8{width:123px;height:36px;padding:7px 0 7px 15px; background: url("../img/select1.jpg") no-repeat 91% 50%;-webkit-appearance: none;    position: relative;}
+ #whole .z9{margin-top:2px;position: relative;bottom: -3px;margin-right:7px;}
+ #whole .z10{margin-top:5px;font-size:12px; color:#333;}
+ #whole .z11 {margin-right:6px;}
+ #whole .z12 {float:Right;margin-top:12px;}
+ #whole .z13 {margin-top:80px;float:left;margin-lefT:200px;height:46px;}
+ #whole .z14 {margin-right:15px;}
+ #whole .z15 {margin:0 11px 10px 0;float:right}
