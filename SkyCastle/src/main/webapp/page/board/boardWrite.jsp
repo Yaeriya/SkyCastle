@@ -9,12 +9,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		
         <!-- All Plugin Css --> 
-		<link rel="stylesheet" href="/skc/css/plugins.css">
+		<link rel="stylesheet" href="../../css/plugins.css">
 		
 		<!-- Style & Common Css --> 
-		<link rel="stylesheet" href="/skc/css/common.css">
-        <link rel="stylesheet" href="/skc/ss/main.css">
-        <link rel="stylesheet" href="/skc/css/boardwrite.css">
+		<link rel="stylesheet" href="../../css/common.css">
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="stylesheet" href="../../css/boardwrite.css">
 
     </head>
 	
@@ -30,7 +30,7 @@
 						<i class="fa fa-bars"></i>
 					</button>
 					<position=fixed>
-					<a class="navbar-brand" href="index.jsp"><img src="/skc/img/logo.png" class="logo" alt=""></a>
+					<a class="navbar-brand" href="index.jsp"><img src="../../img/logo.png" class="logo" alt=""></a>
 					</position>
 				</div>
 				<!-- End Header Navigation -->
@@ -44,9 +44,9 @@
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Community</a>
 								<ul class="dropdown-menu animated fadeOutUp" style="display: none; opacity: 1;">
-									<li class="active"><a href="../../browse-job.jsp">학생 게시판</a></li>
-									<li><a href="../../company-detail.jsp">학부모 게시판</a></li>
-									<li><a href="../../resume.jsp">학원 홍보 게시판</a></li>
+									<li class="active"><a href="boardList.jsp">학생 게시판</a></li>
+									<li><a href="boardList.jsp">학부모 게시판</a></li>
+									<li><a href="#">학원 홍보 게시판</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -112,7 +112,6 @@
                         <th scope="row"/>
                         <td><input Class="txt" type="file" name="img3"  accept="image/*"/></td>
                      </tr>
-                     
 	
 	
 		
@@ -123,7 +122,7 @@
 				
 				<div class="epWBtn anim-btn">
 					<a href="javascript:;" onclick="$('#fmInsertContent').submit();" class="epOk btn g">등록</a>
-					<a href="../../browse-job.jsp" onclick="goBackList('epilogue_list_all.asp');" class="epNo btn gray">취소</a>
+					<a href="boardList.jsp" onclick="goBackList('epilogue_list_all.asp');" class="epNo btn gray">취소</a>
 				</div>
 				
 			</form>
