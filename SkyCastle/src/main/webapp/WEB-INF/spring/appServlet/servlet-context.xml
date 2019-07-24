@@ -18,10 +18,11 @@
 	<resources mapping="/fonts/*" location="/fonts/" />
 	<resources mapping="/js/**" location="/js/" />
 	<resources mapping="/file/**" location="/file/" />
+	<resources mapping="/file/**" location="/file/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
 	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<beans:property name="prefix" value="webapp/page/" />
+		<beans:property name="prefix" value="/page/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	

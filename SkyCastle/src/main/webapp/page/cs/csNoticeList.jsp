@@ -9,12 +9,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 		
 <!-- All Plugin Css --> 
-<link rel="stylesheet" href="../../css/plugins.css">
+<link rel="stylesheet" href="/skc/css/plugins.css">
 
 <!-- Style & Common Css --> 
-<link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/main.css">
-<link rel="stylesheet" href="../../css/cscenter.css">
+<link rel="stylesheet" href="/skc/css/common.css">
+<link rel="stylesheet" href="/skc/css/main.css">
+<link rel="stylesheet" href="/skc/ss/cscenter.css">
 </head>
 <body>
 
