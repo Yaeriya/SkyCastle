@@ -43,15 +43,17 @@
 					data-out="fadeOutUp">
 					<li><a href="index.jsp">홈</a></li>
 					<li><a href="join/login.jsp">로그인</a></li>
-					<li><a href="companies.jsp">회원가입</a></li>
+					<li><a href="join.jsp">회원가입</a></li>
+					<li><a href="event.jsp">이벤트</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
-						data-toggle="dropdown">사이트맵</a>
+						data-toggle="dropdown">커뮤니티</a>
 						<ul class="dropdown-menu animated fadeOutUp"
 							style="display: none; opacity: 1;">
-							<li class="active"><a href="browse-job.jsp">자유 게시판</a></li>
-							<li><a href="company-detail.jsp">학부모 게시판</a></li>
-							<li><a href="resume.jsp">학생 게시판</a></li>
+							<li class="active"><a href="board.jsp">자유 게시판</a></li>
+							<li><a href="board.jsp">학부모 게시판</a></li>
+							<li><a href="board.jsp">학생 게시판</a></li>
 						</ul></li>
+						<li><a href="cs.jsp">고객센터</a></li>
 				</ul>
 			</div>
 			<!-- /.navbar-collapse -->
