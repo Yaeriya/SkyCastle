@@ -5,60 +5,56 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Jober Desk | Responsive Job Portal Template</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!-- All Plugin Css -->
+<!-- Script CSS Start -->
 <link rel="stylesheet" href="/skc/css/plugins.css">
-
-<!-- Style & Common Css -->
 <link rel="stylesheet" href="/skc/css/common.css">
 <link rel="stylesheet" href="/skc/css/main.css">
+<!-- Script CSS End -->
 </head>
 <body>
 	<!-- Navigation Start  -->
 	<nav class="navbar navbar-default navbar-sticky bootsnav">
 		<div class="container">
-			<!-- Start Header Navigation -->
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
 					data-target="#navbar-menu">
 					<i class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand" href="index.jsp"><img
-					src="${pageContext.request.contextPath}/img/logo.png" class="logo"
-					alt=""></a>
+				<a class="navbar-brand" href="../main/index.jsp"><img
+					src="/skc/img/logo.png" class="logo" alt="로고이미지"></a>
 			</div>
-			<!-- End Header Navigation -->
 
-			<!-- Collect the nav links, forms, and other content for toggling -->
 			<div class="collapse navbar-collapse" id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
 					data-out="fadeOutUp">
-					<li><a href="index.jsp">홈</a></li>
-					<li><a href="join/login.jsp">로그인</a></li>
-					<li><a href="join.jsp">회원가입</a></li>
-					<li><a href="event.jsp">이벤트</a></li>
+					<li><a href="../main/index.jsp">홈</a></li>
+					<li><a href="../join/login.jsp">로그인</a></li>
+					<li><a href="../main/map.jsp">로그인</a></li>
+					<li><a href="../main/event.jsp">이벤트</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">커뮤니티</a>
 						<ul class="dropdown-menu animated fadeOutUp"
 							style="display: none; opacity: 1;">
-							<li class="active"><a href="board.jsp">자유 게시판</a></li>
-							<li><a href="board.jsp">학부모 게시판</a></li>
-							<li><a href="board.jsp">학생 게시판</a></li>
+							<li class="active"><a href="../main/board.jsp">자유 게시판</a></li>
+							<li><a href="../main/board.jsp">학부모 게시판</a></li>
+							<li><a href="../main/board.jsp">학생 게시판</a></li>
 						</ul></li>
-					<li><a href="cs.jsp">고객센터</a></li>
+					<li><a href="../main/cs.jsp">고객센터</a></li>
 				</ul>
 			</div>
-			<!-- /.navbar-collapse -->
 		</div>
 	</nav>
 	<!-- Navigation End  -->
-	<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+
+	<!-- Script JS Start -->
+	<script src="/skc/js/jquery.min.js" type="text/javascript"></script>
 	<script src="/skc/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+	<script src="/skc/js/owl.carousel.min.js" type="text/javascript"></script>
 	<script src="/skc/js/bootsnav.js"></script>
 	<script src="/skc/js/main.js"></script>
+	<!-- Script JS End -->
 </body>
 </html>
