@@ -10,48 +10,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<jsp:include page="../side/header.jsp" flush="false" />
+	<jsp:include page="../side/header.jsp" flush="false" />
 
-<div class="map_area">
-	<div class="map_wrap">
-		<div class="left">
-			<ul>
-				<li><span class="name fotm">
-						<?=$item[it_name]?>
-				</span></li>
-				<li><span class="des fotl">
-						<?=cut_str($item[it_description],100)?>
-				</span></li>
-				<li style="margin-top: 30px;"><span class="pro fotl">운영중인
-						프로그램 : <?=it_extra1_echo($item[it_extra1])?>
-				</span></li>
-				<li><span class="tel fotl">전화번호: <?=$item[it_extra8]?></span></li>
-				<li><span class="address fotl">
-						<?=$item[address1]?> <?=$item[address2]?>
-				</span></li>
-			</ul>
+	<div class="map_area">
+		<div class="map_wrap">
+			<div class="left"></div>
+			<div id="map" class="right"></div>
 		</div>
-		<div id="map" class="right"></div>
 	</div>
-</div>	
-
-	<script>
-		function nfor_it_map_show() {
-
-			$('html,body').animate({
-				scrollTop : $("#tabmenu").offset().top
-			}, 500);
-
-			$(".tabmenu li").removeClass("active");
-			$("#map_tit").addClass("active");
-
-			$(".tab-cont").hide();
-			$("#tab2").show();
-
-			$("#map").html("");
-			nfor_it_map();
-		}
-	</script>
 
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=c52ab55869ff6f524aa083e5d461b999"></script>

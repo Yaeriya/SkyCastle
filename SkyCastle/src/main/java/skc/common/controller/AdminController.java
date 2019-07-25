@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@Controller
+/*@Controller*/
 public class AdminController {
 	
 	@RequestMapping(value = "/page/index", method = RequestMethod.GET)
