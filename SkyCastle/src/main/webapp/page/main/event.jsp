@@ -1,4 +1,4 @@
-<%@page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -12,134 +12,57 @@
 
 <body>
 	<jsp:include page="../side/header.jsp" flush="false" />
+
+	<section class="inner-banner"
+		style="backend: #242c36 url(https://via.placeholder.com/1920x600) no-repeat;">
+		<div class="container">
+			<div class="caption">
+				<h2>COUPON PAGE</h2>
+				<p>
+					Get a Free Coupon <span>for member</span>
+				</p>
+			</div>
+		</div>
+	</section>
+
 	<section class="jobs">
 		<div class="container">
 			<div class="row heading">
-				<h2>마감된 이벤트</h2>
-				<p>현재 진행중인 이벤트가 없습니다</p>
+				<h2></h2>
+				<p>학생 회원 그리고 부모님 회원을 위한 쿠폰 발급 페이지입니다!</p>
 			</div>
 			<div class="companies">
 				<div class="company-list">
 					<div class="row">
-						<div class="col-md-2 col-sm-2">
-							<div class="company-logo">
-								<img src="/skc/img/google.png" class="img-responsive" alt="">
-							</div>
+						<div class="col-md-9 col-sm-9">
+							<div class="company-logo"></div>
 						</div>
 						<div class="col-md-10 col-sm-10">
 							<div class="company-content">
-								<h3>
-									IOS Developer Event<span class="full-time">Full Time</span>
-								</h3>
-								<p>
-									<span class="company-name"><i class="fa fa-briefcase"></i>Google</span><span
-										class="company-location"><i class="fa fa-map-marker"></i>
-										07th Avenue, New York, NY, United States</span><span class="package"><i
-										class="fa fa-money"></i>$22,000-$50,000</span>
-								</p>
+								<div class="nav navbar-nav navbar-right" data-in="fadeInDown"
+									data-out="fadeOutUp">
+									<img src="/skc/img/coupons.jpg" class="../../img-responsive"
+										alt="" />
+									<p>
+										<input type="button" class="btn brows-btn"
+											value="Get A Coupon" />
+									</p>
+									<p>
+										<span class="company-name"><i class="fa fa-briefcase"></i>※
+											최대 3장까지 발급이가능합니다</span>
+									<p>
+										<span class="company-name"><i class="fa fa-briefcase"></i>※
+											발급일 기준으로 일주일 뒤 추가 발급이 가능합니다.</span>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="company-list">
-					<div class="row">
-						<div class="col-md-2 col-sm-2">
-							<div class="company-logo">
-								<img src="/skc/img/microsoft.png" class="img-responsive" alt="">
-							</div>
-						</div>
-						<div class="col-md-10 col-sm-10">
-							<div class="company-content">
-								<h3>
-									Back-End developer Event<span class="part-time">Part
-										Time</span>
-								</h3>
-								<p>
-									<span class="company-name"><i class="fa fa-briefcase"></i>Microsoft</span><span
-										class="company-location"><i class="fa fa-map-marker"></i>
-										7th Avenue, New York, NY, United States</span><span class="package"><i
-										class="fa fa-money"></i>$20,000-$52,000</span>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="company-list">
-					<div class="row">
-						<div class="col-md-2 col-sm-2">
-							<div class="company-logo">
-								<img src="/skc/img/apple.png" class="img-responsive" alt="">
-							</div>
-						</div>
-						<div class="col-md-10 col-sm-10">
-							<div class="company-content">
-								<h3>
-									UI/UX Designer Event<span class="freelance">Freelance</span>
-								</h3>
-								<p>
-									<span class="company-name"><i class="fa fa-briefcase"></i>Apple</span><span
-										class="company-location"><i class="fa fa-map-marker"></i>
-										7th Avenue, New York, NY, United States</span><span class="package"><i
-										class="fa fa-money"></i>$22,000-$50,000</span>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="company-list">
-					<div class="row">
-						<div class="col-md-2 col-sm-2">
-							<div class="company-logo">
-								<img src="/skc/img/wipro.png" class="img-responsive" alt="">
-							</div>
-						</div>
-						<div class="col-md-10 col-sm-10">
-							<div class="company-content">
-								<h3>
-									IOS developer Event<span class="internship">Intership</span>
-								</h3>
-								<p>
-									<span class="company-name"><i class="fa fa-briefcase"></i>Wipro</span><span
-										class="company-location"><i class="fa fa-map-marker"></i>
-										8th Avenue, New York, NY, United States</span><span class="package"><i
-										class="fa fa-money"></i>$24,000-$52,000</span>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="company-list">
-					<div class="row">
-						<div class="col-md-2 col-sm-2">
-							<div class="company-logo">
-								<img src="/skc/img/twitter.png" class="img-responsive" alt="">
-							</div>
-						</div>
-						<div class="col-md-10 col-sm-10">
-							<div class="company-content">
-								<h3>
-									Marketing Holder Event<span class="full-time">Full Time</span>
-								</h3>
-								<p>
-									<span class="company-name"><i class="fa fa-briefcase"></i>Twitter</span><span
-										class="company-location"><i class="fa fa-map-marker"></i>
-										4th Avenue, New York, NY, United States</span><span class="package"><i
-										class="fa fa-money"></i>$24,000-$48,000</span>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<input type="button" class="btn brows-btn" value="Brows All Jobs">
 			</div>
 		</div>
 	</section>
+
 	<jsp:include page="../side/footer.jsp" flush="false" />
 </body>
 </html>
