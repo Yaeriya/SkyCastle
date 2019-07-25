@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+.map_wrap {
+	overflow: hidden;
+	margin-top: 50px;
+	padding: 0px 30px;
+}
+
+.map_wrap .left {
+	float: left;
+}
+
+.map_wrap .right {
+	float: right;
+	width: 50%;
+	height: 250px;
+}
+
+.map_wrap ul {
+	margin-top: 20px;
+}
+
+.map_wrap li {
+	margin-bottom: 10px;
+}
+
+.map_wrap .name {
+	font-size: 20px;
+}
+
+.map_wrap .des {
+	font-size: 20px;
+}
+
+.map_wrap .pro {
+	font-size: 16px;
+}
+
+.map_wrap .tel {
+	font-size: 20px;
+}
+
+.map_area {
+	width: 100%;
+	min-height: 700px;
+	overflow: hidden;
+	position: relative;
+}

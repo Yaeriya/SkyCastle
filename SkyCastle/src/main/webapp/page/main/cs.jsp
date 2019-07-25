@@ -2,11 +2,14 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-<title>고객센터</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>스카이캐슬 | 고객센터</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/skc/css/cscenter.css">
 </head>
 <body>
-
 <jsp:include page="../side/header.jsp" flush="false"/>
 
 <div class="tab-container">
@@ -119,7 +122,6 @@
          </tr>      
          </tbody>   
       </table>
-		
 
    <section class="banner">
 		<input type=text><input type ="button" value=검색>
@@ -127,7 +129,7 @@
 	</div>
 </div>
 
-<jsp:include page="../side/footer.jsp" flush="false"/>
 <script src="/skc/js/cscenter.js"></script>
+<jsp:include page="../side/footer.jsp" flush="false"/>
 </body>
 </html>

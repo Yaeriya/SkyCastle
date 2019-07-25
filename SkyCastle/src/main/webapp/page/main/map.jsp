@@ -5,53 +5,13 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>SkyCastle</title>
+<title>스카이캐슬 | 지도보기</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<style>
-.map_wrap {
-	overflow: hidden;
-	margin-top: 50px;
-	padding: 0px 30px;
-}
-
-.map_wrap .left {
-	float: left;
-}
-
-.map_wrap .right {
-	float: right;
-	width: 50%;
-	height: 250px;
-}
-
-.map_wrap ul {
-	margin-top: 20px;
-}
-
-.map_wrap li {
-	margin-bottom: 10px;
-}
-
-.map_wrap .name {
-	font-size: 20px;
-}
-
-.map_wrap .des {
-	font-size: 20px;
-}
-
-.map_wrap .pro {
-	font-size: 16px;
-}
-
-.map_wrap .tel {
-	font-size: 20px;
-}
-.map_area{width:100%;min-height:700px;overflow:hidden; position:relative;}
-</style>
 <body>
+<jsp:include page="../side/header.jsp" flush="false" />
+
 <div class="map_area">
 	<div class="map_wrap">
 		<div class="left">

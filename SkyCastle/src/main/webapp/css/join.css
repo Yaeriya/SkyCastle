@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+nav.navbar.bootsnav {
+	background-color: #000;
+}
+
+#wrap {
+	background-image: url("../img/join-main.jpg");
+	height: 100%;
+	min-height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+
+.aaa {
+	margin-left: 450px;
+	margin-right: 450px;
+	padding: 50px;
+	font-weight: bold;
+	background-color: #ffffff;
+	opacity: 0.7;
+}
+
+tr {
+	height: 40px;
+}

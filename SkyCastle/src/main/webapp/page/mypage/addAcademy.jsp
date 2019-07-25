@@ -8,10 +8,12 @@
 <title>스카이캐슬 | 학원등록</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="/skc/css/add.css">
 </head>
 <body>
 	<jsp:include page="../side/header.jsp" flush="false" />
+
 	<section class="newsletter">
 		<div class="container">
 			<div class="row">
@@ -110,7 +112,6 @@
 										<button class="i-btn" type="button">+등록</button></li>
 								</ul>
 							</div>
-
 						</div>
 
 						<div class="add-container">
@@ -127,4 +128,5 @@
 	</section>
 
 	<jsp:include page="../side/footer.jsp" flush="false" />
+</body>
 </html>
