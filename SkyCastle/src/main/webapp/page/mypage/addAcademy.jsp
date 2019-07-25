@@ -12,7 +12,8 @@
 </head>
 <body>
 	<jsp:include page="../side/header.jsp" flush="false" />
-
+	
+	<!-- 입력폼 -->
 	<section class="newsletter">
 		<div class="container">
 			<div class="row">
