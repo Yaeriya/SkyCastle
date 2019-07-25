@@ -42,7 +42,7 @@
 	<div id="tab-2" class="tab-content">
 	<section class="banner">
 		<h1>1:1 문의</h1>
-	</section>
+	</section><!-- test -->
 	<ul class="qnaq">
 		<li>문의제목<input type=text size=71></li>
 		<li>문의내용<textarea cols=70 rows=15></textarea></li>
