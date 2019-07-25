@@ -4,9 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회원 탈퇴</title>
 </head>
 <body>
-
+회원 탈퇴가 완료 되었습니다
 </body>
 </html>
