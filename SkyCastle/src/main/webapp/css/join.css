@@ -1,26 +1,35 @@
 @charset "UTF-8";
 
-nav.navbar.bootsnav {
-	background-color: #000;
+#wrap {
+	background-image: url("/skc/img/join-main.jpg");
+	height: 100%;
+	min-height: 100%;
+	background-size: cover;
+	background-position: bottom;
 }
 
-#wrap {
-	background-image: url("../img/join-main.jpg");
+.aaa {
+	width: 900px;
+	margin: 250px auto;
+	padding: 50px;
+	font-weight: bold;
+	background-color: #ffffff;
+	opacity: 0.9;
+}
+
+tr {
+	height: 40px;
+}
+
+#asd {
+	background-image: url("/skc/img/login-main.png");
 	height: 100%;
 	min-height: 100%;
 	background-position: center;
 	background-size: cover;
 }
-
-.aaa {
-	margin-left: 450px;
-	margin-right: 450px;
-	padding: 50px;
-	font-weight: bold;
-	background-color: #ffffff;
-	opacity: 0.7;
-}
-
-tr {
-	height: 40px;
+.findform{
+	position: relative;
+	left: 10px;
+	top: -70px;
 }
