@@ -97,6 +97,101 @@ $(document).ready(function() {
     });
 });
 
+function openTab(evt, tabName) 
+{
+      var i, tabcontent, tablinks;
+      tabcontent = document.getElementsByClassName("tabcontent"); //컨텐츠 불러옴 
+      for (i = 0; i < tabcontent.length; i++) 
+      {
+        tabcontent[i].style.display = "none"; //컨텐츠 모두 숨김
+      }
+      tablinks = document.getElementsByClassName("tablinks"); //탭을 불러옴
+      for (i = 0; i < tablinks.length; i++) 
+      {
+        tablinks[i].className = tablinks[i].className.replace(" active", ""); //탭을 초기화
+      }
+      document.getElementById(tabName).style.display = "block"; //해당되는 컨텐츠만 보여줌
+      evt.currentTarget.className += " active"; //클릭한 탭을 활성화
+}
 
 
+var email_info = 'heraresq@naver.com';
+var email_info_split = email_info.split('@');
+$(function(){
+    inputPlaceholder(document.getElementById('join_form_pwd'),'');
+    inputPlaceholder(document.getElementById('join_form_nick'),'');
+    inputPlaceholder(document.getElementById('join_form_email'),'');
+});
 
+ 
+
+     //console.debug(email_info_split);
+
+if(email_info_split != '')
+{
+	$('#inputEmail').val(email_info_split[0]);
+	$('#inputEmail2').val(email_info_split[1]);
+
+	var is_selected_email = false;
+	$("#inputEmailSelect option").each(function() {
+		if($(this).text() == email_info_split[1]) {
+			$("#inputEmailSelect option[text=" + $(this).text() + "]").attr("selected", true);
+			is_selected_email = true;
+			return;
+		}
+	});
+
+	if(!is_selected_email) {
+		$('#inputEmail2').show().val(email_info_split[1]);
+		$("#inputEmailSelect").val('custom');
+	}
+}
+//여기까지가 myPage_N,P.jsp
+
+
+//wishList.jsp
+jQuery(document).ready(function(){
+	$("#checkAll").click(function(){
+		if ($(this).is(':checked')) {
+			$(".cartTable #course_idx").each(function() { 
+				$(this).prop("checked", true);
+			});
+		} else {
+			 $(".cartTable #course_idx").each(function() { 
+				$(this).prop("checked", false);
+			}); 
+		}
+	});
+});
+
+//requestCoupon.jsp
+jQuery(document).ready(function(){
+	var select = $("select#color");
+	select.change(function(){
+		var select_name = $(this).children("option:selected").text();
+		$(this).siblings("label").text(select_name);
+	});
+	goBoardEditer("contents");
+});
+
+//qnaList.jsp, couponList_N,P.jsp
+$(".reonON .r6").on("click",function(){
+	$(this).parent().next().find(".reonBox").slideToggle( "slow" );
+})
+function anwerView(idx) {
+	$("#anwer_"+idx).toggle();
+}
+
+//history.jsp
+function movePaginate(p){
+    $('#page').val(p); 
+    $('#frm_list').submit();
+}
+
+//couponList_N,P.jsp
+$(".reonON .r6").on("click",function(){
+	$(this).parent().next().find(".reonBox").slideToggle( "slow" );
+})
+function anwerView(idx) {
+	$("#anwer_"+idx).toggle();
+}

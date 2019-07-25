@@ -6,34 +6,10 @@
 <title>스카이캐슬</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- All Plugin Css --> 
-<link rel="stylesheet" href="../../css/plugins.css">
-
-<!-- Style & Common Css --> 
-<link rel="stylesheet" href="../../css/common.css">
-<link rel="stylesheet" href="../../css/main.css">
-<link rel="stylesheet" href="../../css/mypage.css">
-<link rel="stylesheet" href="../../css/rqcoupon.css">
-
-
-<script src="../../js/jquery.min.js"></script>
-<script type="text/javascript">
-		jQuery(document).ready(function(){
-			var select = $("select#color");
-			select.change(function(){
-				var select_name = $(this).children("option:selected").text();
-				$(this).siblings("label").text(select_name);
-			});
-			goBoardEditer("contents");
-		});
-</script>
-
+<link rel="stylesheet" href="/skc/css/rqcoupon.css">
 </head>
 <body>
 
-
-
-	
 <div id="whole">
 	
 	<form id="fmInsertContent" name="fmInsertContent"

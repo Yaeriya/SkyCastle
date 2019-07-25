@@ -2,19 +2,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-<title>Jober Desk | Responsive Job Portal Template</title>
+<title>고객센터</title>
 <link rel="stylesheet" href="/skc/css/cscenter.css">
 </head>
 <body>
-<%
-	String content = request.getParameter("content");
-	if(content == null)
-		content = "cs/qnaWrite.jsp";
-
-	String csTab = request.getParameter("csTab");
-	if(csTab == null)
-		csTab = "faq";
-%>
 
 <jsp:include page="../side/header.jsp" flush="false"/>
 
@@ -44,7 +35,7 @@
 		<h1>1:1 문의</h1>
 	</section>
 	<ul class="qnaq">
-		<li>문의제목<input type=text size=71></li>
+		<li>문의제목<input type=text size=69></li>
 		<li>문의내용<textarea cols=70 rows=15></textarea></li>
 		<li><button onclick="location.href='cs/csQnaResult.jsp'">제출하기</button></li>
 	</ul>
@@ -137,12 +128,6 @@
 </div>
 
 <jsp:include page="../side/footer.jsp" flush="false"/>
-
-<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
-<script src="/skc/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
-<script src="/skc/js/bootsnav.js"></script>
-<script src="/skc/js/main.js"></script>
 <script src="/skc/js/cscenter.js"></script>
 </body>
 </html>
