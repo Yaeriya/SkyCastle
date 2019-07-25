@@ -13,7 +13,7 @@
 <jsp:include page="../side/header.jsp" flush="false"/>
 
 	<!-- login section start -->
-	<div style="position: relative; left: 10px; top: -70px;">
+	<div style="position: relative; left: 10px; top: -70px;" >
 
 		<section class="login-wrapper">
 
