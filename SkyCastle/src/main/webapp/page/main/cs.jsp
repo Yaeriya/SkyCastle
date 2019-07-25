@@ -16,7 +16,7 @@
 		csTab = "faq";
 %>
 
-<jsp:include page="side/header.jsp" flush="false"/>
+<jsp:include page="../side/header.jsp" flush="false"/>
 
 <div class="tab-container">
 	<ul class="tabs">
@@ -136,7 +136,7 @@
 	</div>
 </div>
 
-<jsp:include page="side/footer.jsp" flush="false"/>
+<jsp:include page="../side/footer.jsp" flush="false"/>
 
 <script type="text/javascript" src="/skc/js/jquery.min.js"></script>
 <script src="/skc/js/bootstrap.min.js"></script>
