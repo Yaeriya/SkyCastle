@@ -32,7 +32,7 @@
 					data-out="fadeOutUp">
 					<li><a href="../main/index.jsp">홈</a></li>
 					<li><a href="../join/login.jsp">로그인</a></li>
-					<li><a href="../main/map.jsp">로그인</a></li>
+					<li><a href="../main/map.jsp">지도보기</a></li>
 					<li><a href="../main/event.jsp">이벤트</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">커뮤니티</a>
