@@ -4,7 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import skc.member.dao.MemberDTO;
+import skc.member.dao.MemberDAOImpl;
+import skc.member.model.MemberDTO;
 import skc.member.service.JoinService;
 
 public class JoinServiceImpl implements JoinService
@@ -15,7 +16,7 @@ public class JoinServiceImpl implements JoinService
 	@Override
 	public List<MemberDTO> getMemberList() throws Exception
 	{
-		return memberDAO.getUserList();
+		return memberDAO.getMemberList();
 	}
 	@Override
 	public MemberDTO getMemberInfo(String Id) throws Exception
@@ -25,7 +26,7 @@ public class JoinServiceImpl implements JoinService
 	@Override
 	public void insertMember(MemberDTO memberDTO) throws Exception
 	{
-		memberDAO.insertUser(memberDTO);
+		memberDAO.insertMember(memberDTO);
 	}
 	@Override
 	public void updateMember(MemberDTO memberDTO) throws Exception

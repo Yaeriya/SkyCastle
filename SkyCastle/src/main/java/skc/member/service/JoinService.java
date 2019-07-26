@@ -2,7 +2,7 @@ package skc.member.service;
 
 import java.util.List;
 
-import skc.member.dao.MemberDTO;
+import skc.member.model.MemberDTO;
 
 public interface JoinService
 {
