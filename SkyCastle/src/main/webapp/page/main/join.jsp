@@ -3,44 +3,59 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>스카이캐슬 | 회원가입</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
-	<jsp:include page="../side/header.jsp" flush="false" />
+<title>SKYCASTLE 프리미엄 학원입시정보</title>
 
-	<div id="wrap">
+<link rel="stylesheet" href="/skc/css/join.css">
+
+</head>
+<body class="wrap">
+<jsp:include page="../side/header.jsp" flush="false"/>
+
+
+
 		<div class="aaa">
 
-			<b> <font size="6" color="gray">회원가입</font></b> <br>
+			<b> <font size="6" color="gray">회원가입</font></b> <br> <br> <br>
 			<table>
 				<tr>
 					<td id="title">아이디</td>
 					<td><input type="text" name="id" maxlength="10"> <input
 						type="button" value="중복확인"></td>
 				</tr>
+
+
+
 				<tr>
 					<td id="title">별명</td>
 					<td><input type="text" name="id" maxlength="10"> <input
 						type="button" value="중복확인"></td>
 				</tr>
+
+
+
 				<tr>
 					<td id="title">이름</td>
 					<td><input type="text" name="name" maxlength="40"></td>
 				</tr>
+
+
+
 				<tr>
 					<td id="title">비밀번호</td>
 					<td><input type="password" name="password" maxlength="15">
 					</td>
 				</tr>
+
+
+
 				<tr>
 					<td id="title">비밀번호 확인</td>
 					<td><input type="password" name="password" maxlength="15">
 					</td>
 				</tr>
+
+
+
 				<tr>
 					<td id="title">이메일</td>
 					<td><input type="text" name="email_1" maxlength="30">@
@@ -51,19 +66,27 @@
 							<option>nate.com</option>
 					</select></td>
 				</tr>
+
+
+
 				<tr>
 					<td id="title">휴대전화</td>
 					<td><input type="text" name="phone" /></td>
 				</tr>
+
+
 				<tr>
 					<td id="title">주소</td>
 					<td><input type="text" size="50" name="address" /></td>
 				</tr>
-			</table>
-			<input type="submit" value="가입" /> <input type="button" value="취소">
-		</div>
-	</div>
 
-	<jsp:include page="../side/footer.jsp" flush="false" />
+
+			</table>
+			<br> <br> <input type="submit" value="가입" /> <input
+				type="button" value="취소">
+		</div>
+
+
+<jsp:include page="../side/footer.jsp" flush="false"/>
 </body>
 </html>

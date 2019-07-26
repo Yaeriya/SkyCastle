@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-#wrap {
+.wrap {
 	background-image: url("/skc/img/join-main.jpg");
 	height: 100%;
 	min-height: 100%;
@@ -33,3 +33,4 @@ tr {
 	left: 10px;
 	top: -70px;
 }
+
