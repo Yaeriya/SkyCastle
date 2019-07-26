@@ -12,7 +12,6 @@
 <jsp:include page="../side/header.jsp" flush="false"/>
 
 
-
 		<div class="aaa">
 
 			<b> <font size="6" color="gray">회원가입</font></b> <br> <br> <br>
