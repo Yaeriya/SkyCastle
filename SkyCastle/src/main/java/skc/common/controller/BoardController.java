@@ -1,12 +1,14 @@
 package skc.common.controller;
 
 import java.util.List; 
-import java.util.Map; 
+import java.util.Map;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Controller; 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView; 
+import org.springframework.web.servlet.ModelAndView;
+
+import skc.common.common.CommandMap;
 import skc.common.service.BoardService;
 
 @Controller
@@ -20,4 +22,9 @@ public class BoardController {
 			List<Map<String,Object>> list = boardService.selectBoardList(commandMap);
 			mv.addObject("list", list); return mv;
 			} 
+	@RequestMapping(value="/board/boardWrite") 
+	public ModelAndView openBoardWrite(CommandMap commandMap) throws Exception{ 
+		ModelAndView mv = new ModelAndView("/board/boardWrite");
+			return mv;
+			}
 	}

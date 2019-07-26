@@ -47,45 +47,30 @@
 					<dl class="eptt cf">
 						<dt class="req">제목</dt>
 						<dd>
-							<input name="subject" value="" type="text" fieldName="과목명"
+							<input name="subject" value="" type="text"
+							 id = "FREE_TITLE" name = "FREE_TITLE" fieldName="과목명"
 								maxlength="100" restrictBytes="100" class="__required" />
 						</dd>
 					</dl>
 					<dl class="eptt cf">
-						<dt class="req">아이디</dt>
+						<dt class="req">별명</dt>
 						<dd>
 							<input name="name" value="" type="text" fieldName="수강생명"
+							id = "MB_NICK" name = "MB_NICK"
 								maxlength="20" restrictBytes="20" class="__required" />
 						</dd>
 					</dl>
 					<dl class="warea cf">
 						<dt class="req">내용</dt>
 						<dd>
-							<textarea name="contents" fieldName="내용" class="__required"></textarea>
-						</dd>
-					</dl>
-					<dl class="eptt eppw cf">
-						<dt class="req">비밀번호</dt>
-						<dd>
-							<input name="pw" value="" type="password" fieldName="비밀번호"
-								maxlength="20" restrictBytes="20" class="__required" /> <span>*
-								등록하신 글을 수정 또는 삭제 하시려면 입력하신 비밀번호를 반드시 기억하시기 바랍니다.</span>
+							<textarea  fieldName="내용" class="__required"
+							id = "FREE_BODY" name = "FREE_BODY"></textarea>
 						</dd>
 					</dl>
 					<table>
 						<tr>
 							<th scope="row" />
 							<td><input Class="txt" type="file" name="img1"
-								accept="image/*" /></td>
-						</tr>
-						<tr>
-							<th scope="row" />
-							<td><input Class="txt" type="file" name="img2"
-								accept="image/*" /></td>
-						</tr>
-						<tr>
-							<th scope="row" />
-							<td><input Class="txt" type="file" name="img3"
 								accept="image/*" /></td>
 						</tr>
 					</table>
