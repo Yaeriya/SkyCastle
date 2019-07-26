@@ -10,7 +10,7 @@ import skc.member.service.JoinService;
 public class JoinServiceImpl implements JoinService
 {
 	@Resource
-	private MemberDAO memberDAO;
+	private MemberDAOImpl memberDAO;
 	
 	@Override
 	public List<MemberDTO> getMemberList() throws Exception

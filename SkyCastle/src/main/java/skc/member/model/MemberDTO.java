@@ -1,4 +1,4 @@
-package skc.member.dao;
+package skc.member.model;
 
 public class MemberDTO {
 	
@@ -12,6 +12,7 @@ public class MemberDTO {
 	private String Licen;
 	private int Level;
 	private int Limit;
+	
 	public String getId() {
 		return Id;
 	}
@@ -72,4 +73,5 @@ public class MemberDTO {
 	public void setLimit(int limit) {
 		Limit = limit;
 	}
+
 }
