@@ -25,13 +25,10 @@
     <body>		
 		
 			<style>
-			
-			nav.navbar.bootsnav {
-			 background-color: #000;
-			 }
+
 			
 			#joinSelect-main {
-    		 background-image: url("../../img/joinSelect.png");
+    		 background-image: url("../../img/joinSelect.jpg");
     		 height: 100%;
     		 min-height: 100%;
 			 background-position: center;
