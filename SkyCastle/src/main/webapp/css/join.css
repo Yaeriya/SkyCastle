@@ -1,33 +1,71 @@
 @charset "UTF-8";
 
-.wrap {
+
+/* join.jsp */
+.join-main {
 	background-image: url("/skc/img/join-main.jpg");
 	height: 100%;
 	min-height: 100%;
 	background-size: cover;
 	background-position: bottom;
 }
-
-.aaa {
+.join-back {
 	width: 900px;
 	margin: 250px auto;
 	padding: 50px;
 	font-weight: bold;
 	background-color: #ffffff;
-	opacity: 0.9;
+	opacity: 0.8;
 }
-
 tr {
 	height: 40px;
 }
+/* 끝 */
 
-#asd {
+/* --------------------------------------------------- */
+
+/* login.jsp */
+#login-main {
 	background-image: url("/skc/img/login-main.png");
 	height: 100%;
 	min-height: 100%;
 	background-position: center;
 	background-size: cover;
 }
+/* 끝 */
+
+/* --------------------------------------------------- */
+
+/* joinSelect.jsp */
+
+#joinSelect-main {
+	background-image: url("/skc/img/joinSelect.jpg");
+    height: 100%;
+    min-height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+			 
+.ddd,
+.ddd:hover,
+.ddd:focus,
+.ddd.focus,
+.ddd:active,
+.ddd.active,
+.open>.dropdown-toggle.ddd {
+    color: #fff;
+    background-color: #292929;
+    border-color: #bdbdbd;
+    text-transform: uppercase;
+    border-radius: 2px;
+    box-shadow: none;
+    padding: 10px 25px;
+}
+
+/* 끝 */
+
+/* --------------------------------------------------- */
+
 .findform{
 	position: relative;
 	left: 10px;
