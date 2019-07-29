@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView; 
 import skc.common.service.BoardService;
 
-@Controller
+/*@Controller*/
 public class BoardController { 
 	@Resource(name="boardService")
 	private BoardService boardService; 

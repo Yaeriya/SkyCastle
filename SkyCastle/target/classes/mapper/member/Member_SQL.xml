@@ -14,10 +14,8 @@
 		]]>
 	</select>
 	<insert id="insertMember" parameterType="hashmap">
-		<![CDATA[ 
 			INSERT INTO MEMBER (MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE)
-			VALUES (#{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone})
-		]]>
+			VALUES ('#{Nick}', '#{Id}', '#{Pwd}', '#{Name}', '#{Email}', '#{Phone}')
 	</insert>
 	<update id="updateMember" parameterType="hashmap">
 		<![CDATA[ 

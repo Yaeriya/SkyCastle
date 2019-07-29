@@ -1,41 +1,42 @@
 package skc.member.service;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
-import skc.member.dao.MemberDAOImpl;
-import skc.member.model.MemberDTO;
-import skc.member.service.JoinService;
+import org.springframework.stereotype.Service;
+import skc.member.dao.MemberDAO;
 
+@Service("joinService")
 public class JoinServiceImpl implements JoinService
 {
-	@Resource
-	private MemberDAOImpl memberDAO;
+	@Resource(name="memberDAO")
+	private MemberDAO memberDAO;
 	
 	@Override
-	public List<MemberDTO> getMemberList() throws Exception
+	public List<Map<String, Object>> getMemberList(Map<String, Object> map) throws Exception
 	{
-		return memberDAO.getMemberList();
+		return memberDAO.getMemberList(map);
 	}
 	@Override
-	public MemberDTO getMemberInfo(String Id) throws Exception
+	public List<Map<String, Object>> getMemberInfo(Map<String, Object> map) throws Exception
 	{
-		return memberDAO.getMemberInfo(Id);
+		return memberDAO.getMemberInfo(map);
 	}
 	@Override
-	public void insertMember(MemberDTO memberDTO) throws Exception
+	public void insertMember(Map<String, Object> map) throws Exception
 	{
-		memberDAO.insertMember(memberDTO);
+		memberDAO.insertMember(map);
 	}
 	@Override
-	public void updateMember(MemberDTO memberDTO) throws Exception
+	public void updateMember(Map<String, Object> map) throws Exception
 	{
-		memberDAO.updateMember(memberDTO);
+		memberDAO.updateMember(map);
 	}
 	@Override
-	public void deleteMember(String Id) throws Exception
+	public void deleteMember(Map<String, Object> map) throws Exception
 	{
-		memberDAO.deleteMember(Id);
+		memberDAO.deleteMember(map);
 	}
 }

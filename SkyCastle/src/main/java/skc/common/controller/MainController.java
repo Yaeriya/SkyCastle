@@ -7,12 +7,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/*@Controller*/
+@Controller
 public class MainController {
 	
-	@RequestMapping(value = "/page/index", method = RequestMethod.GET)
+	@RequestMapping(value = "/main/index", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
-		return "index";
+		return "/main/index";
 	}
 	
 }

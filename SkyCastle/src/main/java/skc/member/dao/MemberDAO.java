@@ -1,14 +1,34 @@
 package skc.member.dao;
 
 import java.util.List;
+import java.util.Map;
 
-import skc.member.model.MemberDTO;
+import org.springframework.stereotype.Repository;
+import skc.common.dao.AbstractDAO;
 
-public interface MemberDAO {
-
-	public List<MemberDTO> getMemberList() throws Exception;
-	public MemberDTO getMemberInfo(String member) throws Exception;
-	public int insertMember(MemberDTO member) throws Exception;
-	public int updateMember(MemberDTO member) throws Exception;
-	public int deleteMember(String member) throws Exception;
+@Repository("memberDAO") 
+public class MemberDAO extends AbstractDAO
+{
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> getMemberList(Map<String, Object> map) throws Exception
+	{
+		return (List<Map<String, Object>>)selectList("member.getMemberList", map);
+	}
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> getMemberInfo(Map<String, Object> map) throws Exception
+	{
+		return (List<Map<String, Object>>)selectOne("member.getMemebrInfo", map);
+	}
+	public void insertMember(Map<String, Object> map) throws Exception
+	{
+		insert("member.insertMember", map);
+	}
+	public void updateMember(Map<String, Object> map) throws Exception
+	{
+		update("member.updateMember", map);
+	}
+	public void deleteMember(Map<String, Object> map) throws Exception
+	{
+		delete("member.deleteMember", map);
+	}
 }

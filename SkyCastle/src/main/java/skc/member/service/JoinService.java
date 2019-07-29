@@ -1,18 +1,14 @@
 package skc.member.service;
 
 import java.util.List;
+import java.util.Map;
 
-import skc.member.model.MemberDTO;
 
 public interface JoinService
 {
-	public List<MemberDTO> getMemberList() throws Exception;
-	
-	public MemberDTO getMemberInfo(String Id) throws Exception;
-	
-	public void insertMember(MemberDTO memberDTO) throws Exception;
-	
-	public void updateMember(MemberDTO memberDTO) throws Exception;
-	
-	public void deleteMember(String Id) throws Exception;
+	List<Map<String, Object>> getMemberList(Map<String, Object> map) throws Exception;
+	List<Map<String, Object>> getMemberInfo(Map<String, Object> map) throws Exception;
+	void insertMember(Map<String, Object> map) throws Exception;
+	void updateMember(Map<String, Object> map) throws Exception;
+	void deleteMember(Map<String, Object> map) throws Exception;
 }

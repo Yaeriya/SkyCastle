@@ -1,42 +1,40 @@
 package skc.member.controller;
 
-
+import java.util.List;
+import java.util.Map;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import skc.member.model.MemberDTO;
 import skc.member.service.JoinService;
 
 @Controller
 @RequestMapping(value="/member")
 public class JoinController 
 {
-	@Resource
+	@Resource(name="joinService")
 	private JoinService joinService;
 	
 	@RequestMapping(value = "/getMemberList", method = RequestMethod.GET) 
-	public String getMemberList(Model model) throws Exception
+	public ModelAndView getMemberList(Map<String,Object> commandMap) throws Exception
 	{ 
-		model.addAttribute("memberList", joinService.getMemberList()); 
+		ModelAndView mv = new ModelAndView("/getMemberList");
+		List<Map<String,Object>> list = joinService.getMemberList(commandMap);
 		
-		return "member/memberList"; 
+		mv.addObject("list", list);
+		return mv; 
 	} 
 	
-	@RequestMapping(value = "/inserMember", method = RequestMethod.POST) 
-	public String insertMember(@ModelAttribute("MemberDTO") MemberDTO memberDTO , RedirectAttributes rttr) throws Exception 
+	@RequestMapping(value = "/insertMember", method = RequestMethod.POST) 
+	public String insertMember(Map<String,Object> commandMap) throws Exception 
 	{ 
-		joinService.insertMember(memberDTO); 
+		joinService.insertMember(commandMap); 
 		
-		return "redirect:/member/getMemberList"; 
+		//return "redirect:/page/getMemberList"; 
+		return "/main/index";
 	}
-
-	
 }

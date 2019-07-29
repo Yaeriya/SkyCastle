@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -12,81 +13,104 @@
 <jsp:include page="../side/header.jsp" flush="false"/>
 
 <body class="join-main">
-
-		<div class="join-back">
-
-			<b> <font size="6" color="gray">회원가입</font></b> <br> <br> <br>
+<div class="join-back">
+	<b> <font size="6" color="gray">회원가입</font></b> <br> <br> <br>
+	<div class="join-body">
+			<%-- <form:form name="form" id="form" class="form-signup" role="form"
+				method="post" action="${pageContext.request.contextPath}/member/insertMember">
+				<div class="form-group row">
+					<label for="Id" class="col-md-3 col-form-label text-md-right">아이디</label>
+					<div class="col-md-5">
+						<form:input path="id" id="Id" class="form-control"
+							placeholder="아이디을 입력해 주세요" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Name" class="col-md-3 col-form-label text-md-right">이름</label>
+					<div class="col-md-5">
+						<form:input path="name" id="Name" class="form-control"
+							placeholder="이름을 입력해 주세요" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Pwd" class="col-md-3 col-form-label text-md-right">비밀번호</label>
+					<div class="col-md-5">
+						<form:password path="pwd" id="Pwd" class="form-control"
+							placeholder="비밀번호를 입력해 주세요" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Pwd2" class="col-md-3 col-form-label text-md-right">비밀번호
+						확인</label>
+					<div class="col-md-5">
+						<form:password path="pwd2" id="Pwd2" class="form-control"
+							placeholder="비밀번호를 입력해 주세요" />
+					</div>
+				</div>
+				<div class="form-group row">
+					<label for="Email" class="col-md-3 col-form-label text-md-right">이메일</label>
+					<div class="input-group col-md-7">
+						<div class="input-group-prepend">
+							<span class="input-group-text">@</span>
+						</div>
+						<form:input path="email" id="Email" class="form-control"
+							placeholder="이메일을 입력해 주세요" />
+					</div>
+				</div>
+			</form:form> --%>
+		<form name="form" id="form" class="form-signup" role="form"
+				method="post" action="${pageContext.request.contextPath}/member/insertMember">
 			<table>
 				<tr>
 					<td id="title">아이디</td>
-					<td><input type="text" name="id" maxlength="10"> <input
+					<td><input type="text" name="Id" maxlength="10"> <input
 						type="button" value="중복확인"></td>
 				</tr>
-
-
-
 				<tr>
 					<td id="title">별명</td>
-					<td><input type="text" name="id" maxlength="10"> <input
+					<td><input type="text" name="Nick" maxlength="10"> <input
 						type="button" value="중복확인"></td>
 				</tr>
-
-
-
 				<tr>
 					<td id="title">이름</td>
-					<td><input type="text" name="name" maxlength="40"></td>
+					<td><input type="text" name="Name" maxlength="40"></td>
 				</tr>
-
-
-
 				<tr>
 					<td id="title">비밀번호</td>
-					<td><input type="password" name="password" maxlength="15">
+					<td><input type="password" name="Pwd" maxlength="15">
 					</td>
 				</tr>
-
-
-
 				<tr>
 					<td id="title">비밀번호 확인</td>
-					<td><input type="password" name="password" maxlength="15">
+					<td><input type="password" name="Pwd2" maxlength="15">
 					</td>
 				</tr>
-
-
-
 				<tr>
 					<td id="title">이메일</td>
-					<td><input type="text" name="email_1" maxlength="30">@
+					<td><input type="text" name="Email" maxlength="30"><!-- @
 						<select name="email_2">
 							<option>naver.com</option>
 							<option>daum.net</option>
 							<option>gmail.com</option>
 							<option>nate.com</option>
-					</select></td>
+					</select> --></td>
 				</tr>
-
-
-
 				<tr>
 					<td id="title">휴대전화</td>
-					<td><input type="text" name="phone" /></td>
+					<td><input type="text" name="Phone" /></td>
 				</tr>
-
-
-				<tr>
-					<td id="title">주소</td>
-					<td><input type="text" size="50" name="address" /></td>
-				</tr>
-
-
 			</table>
-			<br> <br> <input type="submit" value="가입" /> <input
-				type="button" value="취소">
+			</form>
 		</div>
+		<!-- 	<br> <br> <button >가입</button> <input
+				type="button" value="취소"> -->
+		<div style="margin-top: 10px">
+			<button type="button" class="btn btn-sm btn-primary" id="btnSignup">회원가입</button>
+			<button type="button" class="btn btn-sm btn-primary" id="btnCancel">취소</button>
+		</div>
+	</div>
 
-
+<script src="/skc/js/join.js"></script>
 <jsp:include page="../side/footer.jsp" flush="false"/>
 </body>
 </html>
