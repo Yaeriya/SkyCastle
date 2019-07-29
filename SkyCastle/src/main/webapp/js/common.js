@@ -14,7 +14,8 @@ function gfn_isNull(str) {
 		return false;
 } 
 function ComSubmit(opt_formId) {
-	this.formId = gfn_isNull(opt_formId) == true ? "commonForm" : opt_formId; this.url = "";
+	this.formId = gfn_isNull(opt_formId) == true ? "commonForm" : opt_formId; 
+	this.url = "";
 	if(this.formId == "commonForm"){ $("#commonForm")[0].reset(); 
 	} 
 	this.setUrl = function setUrl(url){

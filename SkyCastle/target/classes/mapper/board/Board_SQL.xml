@@ -6,13 +6,17 @@
 		resultType="hashmap"> 
 <![CDATA[ 
 SELECT 
-FREE_NUM, 
-FREE_TITLE, 
-MB_NICK, 
-FREE_DATE, 
-FREE_HIT 
+FREE_NUM, FREE_TITLE, MB_NICK, FREE_DATE, FREE_HIT 
 FROM FREE
 ]]>
 	</select>
+<insert id="insertBoard" parameterType="hashmap"> 
+<![CDATA[
+ INSERT INTO FREE (
+  FREE_NUM, FREE_TITLE, FREE_BODY, FREE_HIT,MB_NICK,FREE_IMG,FREE_DATE) 
+  VALUES ( SEQ_TB_BOARD_IDX.NEXTVAL, #{FREE_TITLE}, #{FREE_BODY},0,'우동','냉무',SYSDATE) 
+   ]]> 
+  
+   </insert>
 </mapper>
 
