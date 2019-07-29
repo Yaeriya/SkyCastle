@@ -1,5 +1,4 @@
-<%@page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -15,8 +14,8 @@
 
 <!-- login section start -->
 
-<div id="asd">
-	<div class="qqq">
+<div id="login-main">
+
 		<br>
 		<br> <br>
 		<br> <br>
@@ -44,7 +43,7 @@
 		<br> <br>
 		<br> <br>
 		<br>
-	</div>
+
 </div>
 <!-- login section End -->
 

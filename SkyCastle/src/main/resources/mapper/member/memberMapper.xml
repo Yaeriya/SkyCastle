@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="skc.member.memberMapper">
+	<select id="getMemberInfo" resultType="skc.member.model.MemberDTO">
+		SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN, MB_LIMIT, MB_LEVEL FROM
+		MEMBER WHERE MB_NICK = #{Nick}
+	</select>
+	<select id="getMemberList" resultType="skc.member.model.MemberDTO">
+		SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN, MB_LIMIT, MB_LEVEL FROM
+		MEMBER
+	</select>
+	<insert id="insertMember" parameterType="skc.member.model.MemberDTO">
+		INSERT INTO MEMBER (MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN)
+		VALUES (#{Nick}, #{Id}, #{Pwd}, #{Email}, #{Phone}, #{Licen})
+	</insert>
+	<update id="updateMember" parameterType="skc.member.model.MemberDTO">
+		UPDATE MEMBER SET MB_NICK = #{Nick}, MB_ID = #{Id}, MB_PW = #{Pwd}, MB_NAME = #{Name}, 
+		MB_EMAIL = #{Email}, MB_PHONE = #{Phone}, MB_LICEN = #{Licen} WHERE MB_NICK = #{Nick}
+	</update>
+	<delete id="deleteMember" parameterType="int">
+		DELETE FROM MEMBER
+		WHERE MB_NICK = #{Nick}
+	</delete>
+</mapper>

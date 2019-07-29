@@ -8,11 +8,12 @@
 <link rel="stylesheet" href="/skc/css/join.css">
 
 </head>
-<body class="wrap">
+
 <jsp:include page="../side/header.jsp" flush="false"/>
 
+<body class="join-main">
 
-		<div class="aaa">
+		<div class="join-back">
 
 			<b> <font size="6" color="gray">회원가입</font></b> <br> <br> <br>
 			<table>
