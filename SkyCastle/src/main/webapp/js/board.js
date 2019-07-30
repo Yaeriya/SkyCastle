@@ -6,6 +6,6 @@ $(document).ready(function(){
 	}); 
 function fn_openBoardList(){
 	var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/sample/openBoardList.do' />"); 
+	comSubmit.setUrl("<c:url value='/board/openBoardList.do' />"); 
 	comSubmit.submit();
 } 

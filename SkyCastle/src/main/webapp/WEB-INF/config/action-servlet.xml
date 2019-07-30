@@ -17,10 +17,16 @@
    <!-- Map을 이용해 데이터를 주고 받을 수 있도록 -->
 
    <mvc:annotation-driven>
-      <mvc:argument-resolvers>
-         <bean class="skc.common.resolver.CustomMapArgumentResolver" />
-      </mvc:argument-resolvers>
-   </mvc:annotation-driven>
+		<mvc:argument-resolvers>
+			<bean class="skc.common.resolver.CustomMapArgumentResolver"></bean>		
+		</mvc:argument-resolvers>
+	</mvc:annotation-driven>
+	<mvc:interceptors> <mvc:interceptor> 
+	<mvc:mapping path="/**"/>
+	 <bean id="loggerInterceptor" class="skc.common.logger.LoggerInterceptor">
+	 </bean> 
+	 </mvc:interceptor> 
+	 </mvc:interceptors>
 
    <bean
       class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />

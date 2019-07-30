@@ -30,25 +30,23 @@
 					<dl class="eptt cf">
 						<dt class="req">제목</dt>
 						<dd>
-							<input name="subject" value="" type="text" id="FREE_TITLE"
-								name="FREE_TITLE" fieldName="제목" maxlength="100"
+							<input type="text" id="FREE_TITLE" name="FREE_TITLE" fieldName="제목" maxlength="100"
 								restrictBytes="100" class="__required" />
 						</dd>
 					</dl>
 					<dl class="warea cf">
 						<dt class="req">내용</dt>
 						<dd>
-							<textarea fieldName="내용" class="__required" id="FREE_BODY"
-								name="FREE_BODY"></textarea>
+							<textarea fieldName="내용" class="__required" id="FREE_BODY" name="FREE_BODY"></textarea>
 						</dd>
 					</dl>
-					<table>
+				<!-- 	<table>
 						<tr>
 							<th scope="row" />
 							<td><input Class="txt" type="file" name="img1"
 								accept="image/*" /></td>
 						</tr>
-					</table>
+					</table> -->
 				</div>
 			</form>
 		</div>
@@ -79,7 +77,7 @@ function fn_openBoardList(){
 	comSubmit.submit();
 }
 function fn_insertBoard(){ 
-	var comSubmit = new ComSubmit("fmInsertContent"); 
+	var comSubmit = new ComSubmit("fmInsertContent");  
 	comSubmit.setUrl("<c:url value='/board/insertBoard'/>"); 
 	comSubmit.submit();
 }

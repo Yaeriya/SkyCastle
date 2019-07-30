@@ -30,12 +30,14 @@ public class BoardController {
 		ModelAndView mv = new ModelAndView("/board/boardWrite");
 		return mv;
 	}
-	@RequestMapping(value="/board/insertBoard")
+	@RequestMapping(value="/board/insertBoard",method = RequestMethod.POST)
 	public ModelAndView insertBoard(CommandMap commandMap) throws Exception{
 		ModelAndView mv = new ModelAndView("redirect:/board/boardList");
 		boardService.insertBoard(commandMap.getMap());
+		System.out.println(commandMap.getMap());
 		return mv;
 	}
+
 }
 
 

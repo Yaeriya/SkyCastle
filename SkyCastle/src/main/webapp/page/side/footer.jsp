@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+	<form id="commonForm" name="commonForm"></form>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
