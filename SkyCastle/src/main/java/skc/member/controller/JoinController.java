@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import skc.common.common.CommandMap;
 import skc.member.service.JoinService;
 
 @Controller
@@ -19,8 +20,8 @@ public class JoinController
 	@Resource(name="joinService")
 	private JoinService joinService;
 	
-	@RequestMapping(value = "/getMemberList", method = RequestMethod.GET) 
-	public ModelAndView getMemberList(Map<String,Object> commandMap) throws Exception
+	@RequestMapping(value = "/getMemberList", method = {RequestMethod.POST, RequestMethod.GET}) 
+	public ModelAndView getMemberList(CommandMap commandMap) throws Exception
 	{ 
 		ModelAndView mv = new ModelAndView("/getMemberList");
 		List<Map<String,Object>> list = joinService.getMemberList(commandMap);
@@ -29,10 +30,11 @@ public class JoinController
 		return mv; 
 	} 
 	
-	@RequestMapping(value = "/insertMember", method = RequestMethod.POST) 
-	public String insertMember(Map<String,Object> commandMap) throws Exception 
-	{ 
-		joinService.insertMember(commandMap); 
+	@RequestMapping(value = "/insertMember", method = {RequestMethod.POST, RequestMethod.GET}) 
+	public String insertMember(CommandMap commandMap) throws Exception 
+	{
+		System.out.println("======2========= : " + commandMap.getMap());
+		joinService.insertMember(commandMap.getMap()); 
 		
 		//return "redirect:/page/getMemberList"; 
 		return "/main/index";

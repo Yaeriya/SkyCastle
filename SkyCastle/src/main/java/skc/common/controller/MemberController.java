@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/main")
 public class MemberController {
 	
-	@RequestMapping(value = "/join", method = RequestMethod.GET)
+	@RequestMapping(value = "/join", method = {RequestMethod.POST, RequestMethod.GET})
 	public String home(Locale locale, Model model)
 	{
 		return "/main/join";

@@ -6,6 +6,8 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+
+import skc.common.common.CommandMap;
 import skc.member.dao.MemberDAO;
 
 @Service("joinService")
@@ -15,9 +17,9 @@ public class JoinServiceImpl implements JoinService
 	private MemberDAO memberDAO;
 	
 	@Override
-	public List<Map<String, Object>> getMemberList(Map<String, Object> map) throws Exception
+	public List<Map<String, Object>> getMemberList(CommandMap commandMap) throws Exception
 	{
-		return memberDAO.getMemberList(map);
+		return memberDAO.getMemberList(commandMap);
 	}
 	@Override
 	public List<Map<String, Object>> getMemberInfo(Map<String, Object> map) throws Exception
