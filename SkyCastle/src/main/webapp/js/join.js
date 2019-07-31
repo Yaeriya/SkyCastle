@@ -18,6 +18,13 @@ $(document).ready(function() {
 	});
 });
 
+$(document).ready(function() {
+	$("#btnLogin").click(function(e) {
+		e.preventDefault();
+		fn_logIn();
+	});
+});
+
 function gfn_isNull(str) {
 	if (str == null) return true;
 	if (str == "NaN") return true;
@@ -56,5 +63,11 @@ function ComSubmit(opt_formId) {
 function fn_signUp() {
 	var comSubmit = new ComSubmit("form");
 	comSubmit.setUrl("/skc/member/insertMember");
+	comSubmit.submit();
+}
+
+function fn_logIn() {
+	var comSubmit = new ComSubmit("form");
+	comSubmit.setUrl("/skc/member/memberLogin");
 	comSubmit.submit();
 }
