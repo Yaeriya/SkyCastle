@@ -18,4 +18,10 @@ public class BoardServiceImpl implements BoardService{
 	public void insertBoard(Map<String, Object>map)throws Exception{
 		boardDAO.insertBoard(map);
 	}
+	@Override
+	public Map<String, Object> selectBoardDetail(Map<String, Object>map) throws Exception{
+		boardDAO.updateHitCnt(map);
+		Map<String, Object> resultMap = boardDAO.selectBoardDetail(map);
+		return resultMap;
+	}
 	}

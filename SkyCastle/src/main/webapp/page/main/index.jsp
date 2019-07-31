@@ -31,27 +31,6 @@
 		</div>
 	</section>
 
-	<!-- Main jumbotron for a primary marketing message or call to action -->
-	<!-- 		<section class="main-banner" style="background:#242c36 url(../img/slider-01.jpg) no-repeat">
-			<div class="container">
-				<div class="caption">
-					<h2>스카이캐슬</h2>
-					<form>
-						<fieldset>
-							<div class="col-md-11 col-sm-11 no-pad">
-								<input type="text" class="form-control border-right" placeholder="Skills, Designation, Companies" />
-							</div>
-							
-							
-							<div class="col-md-2 col-sm-2 no-pad">
-								<input type="submit" class="btn seub-btn" value="submit" />
-							</div>
-						</fieldset>
-					</form>
-				</div>
-			</div>
-		</section> -->
-
 	<section class="features">
 		<div class="container">
 			<div class="col-md-4 col-sm-4">
@@ -481,7 +460,7 @@
 										src="../img/avatar1.jpg" alt=""> <i
 										class="fa fa-circle-o fa-green"></i>
 								</div>
-								<h5>Silp Sizzer</h5>
+								<h5>냥충이</h5>
 								<p class="text-muted">Human Resource</p>
 							</div>
 							<div class="user-social-profile">

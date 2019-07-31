@@ -10,12 +10,32 @@ FREE_NUM, FREE_TITLE, MB_NICK, FREE_DATE, FREE_HIT
 FROM FREE
 ]]>
 	</select>
-<insert id="insertBoard" parameterType="hashmap"> 
+	<insert id="insertBoard" parameterType="hashmap"> 
 <![CDATA[
  INSERT INTO FREE(FREE_NUM, FREE_TITLE, FREE_BODY, FREE_HIT,MB_NICK) 
-  VALUES(SEQ_TB_BOARD_IDX.NEXTVAL, #{FREE_TITLE,jdbcType=VARCHAR}, #{FREE_BODY,jdbcType=VARCHAR}, 0,'우동' ) 
-   ]]> 
-  
-   </insert>
+  VALUES(SEQ_TB_BOARD_IDX.NEXTVAL, #{FREE_TITLE}, #{FREE_BODY}, 0,'우동' ) 
+   ]]>
+
+	</insert>
+	<update id= "updateHitCnt" parameterType="hashmap">
+	<![CDATA[ 
+UPDATE FREE
+SET FREE_HIT = NVL(FREE_HIT,0)+1
+WHERE FREE_NUM=#{FREE_NUM}
+]]>
+	</update>
+
+	<select id="selectBoardDetail" parameterType="hashmap"
+		resultType="hashmap">
+
+<![CDATA[ 
+SELECT FREE_NUM, FREE_TITLE, MB_NICK, FREE_DATE, FREE_HIT 
+FROM FREE
+WHERE FREE_NUM=#{FREE_NUM}
+]]>
+
+
+
+	</select>
 </mapper>
 

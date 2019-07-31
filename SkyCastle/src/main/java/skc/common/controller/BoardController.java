@@ -37,6 +37,21 @@ public class BoardController {
 		System.out.println(commandMap.getMap());
 		return mv;
 	}
+	@RequestMapping(value="/board/openBoardDetail")
+	public ModelAndView openBoardDetail(CommandMap commandMap) throws Exception{
+		ModelAndView mv = new ModelAndView("/board/boardDetail");
+		Map<String,Object> map = boardService.selectBoardDetail(commandMap.getMap());
+
+		mv.addObject("map",map);
+		return mv;
+	}
+	@RequestMapping(value="/board/openBoardUpdate")
+	public ModelAndView openBoardUpdate(CommandMap commandMap) throws Exception{
+		ModelAndView mv = new ModelAndView("/board/boardUpdate");
+		
+		mv.addObject("map");
+		return mv;
+		}
 
 }
 

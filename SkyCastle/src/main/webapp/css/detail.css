@@ -1,0 +1,1402 @@
+@charset "utf-8";
+
+li {
+	list-style: none;
+}
+
+.centerMasterHead {
+	position: relative;
+	overflow: hidden;
+	min-height: 380px;
+}
+
+.centerMasterHead_bg_blur {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) inset;
+}
+
+.centerMasterHead .cHeading {
+	position: static;
+	background: none;
+}
+
+.centerMasterHead .cHeading .info {
+	position: relative;
+	left: 0;
+	top: 0;
+	padding-top: 50px;
+	padding-left: 15px;
+	height: 100%;
+}
+
+.centerMasterHead .cHeading .info h3 {
+	margin: 0 0 20px;
+}
+
+.centerMasterHead .cHeading .info h3 strong {
+	display: block;
+	font-size: 36px;
+	font-weight: 500;
+	letter-spacing: -1.5px;
+	color: #fff;
+}
+
+.centerMasterHead .cHeading small.centerNameLabel {
+	font-size: 11px;
+	line-height: 19px;
+	height: 21px;
+	vertical-align: middle;
+	color: #00cbff;
+	letter-spacing: 0;
+	margin: 0 0 5px;
+	display: inline-block;
+	padding: 0 5px;
+	border: 1px solid #00cbff;
+	border-radius: 2px;
+}
+
+.centerMasterHead .cHeading .mapPin {
+	position: static;
+}
+
+.cHeading h6 {
+	font-size: 12px;
+	letter-spacing: -0.5px;
+	padding: 5px 7px;
+	border-radius: 3px;
+	display: inline-block;
+	margin: 0 0 5px;
+	color: #ffffff;
+}
+
+.cHeading h6.breakTime {
+	background: #999;
+	background: rgba(130, 130, 130, 0.9);
+}
+
+.cHeading h6.onlyB2C {
+	background: #0d1f35;
+	background: rgba(13, 31, 53, 0.7);
+}
+
+.tab {
+	border-top: 8px solid #eee;
+}
+
+.tabMenu {
+	-webkit-tap-highlight-color: transparent;
+	cursor: pointer;
+}
+
+.tabItem {
+	padding: 0;
+}
+
+.tabItem p {
+	margin-bottom: 0;
+	padding: 10px 0;
+	text-align: center;
+	font-size: 14px;
+	border-bottom: 1px solid #ddd;
+}
+
+.tabItem.clicked p {
+	font-size: 15px;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #00bdf2;
+	border-bottom: 2px solid #00bdf2;
+}
+
+.hidden {
+	display: none;
+}
+
+.centerInformation>.row {
+	margin-bottom: 15px;
+	border-bottom: 1px solid #eee;
+}
+
+
+.centerMainReview {
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	background: rgba(255, 255, 255, 0.1);
+	padding: 15px 15px 5px;
+	margin: 25px 0 25px;
+	border-radius: 3px;
+	width: 48%;
+	position: absolute;
+	right: 10px;
+	top: 120px;
+}
+
+.centerMainReview h5 {
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	padding-bottom: 15px;
+	margin: 0 0 10px;
+}
+
+.centerMainReview p {
+	font-weight: 300;
+	font-size: 13px;
+}
+
+.centerDetailWrap .centerDetail {
+	margin: 20px 0px 45px 0;
+}
+
+.centerDetailWrap .cBody {
+	width: 1080px;
+	color: #777;
+}
+
+.centerDetailWrap .cBody h6 {
+	font-size: 12px;
+	color: #888;
+	margin: 10px 0;
+}
+
+.centerDetailWrap .cBody p {
+	font-size: 14px;
+}
+
+.centerDetailWrap .cBody .centerRule .contents {
+	overflow-y: scroll;
+}
+
+.centerDetailWrap .cBody ul.cdList {
+	font-size: 14px;
+	margin-left: 0;
+}
+
+.centerDetail .centerItems {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 15px;
+}
+
+.centerDetail .centerItems .centerItemsInnerWrap {
+	margin: 0 0 30px;
+}
+
+.centerDetail span.events {
+	border-bottom: 1px solid #eee;
+}
+
+.centerDetail span.events .pass {
+	margin-right: 10px;
+}
+
+.centerDetail .centerItems span.events {
+	margin-right: 20px;
+	border-color: #f5f5f5;
+}
+
+.centerDetail span.events:hover {
+	border-color: #ddd;
+	padding: 7px 0 8px;
+}
+
+.centerDetail span.events:hover .pass {
+	transition: all 0.2s;
+}
+
+.centerDetail span.events:hover .pass:before {
+	transition: all 0.3s;
+	-webkit-transform: rotate(135deg);
+	-moz-transform: rotate(135deg);
+	-ms-transform: rotate(135deg);
+	-o-transform: rotate(135deg);
+	transform: rotate(135deg);
+}
+
+.centerDetail span.events:hover i.circle {
+	background: #00bff0;
+}
+
+.centerDetail .usePASSListWrap {
+	margin-bottom: 20px;
+}
+
+/* 고객만족지수 */
+.centerDetailWrap .customerSatisfactionIndex .btnOpenTipBox {
+	vertical-align: text-top;
+	font-size: 15px;
+	margin: -5px 0 0 -3px;
+	display: inline-block;
+	padding: 5px;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .hint {
+	font-size: 11px;
+	color: #888;
+	letter-spacing: -0.5px;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .hint a {
+	font-size: 14px;
+	color: #111;
+	padding: 3px;
+	display: inline-block;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .hint a:hover,
+	.centerDetailWrap .customerSatisfactionIndex .hint a.clicked {
+	color: #FEC40C;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox {
+	background: rgba(0, 0, 0, 0.9);
+	border-radius: 8px;
+	color: #fff;
+	padding: 20px;
+	position: absolute;
+	top: 30px;
+	left: 15px;
+	right: 15px;
+	top: 35px;
+	max-width: 440px;
+	z-index: 10;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+	text-align: left;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox h5 {
+	margin: 0 0 15px;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox h5 small {
+	font-size: 12px;
+	color: #fff;
+	opacity: 0.5;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox ul {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox ul.alt {
+	border: 0 none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox li {
+	font-size: 13px;
+	list-style: none;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox .alt {
+	margin-top: 10px;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox .alt li {
+	font-size: 11px;
+	color: #aaa;
+	list-style: disc;
+	margin-left: 15px;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .tipBox a.btnClose {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: #fff;
+	font-size: 18px;
+	line-height: 1;
+	display: block;
+	padding: 5px;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .empty {
+	font-size: 12px;
+	color: #888;
+	margin: 7px 0 10px;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .empty span {
+	display: block;
+}
+
+.centerDetailWrap .customerSatisfactionIndex .empty span b {
+	color: #222;
+}
+
+.csChartWrap {
+	padding-left: 155px;
+	padding-right: 40px;
+	margin: 0 0 20px;
+	overflow: hidden;
+}
+
+/* 별점 */
+.csChartWrap .starScoreWrap {
+	margin-left: -140px;
+	float: left;
+	width: 115px;
+	text-align: center;
+}
+
+.csChartWrap .starScoreWrap .pointScore {
+	font-size: 30px;
+	font-weight: 400;
+	letter-spacing: -1.5px;
+	color: #4a4a4a;
+	display: block;
+	margin-top: 8px;
+}
+
+.starScore {
+	position: relative;
+	height: 30px;
+	font-size: 20px;
+	white-space: nowrap;
+	color: #FEC40C;
+}
+
+.starScore .score {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.starScore .score span {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	height: 30px;
+	display: block;
+}
+
+.starScore .score i {
+	
+}
+
+.customerSatisfactionIndex .barChartWrap {
+	padding: 3px 0;
+	margin-bottom: 3px;
+	overflow: hidden;
+}
+
+.customerSatisfactionIndex .barChartWrap h6 {
+	margin: 0 0 2px;
+	font-weight: 400;
+	color: #9B9B9B;
+}
+
+.customerSatisfactionIndex .barChart {
+	width: 100%;
+	height: 4px;
+	background: #d8d8d8;
+	border-radius: 2px;
+}
+
+.customerSatisfactionIndex .barChart span {
+	height: 4px;
+	display: block;
+	border-radius: 2px 10px 10px 2px;
+	background: rgb(0, 191, 240); /* Old browsers */
+	background: -moz-linear-gradient(-45deg, rgba(0, 191, 240, 1) 0%,
+		rgba(111, 147, 236, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-45deg, rgba(0, 191, 240, 1) 0%,
+		rgba(111, 147, 236, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(135deg, rgba(0, 191, 240, 1) 0%,
+		rgba(111, 147, 236, 1) 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+/* 센터 리뷰 */
+.centerDetailWrap .csVoiceWrap {
+	border-bottom: 1px solid #eee;
+	padding: 0 20px 20px;
+	margin: 0 -15px 20px;
+}
+
+.centerDetailWrap .centerReview.mobile {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 15px;
+}
+
+.centerDetailWrap .centerReview ul {
+	margin-right: 40px;
+	transition: all 0.5s;
+}
+
+.centerDetailWrap .centerReview ul.cutted {
+	overflow: hidden;
+	position: relative;
+}
+
+.centerDetailWrap .centerReview li {
+	border-bottom: 1px dotted #ddd;
+	padding: 0 0 15px;
+	margin: 5px 0 15px;
+}
+
+.centerDetailWrap .centerReview li:last-child {
+	border: 0 none;
+}
+
+.centerDetailWrap .centerReview li p {
+	margin: 0 0 5px;
+	color: #333;
+}
+
+.centerDetailWrap .centerReview li .cmtTail {
+	font-size: 12px;
+	color: #999;
+}
+
+.centerDetailWrap .centerReview li .cmtTail small {
+	margin: 0 3px;
+	opacity: 0.8;
+}
+
+.centerDetailWrap .centerReview li .cmtTail em {
+	font-style: normal;
+}
+
+.centerDetailWrap .centerReview li.lastGradBlur {
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+	left: 0;
+	background: -moz-linear-gradient(top, rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 1) 82%, rgba(255, 255, 255, 1) 100%);
+	/* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 1) 82%, rgba(255, 255, 255, 1) 100%);
+	/* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%,
+		rgba(255, 255, 255, 1) 82%, rgba(255, 255, 255, 1) 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.centerReview a.btnReviewMore {
+	border: 1px solid #ddd;
+	padding: 8px 0;
+	text-align: center;
+	display: block;
+	margin: 5px 0;
+	font-size: 12px;
+}
+
+.centerReview a.btnReviewMore:hover {
+	background: #00bff0;
+	color: #fff;
+	text-decoration: none;
+}
+
+.csChartWrap2 {
+	padding-right: 10px;
+}
+
+.csChartWrap2 .starScoreWrap {
+	padding-top: 5px;
+}
+
+.vertBarChartWrap {
+	border-left: 1px solid #eee;
+	padding-left: 20px;
+	padding-top: 10px;
+	text-align: center;
+}
+
+.vertBarChartWrap .vertBar {
+	text-align: center;
+	width: 18%;
+	min-width: 28px;
+	display: inline-block;
+}
+
+.vertBarChartWrap .vertBar b {
+	color: #555;
+	font-size: 9px;
+	font-weight: 500;
+	font-family: aquaticoregular, sans-serif;
+	display: block;
+	margin-bottom: 2px;
+}
+
+.vertBarChartWrap .vertBar .vbBG {
+	display: inline-block;
+	height: 60px;
+	width: 8px;
+	position: relative;
+	background: #eee;
+	border-radius: 5px;
+}
+
+.vertBarChartWrap .vertBar .vbBG .vertSstPoint {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	display: block;
+	width: 8px;
+	border-radius: 5px;
+	background: -moz-linear-gradient(-90deg, rgba(0, 191, 240, 1) 0%,
+		rgba(111, 147, 236, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(-90deg, rgba(0, 191, 240, 1) 0%,
+		rgba(111, 147, 236, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(180deg, rgba(0, 191, 240, 1) 0%,
+		rgba(111, 147, 236, 1) 100%);
+	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+.customerSatisfactionIndex .vertBarChartWrap .vertBar h6 {
+	font-size: 10px;
+	font-weight: 300;
+	margin: 0;
+	color: #aaa;
+	letter-spacing: -0.5px;
+}
+
+.vertBarChartWrap .vertBar h6 span {
+	display: block;
+}
+
+.realUserReview ul.reviewList {
+	margin-top: 15px;
+}
+
+.realUserReview .reviewList>li {
+	
+}
+
+.realUserReview .reviewList>li>a, .realUserReview .reviewList>li div.conceal
+	{
+	display: block;
+	border-top: 1px solid #eee;
+	padding: 15px 0;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+
+.realUserReview .reviewList>li div.conceal {
+	opacity: 0.8;
+	position: relative;
+}
+
+.realUserReview .reviewList>li div.conceal .concealCover {
+	background: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	text-align: center;
+	top: 0;;
+	left: 0;
+	padding-top: 50px;
+	color: #444;
+	font-size: 13px;
+}
+
+.realUserReview .reviewList>li>a:hover, .realUserReview .reviewList>li>a:active
+	{
+	text-decoration: none;
+}
+
+.realUserReview li .userInfo .id {
+	color: #999;
+	font-weight: 400;
+	font-size: 12px;
+	margin-right: 5px;
+}
+
+.realUserReview li .userInfo .userDetailInfos {
+	font-size: 11px;
+	color: #999;
+}
+
+.realUserReview li .esimateInfo {
+	line-height: 1.1;
+}
+
+.starScoreTiny .starScore {
+	display: inline-block;
+	width: 75px;
+	height: 16px;
+	margin-right: 10px;
+	font-size: 14px;
+	vertical-align: middle;
+}
+
+.starScoreTiny .starScore .score span {
+	height: 16px;
+}
+
+.realUserReview li .esimateInfo .scoreCnt {
+	font-size: 12px;
+	font-weight: 400;
+	color: #444;
+	margin-right: 7px;
+	font-family: aquaticoregular;
+}
+
+.realUserReview li .esimateInfo .usedItem {
+	color: #00bff0;
+	font-size: 13px;
+	vertical-align: middle;
+}
+
+.realUserReview li p.reviewText {
+	color: #333;
+	margin: 10px 0;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.realUserReview li div.response {
+	background: #f5f5f5;
+	border: 1px solid #eee;
+	padding: 5px 15px 5px 5px;
+	margin-top: 10px;
+	border-radius: 4px;
+	display: inline-block;
+}
+
+.realUserReview li div.response p {
+	color: #777;
+	font-size: 12px;
+	margin: 0 0 0 25px;
+}
+
+.realUserReview li div.response i.fa-reply {
+	transform: rotate(180deg);
+	float: left;
+	margin-left: -20px;
+}
+
+.realUserReview li div.response .replyTip {
+	font-weight: 600;
+	font-size: 11px;
+	display: block;
+	color: #111;
+}
+
+.realUserReview li div.response .replyTip .date {
+	color: #999;
+	font-weight: 400;
+	margin: 0 0 0 5px;
+}
+
+.realUserReview .reviewList>li>a:hover p.reviewText {
+	text-decoration: underline;
+	color: #222;
+}
+
+.realUserReview ul.reviewImgList {
+	overflow: hidden;
+}
+
+.realUserReview ul.reviewImgList img {
+	width: 40px;
+	height: 40px;
+	border-radius: 2px;
+}
+
+.realUserReview ul.reviewImgList li {
+	float: left;
+	margin-right: 10px;
+}
+
+.realUserReview .btnMore {
+	display: block;
+	margin-top: 5px;
+	padding: 10px 0;
+	font-size: 13px;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 2px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.realUserReview .btnMore:hover {
+	background: #f5f5f5;
+	border-color: #eee;
+}
+
+/* 리뷰 남기기 버튼 */
+.centerDetailWrap .customerSatisfactionIndex {
+	position: relative;
+}
+
+.csVoiceWrap .btn_writeReview {
+	position: absolute;
+	left: 15px;
+	top: 35px;
+	z-index: 10;
+	padding: 7px 0;
+	width: 65px;
+	text-align: center;
+	border-radius: 4px;
+	background: #F1FCFF;
+	border: 1px solid #B5F0FF;
+	color: #00bff0;
+	font-size: 11px;
+	font-weight: 600;
+	transition: all 0.3s;
+}
+
+.csVoiceWrap .btn_writeReview:hover {
+	top: 33px;
+	box-shadow: 0 2px 5px rgba(100, 100, 100, 0.1);
+}
+
+.csVoiceWrap .btn_writeReview i {
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+.csVoiceWrap .btn_writeReviewBig {
+	display: inline-block;
+	text-align: center;
+	border-radius: 4px;
+	background: #F1FCFF;
+	border: 1px solid #B5F0FF;
+	color: #00bff0;
+	padding: 7px 14px;
+	font-size: 11px;
+	font-weight: 600;
+}
+
+.csVoiceWrap .btn_writeReviewBig:hover {
+	box-shadow: 0 2px 5px rgba(100, 100, 100, 0.1);
+}
+
+.csVoiceWrap .btn_writeReviewBig i {
+	font-size: 15px;
+	vertical-align: middle;
+}
+
+/* 리뷰 모두 보기 - 새 창 혹은 모달안에서 iframe 으로 열리는, 모두 보기 한정 선언 */
+.mobileWebHeader {
+	text-align: center;
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+	margin: 0 -15px;
+	padding: 12px;
+	position: fixed;
+	width: 100%;
+	font-size: 15px;
+	height: 50px;
+	background: rgba(255, 255, 255, 0.9);
+	z-index: 20;
+}
+
+.mobileWebHeader .btnBack {
+	position: absolute;
+	left: 15px;
+	top: 11px;
+	padding-right: 20px;
+}
+
+.mobileWebHeader .btnBack img {
+	height: 16px;
+}
+
+.mobileWebHeader .btnBack:hover img {
+	opacity: 0.8;
+}
+
+.reviewFcHeader {
+	padding: 25px 0 20px;
+}
+
+.reviewFcHeader h3 {
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: -0.5px;
+	line-height: 1.2;
+	margin: 0;
+}
+
+.reviewFcHeader h3 strong {
+	display: block;
+	font-weight: 600;
+}
+
+.reviewFcHeader h3 small {
+	font-size: 14px;
+	color: #999;
+}
+
+.realUserFullReviewsWrap .realUserReview {
+	margin: 0 -15px;
+}
+
+.realUserFullReviewsWrap .realUserReview .reviewList {
+	margin-top: 0;
+	border-bottom: 0 none;
+}
+
+.realUserFullReviewsWrap .realUserReview .reviewList>li {
+	padding: 15px 15px 20px;
+	overflow: hidden;
+	border-bottom: 5px solid #eee;
+}
+
+.realUserFullReviewsWrap .realUserReview .reviewList>li:last-of-type {
+	border-bottom: 0 none;
+}
+
+.realUserFullReviewsWrap .realUserReview .reviewList li.reviews .conceal
+	{
+	border-bottom: 0 none;
+	padding: 0;
+}
+
+.realUserFullReviewsWrap .realUserReview .reviewList li.reviews .concealCover
+	{
+	padding-top: 90px;
+}
+
+.realUserFullReviewsWrap .realUserReview li .userInfo {
+	overflow: hidden;
+	padding: 10px 0;
+}
+
+.realUserFullReviewsWrap .realUserReview li .userInfo .usedItem {
+	font-size: 13px;
+	color: #00bff0;
+	display: block;
+}
+
+.realUserFullReviewsWrap .csChartWrap {
+	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+	padding: 10px 0 10px 145px;
+	margin-bottom: 10px;
+	clear: both;
+}
+
+.realUserFullReviewsWrap .csChartWrap .starScoreWrap {
+	margin-left: -130px;
+}
+
+.realUserFullReviewsWrap .vertBarChartWrap {
+	text-align: center;
+	padding: 10px 0 0 10px;
+	border: 0 none;
+	position: relative;
+}
+
+.realUserFullReviewsWrap .vertBarChartWrap:before {
+	content: " ";
+	position: absolute;
+	top: 20px;
+	left: 5px;
+	display: inline-block;
+	background: #eee;
+	height: 65px;
+	width: 1px;
+}
+
+.realUserFullReviewsWrap .vertBarChartWrap .vertBar .vbBG {
+	height: 30px;
+}
+
+.realUserFullReviewsWrap .vertBarChartWrap .vertBar h6 {
+	font-size: 10px;
+	font-weight: 300;
+	margin: 0;
+	color: #aaa;
+	letter-spacing: -0.5px;
+}
+
+.realUserFullReviewsWrap .realUserReview li p.reviewText {
+	white-space: normal;
+	font-size: 15px;
+}
+
+.realUserFullReviewsWrap .realUserReview li div.response {
+	background: #f5f5f5;
+	border-radius: 4px;
+	padding-left: 30px;
+	margin-bottom: 15px;
+	display: block;
+}
+
+.realUserFullReviewsWrap .realUserReview li div.response p {
+	font-size: 14px;
+	border: 0 none;
+	margin: 10px 0;
+}
+
+.realUserFullReviewsWrap .realUserReview li div.response .replyTip {
+	font-weight: 600;
+	font-size: 11px;
+	display: block;
+	color: #111;
+}
+
+.realUserFullReviewsWrap .realUserReview li div.response .replyTip .date
+	{
+	color: #999;
+	font-weight: 400;
+	margin: 0 0 0 5px;
+}
+
+.realUserFullReviewsWrap .realUserReview li.noMoreBox {
+	text-align: center;
+	font-size: 12px;
+	color: #999;
+	padding-top: 25px;
+}
+
+.realUserFullReviewsWrap .realUserReview li.noMoreBox p {
+	margin: 15px 0 0;
+}
+
+.realUserFullReviewsWrap .realUserReview li.noMoreBox i {
+	font-size: 24px;
+	color: #ddd;
+}
+
+.reviewImgSlider img {
+	max-width: 100%;
+}
+
+.reviewGalleryWrap .bx-wrapper {
+	margin: 0 auto;
+}
+
+.reviewGalleryWrap .bx-wrapper .bx-pager {
+	bottom: 0;
+}
+
+.reviewGalleryWrap .bx-wrapper .bx-pager.bx-default-pager a {
+	color: #fff;
+	opacity: 0.6;
+	margin: 0 5px;
+}
+
+.reviewGalleryWrap .bx-wrapper .bx-pager.bx-default-pager a:hover,
+	.reviewGalleryWrap .bx-wrapper .bx-pager.bx-default-pager a.active {
+	background: #fff;
+	opacity: 1;
+}
+
+.realUserReview .btnMoreWrap {
+	padding: 10px;
+	margin: 0;
+	text-align: center;
+}
+
+.realUserReview .btnMoreWrap img {
+	width: 48px;
+}
+
+.reviewFooter {
+	text-align: center;
+	padding: 30px 0;
+}
+
+.reviewFooter img {
+	width: 100px;
+	-webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	opacity: 0.7;
+}
+
+/* 소개 */
+.centerAbout {
+	margin-bottom: 30px;
+}
+
+.centerAbout .centerOwnerWrap {
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background: #f5f5f5;
+}
+
+.centerAbout .centerOwner {
+	padding: 5px 10px 10px;
+	border-bottom: 1px solid #ddd;
+	margin-bottom: 10px;
+	overflow: hidden;
+}
+
+.centerAbout .centerOwner .centerOwnerPic {
+	width: 52px;
+	height: 52px;
+	border-radius: 50%;
+	display: inline-block;
+	margin-right: 10px;
+	float: left;
+	border: 1px solid #B5F0FF;
+}
+
+.centerAbout .centerOwner .centerOwnerName {
+	font-weight: 600;
+	color: #333;
+	font-size: 12px;
+	line-height: 1.2;
+}
+
+.centerAbout .centerOwner .centerOwnerName span {
+	display: block;
+	font-size: 14px;
+	margin-top: 7px;
+}
+
+.centerAbout .centerBio {
+	padding: 10px;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.centerAbout .centerBio i {
+	color: #ddd;
+	display: block;
+	font-size: 60px;
+	line-height: 0.5;
+	margin-bottom: -15px;
+}
+
+.centerAbout .centerBio i.quoteLeft {
+	margin: 0 0 -15px -10px;
+}
+
+.centerAbout .centerBio i.quoteRight {
+	text-align: right;
+}
+
+/* 갤러리 - 미리보기 사진 */
+.centerGallery {
+	padding: 10px 15px;
+	margin-bottom: 30px;
+}
+
+.centerGallery .row div {
+	padding: 0;
+}
+
+.centerGallery .responsibleImgBox {
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 67%;
+	display: block;
+	margin: 1px;
+	border-radius: 0;
+}
+
+.centerGallery .responsibleImgBox img {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	border-radius: 0;
+}
+
+.centerGallery .responsibleImgBox .overlay {
+	background-color: rgba(0, 0, 0, 0.1);
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	transition: background-color 0.15s ease 0s;
+}
+
+.centerGallery .responsibleImgBox .overlay i {
+	left: 50%;
+	margin-left: -10px;
+	margin-top: -10px;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	transition: opacity 0.3s ease 0s;
+	font-size: 20px;
+	color: #fff;
+}
+
+.centerGallery .responsibleImgBox:hover img {
+	transition: transform 0.15s ease 0s;
+	transform: scale3d(1.2, 1.2, 1.2);
+}
+
+.centerGallery .responsibleImgBox:hover .overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.centerGallery .responsibleImgBox:hover .overlay i {
+	opacity: 1;
+}
+
+/* 지도 */
+.centerDetailWrap  .root_daum_roughmap {
+	width: 100% !important;
+	border-radius: 4px;
+}
+
+.modal-slg {
+	/* 모달 창 크기 */
+	width: 90%;
+}
+
+.modal-slg .modal-footer {
+	background: #f5f5f5;
+	border-radius: 0 0 6px 6px;
+}
+
+.centerScheduleTableModal h4 {
+	font-size: 20px;
+	font-weight: 200;
+	letter-spacing: -0.5px;
+}
+
+.centerScheduleTableModal h4 i {
+	float: left;
+	font-size: 40px;
+	margin: 5px 10px 5px 5px;
+}
+
+.centerScheduleTableModal p.sub {
+	font-size: 12px;
+	letter-spacing: -0.5px;
+}
+
+.centerScheduleTableModal p.sub strong {
+	color: #f98e2c;
+	letter-spacing: 0;
+}
+
+/* 리뷰 작성하기 */
+.composeReview {
+	
+}
+
+.composeReview .shade {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99;
+}
+
+section.beforeCompose {
+	min-height: 530px;
+}
+
+section.composeWrap {
+	
+}
+
+section.complete {
+	
+}
+
+.composeReview h3 {
+	font-size: 15px;
+	line-height: 1.3;
+	margin-bottom: 20px;
+}
+
+.composeReview h3 span {
+	display: block;
+}
+
+.composeReview h3 small {
+	font-size: 14px;
+	display: block;
+	margin-bottom: 10px;
+	color: #999;
+}
+
+.composeReview h3 strong {
+	font-size: 24px;
+	font-weight: 600;
+}
+
+.composeReview h3 em {
+	font-style: normal;
+	font-weight: 100;
+	font-size: 20px;
+}
+
+.beforeCompose .centerPicDeco {
+	height: 100px;
+	margin: 0 -15px;
+	position: relative;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.5) inset;
+}
+
+.beforeCompose .centerPicDeco .bar {
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 8px 15px;
+	background: rgba(0, 0, 0, 0.4);
+	color: #fff;
+	display: none;
+}
+
+.beforeCompose .centerPicDeco .bar strong {
+	font-weight: 600;
+	font-size: 11px;
+	letter-spacing: -0.3px;
+}
+
+.beforeCompose img.userPic {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+	display: block;
+	margin: 20px 0;
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.beforeCompose h4 {
+	font-size: 16px;
+	font-weight: 400;
+	color: #666;
+	line-height: 1.5;
+	margin: 20px 0;
+	word-break: keep-all;
+}
+
+.beforeCompose h4 .gt {
+	margin-bottom: 10px;
+	display: block;
+}
+
+.beforeCompose h4 span {
+	display: block;
+}
+
+.composeReview .btnWrap {
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 15px;
+	background: rgba(255, 255, 255, 0.5);
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+}
+
+.composeReview .btnWrap .hint {
+	color: #00bff0;
+	font-size: 12px;
+}
+
+.composeReview .btnWrap .btn_next {
+	border-radius: 50px;
+	height: 60px;
+	background: #00bff0;
+	border-color: #00bff0;
+	background: -moz-linear-gradient(left, rgba(13, 87, 201, 1) 0%,
+		rgba(19, 167, 232, 1) 52%, rgba(21, 194, 172, 1) 100%);
+	background: -webkit-linear-gradient(left, rgba(13, 87, 201, 1) 0%,
+		rgba(19, 167, 232, 1) 52%, rgba(21, 194, 172, 1) 100%);
+	background: linear-gradient(to right, rgba(13, 87, 201, 1) 0%,
+		rgba(19, 167, 232, 1) 52%, rgba(21, 194, 172, 1) 100%);
+	border: 0 none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 600;
+	display: block;
+	margin-bottom: 15px;
+	box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+	outline: none;
+	.
+	composeReview
+	.btnWrap
+	.btn_next
+	:
+	hover
+	{
+	
+  
+	box-shadow
+	:
+	 
+	0
+	3px
+	10px
+	rgba(
+	0
+	,
+	0
+	,
+	0
+	,
+	0.3
+	);
+}
+
+.composeReview .btnWrap .btn_prev {
+	border: 0 none;
+	color: #999;
+	font-size: 12px;
+	outline: none; /* for some mobile */
+}
+
+.composeWrap h3 {
+	margin: 15px 0;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 15px;
+	line-height: 1.2;
+}
+
+.composeWrap h3.fixed {
+	position: fixed;
+	background: rgba(240, 240, 240, 0.9);
+	border-bottom: 1px solid #ddd;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	top: 0;
+	left: 0;
+	width: 100%;
+	margin: 0;
+	padding: 5px;
+	z-index: 5;
+}
+
+.composeWrap h3.mobileWeb.fixed {
+	top: 50px;
+}
+
+.composeWrap h3 strong {
+	font-size: 18px;
+}
+
+.composeWrap h3 em {
+	font-size: 16px;
+}
+
+.composeWrap h3.fixed span {
+	display: inline-block;
+}
+
+.composeWrap h3.fixed small {
+	display: none;
+}
+
+.composeWrap h3.fixed strong, .composeWrap h3.fixed em {
+	font-size: 14px;
+}
+
+.composeWrap h3.fixed em {
+	font-size: 12px;
+}
+
