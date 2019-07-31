@@ -1,20 +1,14 @@
-/*$(document).on('click', '#btnSignup', function(e){
-	e.preventDefault();
-	$("#form").submit();
-});
-$(document).on('click', '#btnCancle', function(e){
-	e.preventDefault();
-	$('#uid').val('');
-	$('#name').val('');
-	$('#pwd1').val('');
-	$('#pwd2').val('');
-	$('#email').val('');
-	//location.href="${pageContext.request.contextPath}/home";
-});*/
 $(document).ready(function() {
 	$("#btnSignup").click(function(e) {
 		e.preventDefault();
 		fn_signUp();
+	});
+});
+
+$(document).ready(function() {
+	$("#btnLogin").click(function(e) {
+		e.preventDefault();
+		fn_logIn();
 	});
 });
 
@@ -56,5 +50,11 @@ function ComSubmit(opt_formId) {
 function fn_signUp() {
 	var comSubmit = new ComSubmit("form");
 	comSubmit.setUrl("/skc/member/insertMember");
+	comSubmit.submit();
+}
+
+function fn_logIn() {
+	var comSubmit = new ComSubmit("form");
+	comSubmit.setUrl("/skc/member/memberLogin");
 	comSubmit.submit();
 }
