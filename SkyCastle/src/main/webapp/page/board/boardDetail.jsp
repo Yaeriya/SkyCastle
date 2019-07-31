@@ -15,7 +15,7 @@
 <link rel="stylesheet" href="/skc/css/board.css">
 </head>
 <body>
-	<jsp:include page="../side/header.jsp" flush="false" />
+
 	<script type="text/javascript"> 
 	$(document).ready(function(){ 
 		$("#list").on("click", function(e){ //목록으로 버튼
@@ -164,6 +164,13 @@
 	<div class="paging">${pagingHtml}</div>
 
 	<jsp:include page="../side/footer.jsp" flush="false" />
+	<%@ include file="/WEB-INF/include/include-body.jspf" %>
+<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+<script src="/skc/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+<script src="/skc/js/bootsnav.js"></script>
+<script src="/skc/js/main.js"></script>
+<script src="/skc/js/join.js"></script>
 
 </body>
 </html>

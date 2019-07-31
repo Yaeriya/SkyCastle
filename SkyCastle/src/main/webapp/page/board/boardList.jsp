@@ -69,6 +69,8 @@
 	</center>
 </section>
 
+
+
 <div class="container">
 	<table class="table-hover" width="1100">
 		<thead>
@@ -86,7 +88,7 @@
 					<c:forEach items="${list }" var="row">
 						<tr>
 							<td>${row.FREE_NUM }</td>
-							<td class="title"> <a href="#this" name="FREE_TILTE">${row.FREE_TITLE }</a>
+							<td class="title"> <a href="#this" name="FREE_TITLE">${row.FREE_TITLE }</a>
 								<input type="hidden" id="FREE_NUM" value="${row.FREE_NUM }"></td>
 							<td>${row.MB_NICK}</td> 
 							<td>${row.FREE_DATE}</td> 
@@ -197,12 +199,13 @@
 		</p>
 	</div>
 </footer>
-
-<script type="text/javascript" src="../../js/jquery.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script type="text/javascript" src="../../js/owl.carousel.min.js"></script>
-<script src="../../js/bootsnav.js"></script>
-<script src="../../js/main.js"></script>
+	<%@ include file="/WEB-INF/include/include-body.jspf" %>
+<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+<script src="/skc/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+<script src="/skc/js/bootsnav.js"></script>
+<script src="/skc/js/main.js"></script>
+<script src="/skc/js/join.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
 	$("#write").on("click", function(e){//글쓰기 버튼
