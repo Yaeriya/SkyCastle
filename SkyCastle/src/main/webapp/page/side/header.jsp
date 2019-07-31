@@ -41,6 +41,7 @@
 							<li class="active"><a href="../main/board.jsp">자유 게시판</a></li>
 							<li><a href="../main/board.jsp">학부모 게시판</a></li>
 							<li><a href="../main/board.jsp">학생 게시판</a></li>
+							<li><a href="../main/board.jsp">학원 홍보 게시판</a></li>
 						</ul></li>
 					<li><a href="../main/cs.jsp">고객센터</a></li>
 				</ul>
