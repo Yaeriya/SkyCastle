@@ -8,6 +8,11 @@
 <title>스카이캐슬 | 학원등록</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/skc/js/detail.js"></script>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <link rel="stylesheet" href="/skc/css/add.css">
 </head>
@@ -20,27 +25,28 @@
 				<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
 					<div class="content left-content">
 						<h4>상세 정보</h4>
+						<form id="form">
 						<table class="add-table">
 							<tbody>
 								<tr>
 									<th>학원이름</th>
-									<td><input type="text"></td>
+									<td><input type="text" id="MB_NICK" name="MB_NICK"></td>
 								</tr>
 								<tr>
 									<th>한줄소개</th>
-									<td><input type="text"></td>
+									<td><input type="text" id="DTL_SUMM" name="DTL_SUMM"></td>
 								</tr>
 								<tr>
 									<th>상세설명</th>
-									<td><input type="text"></td>
+									<td><input type="text" ID="DTL_INFO" name="DTL_INFO"></td>
 								</tr>
 								<tr>
 									<th>홈페이지</th>
-									<td><input type="text"></td>
+									<td><input type="text" id="DTL_URL" name="DTL_URL"></td>
 								</tr>
 								<tr>
 									<th>대표번호</th>
-									<td><input type="text"></td>
+									<td><input type="text" id="DTL_PHONE" name="DTL_PHONE"></td>
 								</tr>
 								<tr>
 									<th>학원분류</th>
@@ -113,10 +119,10 @@
 								</ul>
 							</div>
 						</div>
-
+						</form>
 						<div class="add-container">
 							<div class="add-btn">
-								<button type="button" class="btn btn-orange">
+								<button type="button" class="btn btn-orange" id="btnSignup">
 									<span>등록하기</span>
 								</button>
 							</div>
