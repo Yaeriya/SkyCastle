@@ -15,12 +15,39 @@
 <link rel="stylesheet" href="/skc/css/board.css">
 </head>
 <body>
-	<jsp:include page="../side/header.jsp" flush="false" />
+
+	<script type="text/javascript"> 
+	$(document).ready(function(){ 
+		$("#list").on("click", function(e){ //목록으로 버튼
+		e.preventDefault(); 
+	fn_openBoardList(); 
+	}); 
+		$("#update").on("click", function(e){ //저장하기 버튼 
+		e.preventDefault(); 
+	fn_updateBoard(); 
+	}); 
+		$("#delete").on("click", function(e){ //삭제하기 버튼
+		e.preventDefault();
+	fn_deleteBoard();
+	});
+	
+	});
+	function fn_openBoardList(){ var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/board/openBoardList' />");
+	comSubmit.submit();
+	} function fn_updateBoard(){ var comSubmit = new ComSubmit("frm"); 
+	comSubmit.setUrl("<c:url value='/board/updateBoard' />");
+	comSubmit.submit();
+	} function fn_deleteBoard(){ var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/board/deleteBoard' />"); 
+	comSubmit.addParam("FREE_NUM", $("#FREE_NUM").val()); 
+	comSubmit.submit(); 
+	}
+	</script>
 
 	<h1>STUDENT</h1>
-	
+	<form id = "frm">
 	<div id="wrap">
-
 		<div class="container">
 			<div class="tbl_type_01">
 				<table>
@@ -30,20 +57,24 @@
 					</colgroup>
 					<tbody>
 						<tr>
+							<th scope="row">글 번호</th>
+							<td>${map.FREE_TITLE}</td>
+							<th scope="row">조회수</th>
+							<td>${map.FREE_HIT}</td>
+						</tr>
+						<tr>
 							<th scope="row">작성자</th>
+							<td>${map.MB_NICK }</td>
+							<th scope="row">작성시간</th>
+							<td>${map.FREE_DATE }</td>
 							<td></td>
 						</tr>
-
 						<tr>
-							<th scope="row">글제목</th>
-							<td></td>
+							<th scope="row">제목</th>
+							<td><colspan="3">${map.FREE_TITLE }/></td>
 						</tr>
 						<tr>
-							<th scope="row">작성일</th>
-							<td><fmt:formatDate value="" pattern="yyyy.MM.dd" /></td>
-						</tr>
-						<tr>
-							<th scope="row">글내용</th>
+							<td colspan="4">${map.FREE_BODY}
 							<td></td>
 						</tr>
 					</tbody>
@@ -59,17 +90,17 @@
 					name="no" value="" /> <input type="button" onclick="#" value="이전" />
 				</span>
 			</c:if>
-
-			<a href="#none" class="btn btnC_03 btnP_04 mr10"
-				onclick="location.href = 'boardList.jsp'"> <span>목록</span>
+</form>
+			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="list"> 
+			<span>Back To List</span>
+			</a> 
+			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="update"> 
+			<span>Update My Board</span>
+			</a> 
+			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="delete"> 
+			<span>Delete My Board</span>
 			</a>
 
-			<c:if test="">
-				<span class="btn btnC_03 btnP_04 mr10"> <input type="hidden"
-					name="no" value="" /> <input type="button"
-					onclick="location.href=" value="다음" />
-				</span>
-			</c:if>
 
 			<c:if test="">
 				<!-- 리뷰작성자가 로그인 했을 경우만 생성 -->
@@ -86,7 +117,7 @@
 			</c:if>
 		</div>
 	</div>
-	
+
 	<!-- 댓글작성 -->
 	<div class="cmtlog">
 		<c:if test="">
@@ -98,7 +129,6 @@
 		</c:if>
 	</div>
 	<c:if test="">
-
 		<!-- 로그인 했을 경우 -->
 		<form action="" method="post" onsubmit="return validateForm()"
 			name="commentForm">
@@ -116,7 +146,7 @@
 								type="hidden" name="id" value="${session_id }"> <input
 								type="hidden" name="no" value="${reviewCoModel.no}" />
 						</div>
-						
+
 						<div class="reply_write">
 							<div class="textarea_grp">
 								<textarea name="contents" id="contents"></textarea>
@@ -134,6 +164,13 @@
 	<div class="paging">${pagingHtml}</div>
 
 	<jsp:include page="../side/footer.jsp" flush="false" />
+	<%@ include file="/WEB-INF/include/include-body.jspf" %>
+<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+<script src="/skc/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+<script src="/skc/js/bootsnav.js"></script>
+<script src="/skc/js/main.js"></script>
+<script src="/skc/js/join.js"></script>
 
 </body>
 </html>

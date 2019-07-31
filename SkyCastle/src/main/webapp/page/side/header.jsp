@@ -51,11 +51,13 @@
 	<!-- Navigation End  -->
 
 	<!-- Script JS Start 야옹 멍멍-->
+	<script src="/skc/js/common.js" type="text/javascript"></script>
 	<script src="/skc/js/jquery.min.js" type="text/javascript"></script>
 	<script src="/skc/js/bootstrap.min.js"></script>
 	<script src="/skc/js/owl.carousel.min.js" type="text/javascript"></script>
 	<script src="/skc/js/bootsnav.js"></script>
 	<script src="/skc/js/main.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- Script JS End -->
 </body>
 </html>
