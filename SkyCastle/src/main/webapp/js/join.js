@@ -58,3 +58,17 @@ function fn_logIn() {
 	comSubmit.setUrl("/skc/member/memberLogin");
 	comSubmit.submit();
 }
+
+function password_confirm_check(){	
+	if(!$("#mb_password_confirm").val()){
+		$("#mb_password_confirm_msg").html("비밀번호확인을 입력해주세요").css("color", "red");
+		result = "비밀번호확인을 입력해주세요";
+	} else if($("#uPwd").val() != $("#cPwd").val()){
+		$("#mb_password_confirm_msg").html("먼저 입력하신 패스워드와 일치하지 않습니다").css("color", "red");
+		result = "먼저 입력하신 패스워드와 일치하지 않습니다";
+	} else{
+		$("#mb_password_confirm_msg").html("");
+		result = "";
+	}
+	return result;
+}
