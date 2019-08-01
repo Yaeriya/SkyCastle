@@ -34,7 +34,15 @@
 				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
 					data-out="fadeOutUp">
 					<li><a href="../main/index.jsp">홈</a></li>
-					<li><a href="../join/login.jsp">로그인</a></li>
+					<li><c:choose>
+							<c:when test="${msg == 'success'}">
+								<a>${sessionScope.userNick}(${sessionScope.userId})님 환영합니다.</a>
+							</c:when>
+							<c:otherwise>
+								<a href="../join/login.jsp">로그인</a>
+							</c:otherwise>
+						</c:choose></li>
+
 					<li><a href="../main/map.jsp">지도보기</a></li>
 					<li><a href="../main/event.jsp">이벤트</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
@@ -54,14 +62,12 @@
 	<!-- Navigation End  -->
 
 	<!-- Script JS Start 야옹 멍멍-->
-	<script src="/skc/js/common.js" type="text/javascript"></script>
 	<script src="/skc/js/jquery.min.js" type="text/javascript"></script>
 	<script src="/skc/js/bootstrap.min.js"></script>
 	<script src="/skc/js/owl.carousel.min.js" type="text/javascript"></script>
 	<script src="/skc/js/bootsnav.js"></script>
 	<script src="/skc/js/main.js"></script>
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<!-- Script JS End -->
+
 </body>
 </html>
