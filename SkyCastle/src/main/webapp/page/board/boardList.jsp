@@ -205,7 +205,7 @@
 <script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
 <script src="/skc/js/bootsnav.js"></script>
 <script src="/skc/js/main.js"></script>
-<script src="/skc/js/join.js"></script>
+<script src="/skc/js/common.js"></script>
 <script type="text/javascript"> 
 $(document).ready(function(){
 	$("#write").on("click", function(e){//글쓰기 버튼

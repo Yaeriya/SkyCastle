@@ -19,7 +19,7 @@ public class BoardController {
 	@Resource(name="boardService")
 	private BoardService boardService; 
 
-	@RequestMapping(value="/board/boardList" ,method = RequestMethod.GET) 
+	@RequestMapping(value="/board/boardList" ) 
 	public ModelAndView boardList(Map<String,Object> commandMap) 
 			throws Exception{ ModelAndView mv = new ModelAndView("/board/boardList"); 
 			List<Map<String,Object>> list = boardService.selectBoardList(commandMap);
@@ -47,9 +47,16 @@ public class BoardController {
 	}
 	@RequestMapping(value="/board/openBoardUpdate")
 	public ModelAndView openBoardUpdate(CommandMap commandMap) throws Exception{
-		ModelAndView mv = new ModelAndView("/board/boardUpdate");
-		
-		mv.addObject("map");
+		ModelAndView mv = new ModelAndView("/board/boardUpdate");		
+		Map<String,Object> map = boardService.selectBoardDetail(commandMap.getMap());
+		mv.addObject("map",map);
+		return mv;
+		}
+	@RequestMapping(value="/board/updateBoard") 
+	public ModelAndView updateBoard(CommandMap commandMap) throws Exception{ 
+		ModelAndView mv = new ModelAndView("redirect:/board/boardList");
+		boardService.updateBoard(commandMap.getMap()); 
+		mv.addObject("FREE_NUM", commandMap.get("FREE_NUM")); 
 		return mv;
 		}
 

@@ -10,41 +10,18 @@
 <title>스카이캐슬 | 상세내용</title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- All Plugin Css -->
+<link rel="stylesheet" href="/skc/css/plugins.css">
 
+<!-- Style & Common Css -->
+<link rel="stylesheet" href="/skc/css/common.css">
+<link rel="stylesheet" href="/skc/css/main.css">
+<link rel="stylesheet" href="/skc/css/boardwrite.css">
 <link rel="stylesheet" href="/skc/css/import.css">
 <link rel="stylesheet" href="/skc/css/board.css">
 </head>
 <body>
-
-	<script type="text/javascript"> 
-	$(document).ready(function(){ 
-		$("#list").on("click", function(e){ //목록으로 버튼
-		e.preventDefault(); 
-	fn_openBoardList(); 
-	}); 
-		$("#update").on("click", function(e){ //저장하기 버튼 
-		e.preventDefault(); 
-	fn_updateBoard(); 
-	}); 
-		$("#delete").on("click", function(e){ //삭제하기 버튼
-		e.preventDefault();
-	fn_deleteBoard();
-	});
 	
-	});
-	function fn_openBoardList(){ var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/board/openBoardList' />");
-	comSubmit.submit();
-	} function fn_updateBoard(){ var comSubmit = new ComSubmit("frm"); 
-	comSubmit.setUrl("<c:url value='/board/updateBoard' />");
-	comSubmit.submit();
-	} function fn_deleteBoard(){ var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/board/deleteBoard' />"); 
-	comSubmit.addParam("FREE_NUM", $("#FREE_NUM").val()); 
-	comSubmit.submit(); 
-	}
-	</script>
-
 	<h1>STUDENT</h1>
 	<form id = "frm">
 	<div id="wrap">
@@ -71,10 +48,14 @@
 						</tr>
 						<tr>
 							<th scope="row">제목</th>
-							<td><colspan="3">${map.FREE_TITLE }/></td>
+							<td><colspan="3">
+			<input type="text" id="FREE_TITLE" name="FREE_TITLE" class="wdp_90" value="${map.FREE_TITLE }"/>
+
 						</tr>
 						<tr>
-							<td colspan="4">${map.FREE_BODY}
+							<td colspan="4" class="view_text"> 
+				<textarea rows="20" cols="100" title="내용" id="FREE_BODY" name="FREE_BODY">${map.FREE_BODY }</textarea>
+
 							<td></td>
 						</tr>
 					</tbody>
@@ -85,12 +66,7 @@
 
 	<div class="container">
 		<div class="btn_type_03">
-			<c:if test="">
-				<span class="btn btnC_03 btnP_04 mr10"> <input type="hidden"
-					name="no" value="" /> <input type="button" onclick="#" value="이전" />
-				</span>
-			</c:if>
-</form>
+
 			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="list"> 
 			<span>Back To List</span>
 			</a> 
@@ -117,7 +93,7 @@
 			</c:if>
 		</div>
 	</div>
-
+</form>
 	<!-- 댓글작성 -->
 	<div class="cmtlog">
 		<c:if test="">
@@ -162,15 +138,46 @@
 	</c:if>
 	<!-- 코멘트 페이징 -->
 	<div class="paging">${pagingHtml}</div>
-
-	<jsp:include page="../side/footer.jsp" flush="false" />
+	
 	<%@ include file="/WEB-INF/include/include-body.jspf" %>
 <script type="text/javascript" src="/skc/js/jquery.min.js"></script>
 <script src="/skc/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
 <script src="/skc/js/bootsnav.js"></script>
 <script src="/skc/js/main.js"></script>
-<script src="/skc/js/join.js"></script>
+<script src="/skc/js/common.js"></script>
+<script type="text/javascript"> 
+	$(document).ready(function(){ 
+		$("#list").on("click", function(e){ //목록으로 버튼
+		e.preventDefault(); 
+		fn_openBoardList(); 
+	}); 
+		$("#update").on("click", function(e){ //저장하기 버튼 
+		e.preventDefault(); fn_updateBoard(); 
+	}); 
+		$("#delete").on("click", function(e){ //삭제하기 버튼
+		e.preventDefault();
+	fn_deleteBoard();
+	});
+	
+	});
+	function fn_openBoardList(){
+	var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/board/boardList' />");
+	comSubmit.submit();
+	} 
+	function fn_updateBoard(){ var comSubmit = new ComSubmit("frm"); 
+	comSubmit.setUrl("<c:url value='/board/boardUpdate' />");
+	comSubmit.submit();
+	} 
+	function fn_deleteBoard(){ var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/board/deleteBoard' />"); 
+	comSubmit.addParam("FREE_NUM", $("#FREE_NUM").val()); 
+	comSubmit.submit(); 
+	}
+	</script>
+	<jsp:include page="../side/footer.jsp" flush="false" />
+
 
 </body>
 </html>

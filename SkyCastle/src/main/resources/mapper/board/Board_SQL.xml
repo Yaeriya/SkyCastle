@@ -17,11 +17,12 @@ FROM FREE
    ]]>
 
 	</insert>
+	
 	<update id= "updateHitCnt" parameterType="hashmap">
 	<![CDATA[ 
 UPDATE FREE
-SET FREE_HIT = NVL(FREE_HIT,0)+1
-WHERE FREE_NUM=#{FREE_NUM}
+SET FREE_HIT = NVL(FREE_HIT, 0) + 1
+WHERE FREE_NUM = #{FREE_NUM}
 ]]>
 	</update>
 
@@ -33,9 +34,15 @@ SELECT FREE_NUM, FREE_TITLE, MB_NICK, FREE_DATE, FREE_HIT
 FROM FREE
 WHERE FREE_NUM=#{FREE_NUM}
 ]]>
+</select>
 
+<update id="updateBoard" parameterType="hashmap"> 
+<![CDATA[ 
+UPDATE FREE 
+SET FREE_TITLE = #{FREE_TITLE}, FREE_BODY = #{FREE_BODY} 
+WHERE FREE_NUM = #{FREE_NUM}	
+]]> 
+</update>
 
-
-	</select>
 </mapper>
 

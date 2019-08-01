@@ -23,5 +23,8 @@ public class BoardDAO extends AbstractDAO{
 	@SuppressWarnings("unchecked")
 	public Map<String, Object> selectBoardDetail(Map<String, Object> map) throws Exception{
 		return (Map<String, Object>) selectOne("board.selectBoardDetail",map);
-	
-}}
+	}
+	public void updateBoard(Map<String, Object> map) throws Exception{
+		update("board.updateBoard", map);
+	}
+}
