@@ -3,21 +3,18 @@ $(document).ready(function() {
 		e.preventDefault();
 		fn_signUp();
 	});
-});
-
-$(document).ready(function() {
+	
 	$("#btnSignup_P").click(function(e) {
 		e.preventDefault();
 		fn_signUp_P();
 	});
-});
-
-$(document).ready(function() {
+	
 	$("#btnLogin").unbind("click").click(function(e) {
 		e.preventDefault();
 		fn_logIn();
 	});
 });
+
 
 function fn_signUp() {
 	var comSubmit = new ComSubmit("form");
@@ -46,6 +43,13 @@ function fn_logIn() {
 		comSubmit.setUrl("/skc/member/memberLogin");
 		comSubmit.submit();
 	}
+}
+
+function fn_logOut() {
+	if(window.confirm("갈거냥 냥냥?"))
+		{
+		window.location.href="/main/index"
+		}
 }
 
 function gfn_isNull(str) {

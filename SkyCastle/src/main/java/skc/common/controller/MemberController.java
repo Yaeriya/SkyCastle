@@ -18,16 +18,22 @@ public class MemberController {
 		return "/main/login";
 	}
 	
+	@RequestMapping(value = "/logout", method = {RequestMethod.POST, RequestMethod.GET})
+	public String home2(Locale locale, Model model)
+	{
+		return "/main/logout";
+	}
+	
 	/* ---------- 일반회원 ---------- */
 	@RequestMapping(value = "/join", method = {RequestMethod.POST, RequestMethod.GET})
-	public String home2(Locale locale, Model model)
+	public String home3(Locale locale, Model model)
 	{
 		return "/main/join";
 	}
 	
 	/* ---------- 파트너회원 ---------- */
 	@RequestMapping(value = "/join_partner", method = {RequestMethod.POST, RequestMethod.GET})
-	public String home3(Locale locale, Model model)
+	public String home4(Locale locale, Model model)
 	{
 		return "/main/join_partner";
 	}

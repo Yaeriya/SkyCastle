@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class JoinController
 	/* ---------- 공통부분 ---------- */	
 	@Resource(name="joinService")
 	private JoinService joinService;
-	
+
 	@RequestMapping(value = "/getMemberList", method = {RequestMethod.POST, RequestMethod.GET}) 
 	public ModelAndView getMemberList(CommandMap commandMap) throws Exception
 	{ 
@@ -32,17 +33,39 @@ public class JoinController
 		return mv; 
 	} 
 
+	@RequestMapping(value = "/getMemberInfo", method = {RequestMethod.POST, RequestMethod.GET}) 
+	public ModelAndView getMemberInfo(CommandMap commandMap) throws Exception
+	{ 
+		ModelAndView mv = new ModelAndView("/getMemberList");
+		Map<String,Object> list = joinService.getMemberInfo(commandMap.getMap());
+
+		mv.addObject("list", list);
+		return mv; 
+	} 
+	
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) throws Exception {
+		session.invalidate();
+
+		return "redirect:/";
+	}
+
 	@RequestMapping(value = "/memberLogin", method = {RequestMethod.POST, RequestMethod.GET})
-	public ModelAndView memberLogin(CommandMap commandMap, HttpSession session) throws Exception
+	public ModelAndView memberLogin(HttpServletRequest request, CommandMap commandMap, HttpSession session) throws Exception
 	{
 		System.out.println("=========3====== : " + commandMap.getMap());
 		boolean result = joinService.loginCheck(commandMap.getMap(), session);
 		ModelAndView mv = new ModelAndView();
+
 		if(result == true)	
 		{	
 			mv.setViewName("/main/index");
 			mv.addObject("msg", "success");
+
+			request.getSession().setAttribute("loginInfo", result);
+			request.getSession().setMaxInactiveInterval(60*30);
 		}
+
 		else	
 		{	
 			mv.setViewName("/main/login");
