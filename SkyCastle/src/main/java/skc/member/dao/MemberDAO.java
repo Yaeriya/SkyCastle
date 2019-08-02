@@ -15,14 +15,11 @@ public class MemberDAO extends AbstractDAO
 	{
 		return (List<Map<String, Object>>) selectList("member.getMemberList", map);
 	}
+	
 	@SuppressWarnings("unchecked")
 	public Map<String, Object> getMemberInfo(Map<String, Object> map) throws Exception
 	{
-		return (Map<String, Object>) selectOne("member.getMemberInfo", map);
-		//return pageMap;
-		//List<Map<String, Object>> pageMap = (List<Map<String, Object>>) resultMap.get("result");
-		//List<String> list = new ArrayList<String>(map.keySet());
-		//List<String> list = new ArrayList<String>(map.values());
+		return (Map<String, Object>)selectOne("member.getMemberInfo", map);
 	}
 	public void insertMember(Map<String, Object> map) throws Exception
 	{

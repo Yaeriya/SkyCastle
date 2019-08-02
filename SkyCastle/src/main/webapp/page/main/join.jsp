@@ -127,108 +127,64 @@
 
 			<form name="form" id="form" class="form-signup" role="form"
 				method="post"<%--  action="${pageContext.request.contextPath}/member/insertMember" --%>>
-
 				<table>
-
 					<tr>
-
 						<td id="title">아이디</td>
-
 						<td><input type="text" id="uId" name="Id" maxlength="10">
 							<input type="button" value="중복확인"></td>
-
 					</tr>
 
 					<tr>
-
 						<td id="title">별명</td>
-
 						<td><input type="text" id="uNick" name="Nick" maxlength="10">
 							<input type="button" value="중복확인"></td>
-
 					</tr>
 
 					<tr>
-
 						<td id="title">이름</td>
-
 						<td><input type="text" id="uName" name="Name" maxlength="40"></td>
-
 					</tr>
 
 					<tr>
-
 						<td id="title">비밀번호</td>
-
 						<td><input type="password" id="uPwd" name="Pwd"
 							maxlength="15"></td>
-
 					</tr>
 
 					<tr>
-
 						<td id="title">비밀번호 확인</td>
-
 						<td><input type="password" name="Pwd2" maxlength="15">
-
 						</td>
-
 					</tr>
 
 					<tr>
-
 						<td id="title">이메일</td>
-
 						<td><input type="text" id="uEmail" name="Email"
 							maxlength="30">
 						<!-- @
-
 						<select name="email_2">
-
 							<option>naver.com</option>
-
 							<option>daum.net</option>
-
 							<option>gmail.com</option>
-
 							<option>nate.com</option>
-
 					</select> --></td>
-
 					</tr>
-
 					<tr>
-
 						<td id="title">휴대전화</td>
-
 						<td><input type="text" id="uPhone" name="Phone" /></td>
-
 					</tr>
-
 				</table>
-
 			</form>
-
 		</div>
-
 		<!-- 	<br> <br> <button >가입</button> <input
-
 				type="button" value="취소"> -->
 
 		<div style="margin-top: 10px">
-
 			<button type="button" class="btn btn-sm btn-primary" id="btnSignup">회원가입</button>
-
 			<button type="button" class="btn btn-sm btn-primary" id="btnCancel">취소</button>
-
 		</div>
-
 	</div>
 
-
-
 	<jsp:include page="../side/footer.jsp" flush="false" />
-
 </body>
-
 </html>

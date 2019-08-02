@@ -56,8 +56,8 @@ public class JoinController
 			mv.setViewName("/join/login");
 			mv.addObject("msg", "failure");
 		}
-		//List<Map<String, Object>> list = joinService.getMemberInfo(commandMap.getMap());
-		//mv.addObject("list", list);
+		Map<String, Object> list = joinService.getMemberInfo(commandMap.getMap());
+		mv.addObject("list", list);
 		return mv;
 	}
 }

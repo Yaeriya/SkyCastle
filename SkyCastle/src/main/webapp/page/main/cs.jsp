@@ -25,10 +25,28 @@
 		<ul class=faq>
 			<li>
 				<a class="btn01" onclick="document.getElementById('hiddenContent').style.display=(document.getElementById('hiddenContent').style.display=='block') ? 'none' : 'block';">
-					<i class="fa fa-question-sign"></i><h5>제목</h5>
+					<i class="fa fa-question-sign"></i><h5>냥냥이</h5>
 				</a>
 				<div id="hiddenContent" class="example01" style="display: none;">
-					<i class="fa fa-question-sign"></i><h5>A. 내용</h5>
+					<i class="fa fa-question-sign"></i><h5>A. 냥냥이 내용</h5>
+				</div>
+			</li>
+			
+			<li>
+				<a class="btn02" onclick="document.getElementById('hiddenContent').style.display=(document.getElementById('hiddenContent').style.display=='block') ? 'none' : 'block';">
+					<i class="fa fa-question-sign"></i><h5>갸릉이</h5>
+				</a>
+				<div id="hiddenContent" class="example01" style="display: none;">
+					<i class="fa fa-question-sign"></i><h5>A. 갸릉이 내용</h5>
+				</div>
+			</li>
+			
+			<li>
+				<a class="btn03" onclick="document.getElementById('hiddenContent').style.display=(document.getElementById('hiddenContent').style.display=='block') ? 'none' : 'block';">
+					<i class="fa fa-question-sign"></i><h5>미미</h5>
+				</a>
+				<div id="hiddenContent" class="example01" style="display: none;">
+					<i class="fa fa-question-sign"></i><h5>A. 미미 내용</h5>
 				</div>
 			</li>
 		</ul>

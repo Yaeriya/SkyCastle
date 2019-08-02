@@ -22,7 +22,7 @@ public class JoinServiceImpl implements JoinService
 		return memberDAO.getMemberList(map);
 	}
 	@Override
-	public List<Map<String, Object>> getMemberInfo(Map<String, Object> map) throws Exception
+	public Map<String, Object> getMemberInfo(Map<String, Object> map) throws Exception
 	{
 		return memberDAO.getMemberInfo(map);
 	}
