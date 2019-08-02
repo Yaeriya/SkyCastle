@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
-
+.hidden {
+	display: none;
+}
 /* join.jsp */
 .join-main {
 	background-image: url("/skc/img/join-main.jpg");

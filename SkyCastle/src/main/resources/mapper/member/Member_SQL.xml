@@ -1,34 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="member">
-	<select id="getMemberInfo" parameterType="hashmap" resultType="hashmap">
+	<select id="getMemberInfo" parameterType="hashmap"
+		resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN, MB_LIMIT, MB_LEVEL FROM
-			MEMBER WHERE MB_NICK = #{Nick}
+			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LICEN, MB_LEVEL, MB_LIMIT FROM
+			MEMBER WHERE MB_ID = #{Id}
 		]]>
 	</select>
-	<select id="selectMemberList" parameterType="hashmap" resultType="hashmap">
+
+	<select id="selectMemberList" parameterType="hashmap"
+		resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LIMIT, MB_LEVEL FROM
+			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LICEN, MB_LEVEL, MB_LIMIT FROM
 			MEMBER
 		]]>
 	</select>
+
 	<insert id="insertMember" parameterType="hashmap">
 	<![CDATA[
-			INSERT INTO MEMBER (MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE)
-			VALUES (#{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone})
+			INSERT INTO MEMBER (MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LEVEL)
+			VALUES (#{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone}, #{Level})
 	]]>
 	</insert>
+
+	<insert id="insertMember_P" parameterType="hashmap">
+	<![CDATA[
+			INSERT INTO MEMBER (MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LICEN, MB_LEVEL, MB_LIMIT)
+			VALUES (#{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone}, #{Licen}, #{Level}, #{Limit})
+	]]>
+	</insert>
+
 	<update id="updateMember" parameterType="hashmap">
 	<![CDATA[ 
 			UPDATE MEMBER SET MB_NICK = #{Nick}, MB_ID = #{Id}, MB_PW = #{Pwd}, MB_NAME = #{Name}, 
-			MB_EMAIL = #{Email}, MB_PHONE = #{Phone} WHERE MB_NICK = #{Nick}
+			MB_EMAIL = #{Email}, MB_PHONE = #{Phone}, MB_LICEN = #{Licen}, MB_LEVEL = #{Level}, MB_LIMIT = #{Limit} WHERE MB_NICK = #{Nick}
 	]]>
 	</update>
+
+	<update id="updateMember_P" parameterType="hashmap">
+	<![CDATA[ 
+			UPDATE MEMBER SET MB_NICK = #{Nick}, MB_ID = #{Id}, MB_PW = #{Pwd}, MB_NAME = #{Name}, 
+			MB_EMAIL = #{Email}, MB_PHONE = #{Phone}, MB_LICEN = #{Licen} WHERE MB_NICK = #{Nick}
+	]]>
+	</update>
+
 	<delete id="deleteMember" parameterType="hashmap">
 		<![CDATA[ 
 			DELETE FROM MEMBER
 			WHERE MB_NICK = #{Nick}
 		]]>
 	</delete>
+
+	<select id="loginCheck" parameterType="hashmap"
+		resultType="hashmap">
+	<![CDATA[
+	SELECT * FROM MEMBER
+	WHERE MB_ID = #{Id}
+	]]>
+	</select>
 </mapper>

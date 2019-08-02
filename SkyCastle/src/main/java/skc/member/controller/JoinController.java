@@ -18,6 +18,7 @@ import skc.member.service.JoinService;
 @RequestMapping(value="/member")
 public class JoinController 
 {
+	/* ---------- 공통부분 ---------- */	
 	@Resource(name="joinService")
 	private JoinService joinService;
 	
@@ -26,38 +27,48 @@ public class JoinController
 	{ 
 		ModelAndView mv = new ModelAndView("/getMemberList");
 		List<Map<String,Object>> list = joinService.getMemberList(commandMap.getMap());
-		
+
 		mv.addObject("list", list);
 		return mv; 
 	} 
-	
-	@RequestMapping(value = "/insertMember", method = {RequestMethod.POST, RequestMethod.GET}) 
-	public String insertMember(CommandMap commandMap) throws Exception 
-	{
-		System.out.println("======2========= : " + commandMap.getMap());
-		joinService.insertMember(commandMap.getMap()); 
-		
-		//return "redirect:/page/getMemberList"; 
-		return "/main/index";
-	}
+
 	@RequestMapping(value = "/memberLogin", method = {RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView memberLogin(CommandMap commandMap, HttpSession session) throws Exception
 	{
 		System.out.println("=========3====== : " + commandMap.getMap());
 		boolean result = joinService.loginCheck(commandMap.getMap(), session);
 		ModelAndView mv = new ModelAndView();
-		if(result == true)	//로그인 성공
-		{	//index.jsp으로 이동
+		if(result == true)	
+		{	
 			mv.setViewName("/main/index");
 			mv.addObject("msg", "success");
 		}
-		else	//로그인 실패
-		{	//login.jsp로 이동
-			mv.setViewName("/join/login");
+		else	
+		{	
+			mv.setViewName("/main/login");
 			mv.addObject("msg", "failure");
 		}
-		Map<String, Object> list = joinService.getMemberInfo(commandMap.getMap());
-		mv.addObject("list", list);
 		return mv;
 	}
+
+	/* ---------- 일반회원 ---------- */
+	@RequestMapping(value = "/insertMember", method = {RequestMethod.POST, RequestMethod.GET}) 
+	public String insertMember(CommandMap commandMap) throws Exception 
+	{
+		System.out.println("======2========= : " + commandMap.getMap());
+		joinService.insertMember(commandMap.getMap()); 
+
+		return "/main/index";
+	}
+
+	/* ---------- 파트너회원 ---------- */
+	@RequestMapping(value = "/insertMember_P", method = {RequestMethod.POST, RequestMethod.GET}) 
+	public String insertMember_P(CommandMap commandMap) throws Exception 
+	{
+		System.out.println("======2========= : " + commandMap.getMap());
+		joinService.insertMember_P(commandMap.getMap()); 
+
+		return "/main/index";
+	}
+
 }

@@ -6,11 +6,47 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
+	$("#btnSignup_P").click(function(e) {
+		e.preventDefault();
+		fn_signUp_P();
+	});
+});
+
+$(document).ready(function() {
 	$("#btnLogin").unbind("click").click(function(e) {
 		e.preventDefault();
 		fn_logIn();
 	});
 });
+
+function fn_signUp() {
+	var comSubmit = new ComSubmit("form");
+	comSubmit.setUrl("/skc/member/insertMember");
+	comSubmit.submit();
+}
+
+function fn_signUp_P() {
+	var comSubmit = new ComSubmit("form");
+	comSubmit.setUrl("/skc/member/insertMember_P");
+	comSubmit.submit();
+}
+
+function fn_logIn() {
+	if($("#uId").val().length < 1)
+	{
+		alert("아이디 입력해랑");
+	}
+	else if($("#uPwd").val.length < 1)
+	{
+		alert("비밀번호 입력해랑");
+	}
+	else
+	{
+		var comSubmit = new ComSubmit("form");
+		comSubmit.setUrl("/skc/member/memberLogin");
+		comSubmit.submit();
+	}
+}
 
 function gfn_isNull(str) {
 	if (str == null) return true;
@@ -44,25 +80,3 @@ function ComSubmit(opt_formId) {
 	};
 }
 
-function fn_signUp() {
-	var comSubmit = new ComSubmit("form");
-	comSubmit.setUrl("/skc/member/insertMember");
-	comSubmit.submit();
-}
-
-function fn_logIn() {
-	if($("#uId").val().length < 1)
-	{
-		alert("아이디 입력해랑");
-	}
-	else if($("#uPwd").val.length < 1)
-	{
-		alert("비밀번호 입력해랑");
-	}
-	else
-	{
-		var comSubmit = new Comsubmit("frm");
-		comSubmit.setUrl("/skc/member/memberLogin");
-		comSubmit.submit();
-	}
-}

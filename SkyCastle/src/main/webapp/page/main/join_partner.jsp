@@ -16,7 +16,7 @@
 
 
 <body class="join-main">
-<jsp:include page="../side/header.jsp" flush="false" />
+	<jsp:include page="../side/header.jsp" flush="false" />
 	<div class="join-back">
 		<b> <font size="6" color="gray">회원가입</font></b> <br> <br> <br>
 		<div class="join-body">
@@ -28,24 +28,20 @@
 						<td><input type="text" id="uId" name="Id" maxlength="10">
 							<input type="button" value="중복확인"></td>
 					</tr>
-
 					<tr>
 						<td id="title">별명</td>
 						<td><input type="text" id="uNick" name="Nick" maxlength="10">
 							<input type="button" value="중복확인"></td>
 					</tr>
-
 					<tr>
 						<td id="title">이름</td>
 						<td><input type="text" id="uName" name="Name" maxlength="40"></td>
 					</tr>
-
 					<tr>
 						<td id="title">비밀번호</td>
 						<td><input type="password" id="uPwd" name="Pwd"
 							maxlength="15"></td>
 					</tr>
-
 					<tr>
 						<td id="title">비밀번호 확인</td>
 						<td><input type="password" name="Pwd2" maxlength="15">
@@ -55,25 +51,31 @@
 					<tr>
 						<td id="title">이메일</td>
 						<td><input type="text" id="uEmail" name="Email"
-							maxlength="30">
-				</td>
+							maxlength="30"></td>
 					</tr>
 					<tr>
 						<td id="title">휴대전화</td>
 						<td><input type="text" id="uPhone" name="Phone" /></td>
 					</tr>
-					
+					<tr>
+						<td id="title">사업자번호</td>
+						<td><input type="text" id="uLicen" name="Licen" /></td>
+					</tr>
 					<tr class="hidden">
 						<td id="title">레벨</td>
-						<td><input type="text" id="uLevel" name="Level" value="1" /></td>
+						<td><input type="text" id="uLevel" name="Level" value="2" /></td>
+					</tr>
+					<tr class="hidden">
+						<td id="title">승인</td>
+						<td><input type="text" id="uLimit" name="Limit" value="0" /></td>
 					</tr>
 				</table>
 			</form>
 		</div>
 
 		<div style="margin-top: 10px">
-			<button type="button" class="btn btn-sm btn-primary" id="btnSignup">회원가입</button>
-			<button type="button" class="btn btn-sm btn-primary" id="btnCancel">취소</button>
+			<button type="button" class="btn btn-sm btn-primary" id="btnSignup_P">회원가입</button>
+			<button type="button" class="btn btn-sm btn-primary" id="btnCancel_P">취소</button>
 		</div>
 	</div>
 

@@ -39,7 +39,7 @@
 								<a>${sessionScope.userNick}(${sessionScope.userId})님 환영합니다.</a>
 							</c:when>
 							<c:otherwise>
-								<a href="../join/login.jsp">로그인</a>
+								<a href="../main/login">로그인</a>
 							</c:otherwise>
 						</c:choose></li>
 
