@@ -11,6 +11,120 @@ $(document).on('click', '#btnCancle', function(e){
 	$('#email').val('');
 	//location.href="${pageContext.request.contextPath}/home";
 });*/
+
+/*아이디중복확인*/
+function id_check(){
+	var mb_id = $("#uId").val();
+	var mb_data = {"Id":mb_id}
+	
+	
+	if(mb_id.length<1)
+	{
+		alert("아이디를 입력해주시기 바랍니다.");
+	}
+	else
+	{
+		$.ajax({
+			type: "POST",
+			url: "/skc/member/checkId",
+			data: mb_data,
+			dataType : "json",
+			error : function(error){
+				alert("서버가 응답하지 않습니다.\n다시 시도해주시기 바랍니다.");
+			},
+			success: function(result){
+				if(result == 0)
+				{
+					$("#uId").attr("disabled",false);
+					alert("사용이 가능한 아이디입니다.");
+				} else if(result == 1)
+				{
+					alert("이미 존재하는 아이디입니다.\n다른 아이디를 사용해주세요.");
+				}else
+				{
+					alert("에러가 발생하였습니다.");
+				}
+			}
+	    });
+	}
+}
+
+/*닉네임 중복확인(일반)*/
+function nick_check1(){
+	var mb_nick = $("#uNick").val();
+	var mb_data = {"Nick":mb_nick}
+	
+	
+	if(mb_nick.length<1)
+	{
+		alert("별명을 입력해주시기 바랍니다.");
+	}
+	else
+	{
+		$.ajax({
+			type: "POST",
+			url: "/skc/member/checkNick",
+			data: mb_data,
+			dataType : "json",
+			error : function(error){
+				alert("서버가 응답하지 않습니다.\n다시 시도해주시기 바랍니다.");
+			},
+			success: function(result){
+				if(result == 0)
+				{
+					$("#uNick").attr("disabled",false);
+					alert("사용이 가능한 별명입니다.");
+				} else if(result == 1)
+				{
+					alert("이미 존재하는 별명입니다.\n다른 별명을 사용해주세요.");
+				}else
+				{
+					alert("에러가 발생하였습니다.");
+				}
+			}
+	    });
+	}
+}
+
+
+/*닉네임 중복확인(파트너)*/
+function nick_check2(){
+	var mb_nick = $("#uNick").val();
+	var mb_data = {"Nick":mb_nick}
+	
+	
+	if(mb_nick.length<1)
+	{
+		alert("학원명을 입력해주시기 바랍니다.");
+	}
+	else
+	{
+		$.ajax({
+			type: "POST",
+			url: "/skc/member/checkNick",
+			data: mb_data,
+			dataType : "json",
+			error : function(error){
+				alert("서버가 응답하지 않습니다.\n다시 시도해주시기 바랍니다.");
+			},
+			success: function(result){
+				if(result == 0)
+				{
+					$("#uNick").attr("disabled",false);
+					alert("사용이 가능한 학원명입니다.");
+				} else if(result == 1)
+				{
+					alert("이미 존재하는 학원명입니다.\n다른 학원명을 사용해주세요.");
+				}else
+				{
+					alert("에러가 발생하였습니다.");
+				}
+			}
+	    });
+	}
+}
+
+
 $(document).ready(function() {
 	$("#btnSignup").click(function() {
 		
