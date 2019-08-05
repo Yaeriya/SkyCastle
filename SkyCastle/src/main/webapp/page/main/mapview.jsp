@@ -25,17 +25,17 @@
 					data-target="#navbar-menu">
 					<i class="fa fa-bars"></i>
 				</button>
-				<a class="navbar-brand" href="../main/index.jsp"><img
+				<a class="navbar-brand" href="../main/index"><img
 					src="/skc/img/logo.png" class="logo" alt="로고이미지"></a>
 			</div>
 
 			<div class="collapse navbar-collapse" id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
 					data-out="fadeOutUp">
-					<li><a href="../main/index.jsp">홈</a></li>
-					<li><a href="../join/login.jsp">로그인</a></li>
-					<li><a href="../main/map.jsp">지도보기</a></li>
-					<li><a href="../main/event.jsp">이벤트</a></li>
+					<li><a href="../main/index">홈</a></li>
+					<li><a href="../main/login">로그인</a></li>
+					<li><a href="../main/mapview">지도보기</a></li>
+					<li><a href="../main/event">이벤트</a></li>
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">커뮤니티</a>
 						<ul class="dropdown-menu animated fadeOutUp"

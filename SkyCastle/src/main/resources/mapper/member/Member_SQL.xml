@@ -6,7 +6,7 @@
 		resultType="hashmap">
 		<![CDATA[ 
 			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LICEN, MB_LEVEL, MB_LIMIT FROM
-			MEMBER WHERE MB_ID = #{Id}
+			MEMBER WHERE MB_ID LIKE #{Id}
 		]]>
 	</select>
 

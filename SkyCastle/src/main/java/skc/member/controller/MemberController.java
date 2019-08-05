@@ -1,4 +1,4 @@
-package skc.common.controller;
+package skc.member.controller;
 
 import java.util.Locale;
 
@@ -13,28 +13,28 @@ public class MemberController {
 	
 	/* ---------- 공통부분 ---------- */
 	@RequestMapping(value = "/login", method = {RequestMethod.POST, RequestMethod.GET})
-	public String home1(Locale locale, Model model)
-	{
+	public String login(Locale locale, Model model)
+	{ 	// 로그인
 		return "/main/login";
 	}
 	
 	@RequestMapping(value = "/logout", method = {RequestMethod.POST, RequestMethod.GET})
-	public String home2(Locale locale, Model model)
-	{
+	public String logout(Locale locale, Model model)
+	{ 	// 로그인
 		return "/main/logout";
 	}
 	
 	/* ---------- 일반회원 ---------- */
 	@RequestMapping(value = "/join", method = {RequestMethod.POST, RequestMethod.GET})
-	public String home3(Locale locale, Model model)
-	{
+	public String join_N(Locale locale, Model model)
+	{	// 회원가입
 		return "/main/join";
 	}
-	
+
 	/* ---------- 파트너회원 ---------- */
 	@RequestMapping(value = "/join_partner", method = {RequestMethod.POST, RequestMethod.GET})
-	public String home4(Locale locale, Model model)
-	{
+	public String join_P(Locale locale, Model model)
+	{	// 회원가입
 		return "/main/join_partner";
 	}
 }
