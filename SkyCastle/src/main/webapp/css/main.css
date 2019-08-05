@@ -974,3 +974,22 @@ footer .form-control::-webkit-input-placeholder {
 		padding: 0 20px;
 	}
 }
+
+
+/* 로그아웃 버튼 */
+#btnLogout {
+	cursor: pointer;
+}
+
+/*파트너회원은 이벤트 페이지에 들어가지 못한다*/
+.event_limit {
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+

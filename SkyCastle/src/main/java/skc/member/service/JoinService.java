@@ -11,7 +11,11 @@ public interface JoinService
 	/* ---------- 공통부분 ---------- */
 	Map<String, Object> getMemberInfo(Map<String, Object> map) throws Exception;
 	List<Map<String, Object>> getMemberList(Map<String, Object> map) throws Exception;
+	List<Map<String, Object>> getPartnerList(Map<String, Object> map) throws Exception;
+	List<Map<String, Object>> getPartnerQue(Map<String, Object> map) throws Exception;
+	List<Map<String, Object>> getBlockList(Map<String, Object> map) throws Exception;
 	void deleteMember(Map<String, Object> map) throws Exception;
+	void memberLimit(Map<String, Object> map) throws Exception;
 	boolean loginCheck(Map<String, Object> map, HttpSession session) throws Exception;
 
 
@@ -23,4 +27,8 @@ public interface JoinService
 	/* ---------- 파트너회원 ---------- */
 	void insertMember_P(Map<String, Object> map) throws Exception;
 	void updateMember_P(Map<String, Object> map) throws Exception;
+	
+	/* ---- 아이디,닉네임 중복확인 ---- */
+	int selectMemberId(Map<String, Object> map) throws Exception;
+	int selectMemberNick(Map<String, Object> map) throws Exception;
 }

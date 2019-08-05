@@ -23,6 +23,21 @@ public class JoinServiceImpl implements JoinService
 		return memberDAO.getMemberList(map);
 	}
 	@Override
+	public List<Map<String, Object>> getPartnerList(Map<String, Object> map) throws Exception
+	{
+		return memberDAO.getPartnerList(map);
+	}
+	@Override
+	public List<Map<String, Object>> getPartnerQue(Map<String, Object> map) throws Exception
+	{
+		return memberDAO.getPartnerQue(map);
+	}
+	@Override
+	public List<Map<String, Object>> getBlockList(Map<String, Object> map) throws Exception
+	{
+		return memberDAO.getBlockList(map);
+	}
+	@Override
 	public Map<String, Object> getMemberInfo(Map<String, Object> map) throws Exception
 	{
 		return memberDAO.getMemberInfo(map);
@@ -31,6 +46,11 @@ public class JoinServiceImpl implements JoinService
 	public void deleteMember(Map<String, Object> map) throws Exception
 	{
 		memberDAO.deleteMember(map);
+	}
+	@Override
+	public void memberLimit(Map<String, Object> map) throws Exception
+	{
+		memberDAO.memberLimit(map);
 	}
 	@Override
 	public boolean loginCheck(Map<String, Object> map, HttpSession session) throws Exception
@@ -68,5 +88,18 @@ public class JoinServiceImpl implements JoinService
 	@Override
 	public void updateMember_P(Map<String, Object> map) throws Exception {
 		memberDAO.updateMember_P(map);
+	}
+	
+	/* ---- 아이디,닉네임 중복확인 ---- */
+	@Override
+	public int selectMemberId(Map<String, Object> map) throws Exception
+	{
+		return memberDAO.selectMemberId(map);
+	}
+	
+	@Override
+	public int selectMemberNick(Map<String, Object> map) throws Exception
+	{
+		return memberDAO.selectMemberNick(map);
 	}
 }

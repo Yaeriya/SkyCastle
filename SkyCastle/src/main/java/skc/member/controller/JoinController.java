@@ -42,14 +42,9 @@ public class JoinController
 		mv.addObject("list", list);
 		return mv; 
 	} 
-	
-	@RequestMapping(value = "/logout", method = RequestMethod.GET)
-	public String logout(HttpSession session) throws Exception {
-		session.invalidate();
 
-		return "redirect:/";
-	}
 
+	/* ---------- 로그인 ---------- */
 	@RequestMapping(value = "/memberLogin", method = {RequestMethod.POST, RequestMethod.GET})
 	public ModelAndView memberLogin(HttpServletRequest request, CommandMap commandMap, HttpSession session) throws Exception
 	{
@@ -60,16 +55,12 @@ public class JoinController
 		if(result == true)	
 		{	
 			mv.setViewName("/main/index");
-			mv.addObject("msg", "success");
-
-			request.getSession().setAttribute("loginInfo", result);
-			request.getSession().setMaxInactiveInterval(60*30);
+			session.setAttribute("loginInfo", result);
 		}
 
 		else	
 		{	
 			mv.setViewName("/main/login");
-			mv.addObject("msg", "failure");
 		}
 		return mv;
 	}

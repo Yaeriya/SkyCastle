@@ -23,10 +23,10 @@
 	<mvc:resources mapping="/js/**" location="/js/" />
 	<mvc:resources mapping="/file/**" location="/file/" />
 	
-	<!-- <mvc:interceptors>
+<!-- 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**"/>
-			<bean id="loggerInterceptor" class="skc.common.logger.LoggerInterceptor"></bean>
+			<bean class="skc.member.interceptor.UserInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors> -->
 	<bean

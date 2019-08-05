@@ -3,11 +3,17 @@ $(document).ready(function() {
 		e.preventDefault();
 		fn_signUp();
 	});
-
+	
 	$("#btnLogin").click(function(e) {
 		e.preventDefault();
 		fn_logIn();
 	});
+	
+	$("#btnSignup_P").click(function(e) {
+		e.preventDefault();
+		fn_signUp_P();
+	});
+
 
 });
 
@@ -17,11 +23,20 @@ function fn_signUp() {
 	comSubmit.submit();
 }
 
+function fn_signUp_P() {
+	var comSubmit = new ComSubmit("form");
+	comSubmit.setUrl("/skc/member/insertMember_P");
+	comSubmit.submit();
+}
+
 function fn_logIn() {
 	var comSubmit = new ComSubmit("form");
 	comSubmit.setUrl("/skc/member/memberLogin");
 	comSubmit.submit();
 }
+
+
+
 
 function gfn_isNull(str) {
 	if (str == null) return true;
@@ -62,7 +77,8 @@ function ComSubmit(opt_formId) {
 	e.preventDefault();
 	$("#form").submit();
 });
-$(document).on('click', '#btnCancle', function(e){
+
+$(document).on('click', '#btnCancel', function(e){
 	e.preventDefault();
 	$('#uid').val('');
 	$('#name').val('');

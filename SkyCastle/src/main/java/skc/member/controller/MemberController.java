@@ -2,6 +2,8 @@ package skc.member.controller;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,10 +19,11 @@ public class MemberController {
 	{ 	// 로그인
 		return "/main/login";
 	}
-	
-	@RequestMapping(value = "/logout", method = {RequestMethod.POST, RequestMethod.GET})
-	public String logout(Locale locale, Model model)
-	{ 	// 로그인
+
+	/* 로그아웃 */
+	@RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session) throws Exception {
+		session.invalidate();
 		return "/main/logout";
 	}
 	
