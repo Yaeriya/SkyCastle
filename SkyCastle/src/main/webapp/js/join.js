@@ -124,7 +124,7 @@ function nick_check2(){
 	}
 }
 
-
+/*submit시 유효성 검사*/
 $(document).ready(function() {
 	$("#btnSignup").click(function() {
 		
