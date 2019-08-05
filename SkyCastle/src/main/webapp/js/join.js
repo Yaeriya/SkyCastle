@@ -314,3 +314,14 @@ function ComSubmit(opt_formId) {
 	};
 }
 
+function fn_signUp() {
+   var comSubmit = new ComSubmit("form");
+   comSubmit.setUrl("/skc/member/insertMember");
+   comSubmit.submit();
+}
+
+function fn_logIn() {
+   var comSubmit = new ComSubmit("form");
+   comSubmit.setUrl("/skc/member/memberLogin");
+   comSubmit.submit();
+}
