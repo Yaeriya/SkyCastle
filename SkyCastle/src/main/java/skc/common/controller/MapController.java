@@ -7,12 +7,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-/*@Controller*/
+@Controller
+@RequestMapping(value="/main")
 public class MapController {
 	
-	@RequestMapping(value = "/page/index", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		return "index";
+	/* ---------- 공통부분 ---------- */
+	@RequestMapping(value = "/map", method = {RequestMethod.POST, RequestMethod.GET})
+	public String home1(Locale locale, Model model)
+	{
+		return "/main/map";
 	}
 	
 }
