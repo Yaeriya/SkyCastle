@@ -21,7 +21,7 @@
 <body>
 
 	<!-- Navigation Start  -->
-	<nav class="navbar navbar-default navbar-sticky bootsnav">
+	<nav class="navbar navbar-default navbar-sticky bootsnav map-header">
 		<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse"
@@ -59,8 +59,7 @@
 					<li><a href="../main/mapview">지도보기</a></li>
 
 					<li><c:choose>
-							<c:when
-								test="${sessionScope.userLevel == 1 || sessionScope.userLevel == 6}">
+							<c:when test="${sessionScope.userLevel == 1 || sessionScope.userLevel == 6}">
 								<a href="../main/event">쿠폰발급</a>
 							</c:when>
 							<c:otherwise>
@@ -78,6 +77,14 @@
 							<li><a href="../main/board">학원 홍보 게시판</a></li>
 						</ul></li>
 					<li><a href="../cs/cs">고객센터</a></li>
+					<li><c:choose>
+							<c:when test="${sessionScope.userLevel == 6}">
+								<a href="../adm/getMemberlist">Admin</a>
+							</c:when>
+							<c:otherwise>
+								<a class="hidden">쿠폰발급</a>
+							</c:otherwise>
+						</c:choose></li>
 				</ul>
 			</div>
 		</div>

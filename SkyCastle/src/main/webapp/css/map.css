@@ -284,3 +284,7 @@ p {
 	cursor: default;
 	color: #777;
 }
+
+.map-header {
+	position: fixed !important;
+}
