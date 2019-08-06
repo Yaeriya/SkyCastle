@@ -1,4 +1,4 @@
-package skc.common.controller;
+package skc.admin.controller;
 
 import java.util.List;
 import java.util.Locale;
