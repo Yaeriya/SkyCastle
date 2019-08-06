@@ -13,9 +13,10 @@ public interface JoinService
 	List<Map<String, Object>> getMemberList(Map<String, Object> map) throws Exception;
 	List<Map<String, Object>> getPartnerList(Map<String, Object> map) throws Exception;
 	List<Map<String, Object>> getPartnerQue(Map<String, Object> map) throws Exception;
-	List<Map<String, Object>> getBlockList(Map<String, Object> map) throws Exception;
+	List<Map<String, Object>> getMemberBlock(Map<String, Object> map) throws Exception;
+	List<Map<String, Object>> getPartnerBlock(Map<String, Object> map) throws Exception;
 	void deleteMember(Map<String, Object> map) throws Exception;
-	void memberLimit(Map<String, Object> map) throws Exception;
+	void updateLevel(Map<String, Object> map) throws Exception;
 	boolean loginCheck(Map<String, Object> map, HttpSession session) throws Exception;
 
 

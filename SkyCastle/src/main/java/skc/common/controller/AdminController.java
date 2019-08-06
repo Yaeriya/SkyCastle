@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import skc.common.common.CommandMap;
@@ -31,13 +32,15 @@ public class AdminController
 		List<Map<String,Object>> list_M = joinService.getMemberList(commandMap.getMap());
 		List<Map<String,Object>> list_P = joinService.getPartnerList(commandMap.getMap());
 		List<Map<String,Object>> list_Q = joinService.getPartnerQue(commandMap.getMap());
-		List<Map<String,Object>> list_B = joinService.getBlockList(commandMap.getMap());
+		List<Map<String,Object>> list_Bm = joinService.getMemberBlock(commandMap.getMap());
+		List<Map<String,Object>> list_Bp = joinService.getPartnerBlock(commandMap.getMap());
 		
 		mv.setViewName("/adm/memberList");
 		mv.addObject("list_M", list_M);
 		mv.addObject("list_P", list_P);
 		mv.addObject("list_Q", list_Q);
-		mv.addObject("list_B", list_B);
+		mv.addObject("list_Bm", list_Bm);
+		mv.addObject("list_Bp", list_Bp);
 		
 		return mv;
 	}
@@ -49,11 +52,11 @@ public class AdminController
 		
 		return "redirect:/adm/getMemberList";
 	}
-	@RequestMapping(value = "/memberLimit", method = {RequestMethod.POST, RequestMethod.GET}) 
+	@RequestMapping(value = "/updateLevel", method = {RequestMethod.POST, RequestMethod.GET}) 
 	public String partnerLimit(CommandMap commandMap) throws Exception 
 	{
 		System.out.println("=====제한====== : " + commandMap.getMap());
-		joinService.memberLimit(commandMap.getMap()); 
+		joinService.updateLevel(commandMap.getMap()); 
 		
 		return "redirect:/adm/getMemberList";
 	}

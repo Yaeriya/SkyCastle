@@ -28,9 +28,14 @@ public class MemberDAO extends AbstractDAO
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Map<String, Object>> getBlockList(Map<String, Object> map) throws Exception
+	public List<Map<String, Object>> getMemberBlock(Map<String, Object> map) throws Exception
 	{
-		return (List<Map<String, Object>>) selectList("member.getBlockList", map);
+		return (List<Map<String, Object>>) selectList("member.getMemberBlock", map);
+	}
+	@SuppressWarnings("unchecked")
+	public List<Map<String, Object>> getPartnerBlock(Map<String, Object> map) throws Exception
+	{
+		return (List<Map<String, Object>>) selectList("member.getPartnerBlock", map);
 	}
 	@SuppressWarnings("unchecked")
 	public Map<String, Object> getMemberInfo(Map<String, Object> map) throws Exception
@@ -49,10 +54,11 @@ public class MemberDAO extends AbstractDAO
 		return (name == null) ? false : true;
 	}
 	
-	public void memberLimit(Map<String, Object> map) throws Exception
+	public void updateLevel(Map<String, Object> map) throws Exception
 	{
-		update("member.memberLimit", map);
+		update("member.updateLevel", map);
 	}
+	
 	
 	/* ---------- 일반회원 ---------- */
 	public void insertMember(Map<String, Object> map) throws Exception

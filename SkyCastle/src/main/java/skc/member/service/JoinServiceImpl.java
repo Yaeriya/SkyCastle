@@ -33,9 +33,14 @@ public class JoinServiceImpl implements JoinService
 		return memberDAO.getPartnerQue(map);
 	}
 	@Override
-	public List<Map<String, Object>> getBlockList(Map<String, Object> map) throws Exception
+	public List<Map<String, Object>> getMemberBlock(Map<String, Object> map) throws Exception
 	{
-		return memberDAO.getBlockList(map);
+		return memberDAO.getMemberBlock(map);
+	}
+	@Override
+	public List<Map<String, Object>> getPartnerBlock(Map<String, Object> map) throws Exception
+	{
+		return memberDAO.getPartnerBlock(map);
 	}
 	@Override
 	public Map<String, Object> getMemberInfo(Map<String, Object> map) throws Exception
@@ -48,9 +53,9 @@ public class JoinServiceImpl implements JoinService
 		memberDAO.deleteMember(map);
 	}
 	@Override
-	public void memberLimit(Map<String, Object> map) throws Exception
+	public void updateLevel(Map<String, Object> map) throws Exception
 	{
-		memberDAO.memberLimit(map);
+		memberDAO.updateLevel(map);
 	}
 	@Override
 	public boolean loginCheck(Map<String, Object> map, HttpSession session) throws Exception

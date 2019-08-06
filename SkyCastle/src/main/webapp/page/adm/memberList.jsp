@@ -46,9 +46,9 @@
 									<input type="hidden" name="Nick" value="${member.MB_NICK}"/>
 									<button>탈퇴</button>
 								</form>
-								<form action="/skc/adm/memberLimit">
+								<form action="/skc/adm/updateLevel">
 									<input type="hidden" name="Nick" value="${member.MB_NICK}">
-									<input type="hidden" name="Limit" value="2">
+									<input type="hidden" name="Level" value="2">
 									<button>제한</button>
 								</form>
 							</td>
@@ -72,6 +72,7 @@
 						<th>Name</th>
 						<th>Email</th>
 						<th>Phone</th>
+						<th>LicenceNumber</th>
 						<th>뭐라하지</th>
 					</tr>
 				</thead>
@@ -84,14 +85,15 @@
 							<td><c:out value="${member.MB_NAME}"/></td>
 							<td><c:out value="${member.MB_EMAIL}"/></td>
 							<td><c:out value="${member.MB_PHONE}"/></td>
+							<td><c:out value="${member.MB_LICEN}"/></td>
 							<td>
 								<form action="/skc/adm/deleteMember">
 									<input type="hidden" name="Nick" value="${member.MB_NICK}"/>
 									<button>탈퇴</button>
 								</form>
-								<form action="/skc/adm/memberLimit">
+								<form action="/skc/adm/updateLevel">
 									<input type="hidden" name="Nick" value="${member.MB_NICK}">
-									<input type="hidden" name="Limit" value="2">
+									<input type="hidden" name="Level" value="5">
 									<button>제한</button>
 								</form>
 							</td>
@@ -115,6 +117,7 @@
 						<th>Name</th>
 						<th>Email</th>
 						<th>Phone</th>
+						<th>LicenceNumber</th>
 						<th>뭐라하지</th>
 					</tr>
 				</thead>
@@ -127,10 +130,11 @@
 							<td><c:out value="${member.MB_NAME}"/></td>
 							<td><c:out value="${member.MB_EMAIL}"/></td>
 							<td><c:out value="${member.MB_PHONE}"/></td>
+							<td><c:out value="${member.MB_LICEN}"/></td>
 							<td>
-								<form action="/skc/adm/memberLimit">
+								<form action="/skc/adm/updateLevel">
 									<input type="hidden" name="Nick" value="${member.MB_NICK}">
-									<input type="hidden" name="Limit" value="0">
+									<input type="hidden" name="Level" value="4">
 									<button>허가</button>
 								</form>
 							</td>
@@ -143,7 +147,7 @@
 	
 	<div class="col-md-12">
 		<div class="content-panel">
-			<h4><i class="fa fa-angle-right"></i> 제한</h4>
+			<h4><i class="fa fa-angle-right"></i> 제한 회원</h4>
 			<hr>
 			<table class="table">
 				<thead>
@@ -158,7 +162,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${list_B}" var="member" varStatus="i">
+					<c:forEach items="${list_Bm}" var="member" varStatus="i">
 						<tr>
 							<td><c:out value="${member.MB_NUM}"/></td>
 							<td><c:out value="${member.MB_NICK}"/></td>
@@ -167,9 +171,50 @@
 							<td><c:out value="${member.MB_EMAIL}"/></td>
 							<td><c:out value="${member.MB_PHONE}"/></td>
 							<td>
-								<form action="/skc/adm/memberLimit">
+								<form action="/skc/adm/updateLevel">
 									<input type="hidden" name="Nick" value="${member.MB_NICK}">
-									<input type="hidden" name="Limit" value="0">
+									<input type="hidden" name="Level" value="1">
+									<button>해제</button>
+								</form>
+							</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</div><!--/content-panel -->
+	</div><!-- /col-md-12 -->
+	
+	<div class="col-md-12">
+		<div class="content-panel">
+			<h4><i class="fa fa-angle-right"></i> 제한 파트너</h4>
+			<hr>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>Nick Name</th>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Phone</th>
+						<th>LicenceNumber</th>
+						<th>뭐라하지</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach items="${list_Bp}" var="member" varStatus="i">
+						<tr>
+							<td><c:out value="${member.MB_NUM}"/></td>
+							<td><c:out value="${member.MB_NICK}"/></td>
+							<td><c:out value="${member.MB_ID}"/></td>
+							<td><c:out value="${member.MB_NAME}"/></td>
+							<td><c:out value="${member.MB_EMAIL}"/></td>
+							<td><c:out value="${member.MB_PHONE}"/></td>
+							<td><c:out value="${member.MB_LICEN}"/></td>
+							<td>
+								<form action="/skc/adm/updateLevel">
+									<input type="hidden" name="Nick" value="${member.MB_NICK}">
+									<input type="hidden" name="Level" value="4">
 									<button>해제</button>
 								</form>
 							</td>
