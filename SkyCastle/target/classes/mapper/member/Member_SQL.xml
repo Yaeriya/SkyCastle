@@ -3,32 +3,38 @@
 <mapper namespace="member">
 	<select id="getMemberInfo" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN, MB_LIMIT, MB_LEVEL FROM
+			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN, MB_LEVEL FROM
 			MEMBER WHERE MB_ID LIKE #{Id}
 		]]>
 	</select>
 	<select id="getMemberList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LIMIT, MB_LEVEL FROM
-			MEMBER WHERE MB_LEVEL = 1 AND MB_LIMIT = 0 ORDER BY MB_NUM DESC
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL FROM
+			MEMBER WHERE MB_LEVEL = 1 ORDER BY MB_NUM DESC
 		]]>
 	</select>
-	<select id="getPartnerList" parameterType="hashmap" resultType="hashmap">
+	<select id="getMemberBlock" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LIMIT, MB_LEVEL FROM
-			MEMBER WHERE MB_LEVEL = 2 AND MB_LIMIT = 0 ORDER BY MB_NUM DESC
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL FROM
+			MEMBER WHERE MB_LEVEL = 2 ORDER BY MB_NUM DESC
 		]]>
 	</select>
 	<select id="getPartnerQue" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LIMIT, MB_LEVEL FROM
-			MEMBER WHERE MB_LIMIT = 1 ORDER BY MB_NUM DESC
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL, MB_LICEN FROM
+			MEMBER WHERE MB_LEVEL = 3 ORDER BY MB_NUM ASC
 		]]>
 	</select>
-	<select id="getBlockList" parameterType="hashmap" resultType="hashmap">
+	<select id="getPartnerList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LIMIT, MB_LEVEL FROM
-			MEMBER WHERE MB_LIMIT = 2 ORDER BY MB_NUM DESC
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL, MB_LICEN FROM
+			MEMBER WHERE MB_LEVEL = 4 ORDER BY MB_NUM DESC
+		]]>
+	</select>
+	<select id="getPartnerBlock" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[ 
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL, MB_LICEN FROM
+			MEMBER WHERE MB_LEVEL = 5 ORDER BY MB_NUM DESC
 		]]>
 	</select>
 	<insert id="insertMember" parameterType="hashmap">
@@ -37,10 +43,16 @@
 			VALUES (MB_SEQ.nextval, #{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone})
 	]]>
 	</insert>
+	<insert id="insertMember_P" parameterType="hashmap">
+	<![CDATA[
+			INSERT INTO MEMBER (MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LICEN)
+			VALUES (MB_SEQ.nextval, #{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone}, #{Licen})
+	]]>
+	</insert>
 	<update id="updateMember" parameterType="hashmap">
 	<![CDATA[ 
 			UPDATE MEMBER SET MB_NICK = #{Nick}, MB_ID = #{Id}, MB_PW = #{Pwd}, MB_NAME = #{Name}, 
-			MB_EMAIL = #{Email}, MB_PHONE = #{Phone} WHERE MB_NICK = #{Nick}
+			MB_EMAIL = #{Email}, MB_PHONE = #{Phone}, MB_LICEN = #{Licen} WHERE MB_NICK = #{Nick}
 	]]>
 	</update>
 	<delete id="deleteMember" parameterType="hashmap">
@@ -49,9 +61,9 @@
 			WHERE MB_NICK = #{Nick}
 		]]>
 	</delete>
-	<update id="memberLimit" parameterType="hashmap">
+	<update id="updateLevel" parameterType="hashmap">
 		<![CDATA[
-			UPDATE MEMBER SET MB_LIMIT = #{Limit} WHERE MB_NICK = #{Nick}
+			UPDATE MEMBER SET MB_LEVEL = #{Level} WHERE MB_NICK = #{Nick}
 		]]>
 	</update>
 	<select id="loginCheck" parameterType="Hashmap" resultType="String">
