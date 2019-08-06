@@ -16,29 +16,25 @@ public class DetailServiceImpl implements DetailService
 	@Resource(name="detailDAO")
 	private DetailDAO detailDAO;
 	
+	/*
+	 * @Override public List<Map<String, Object>> getDetailList(CommandMap
+	 * commandMap) throws Exception { return detailDAO.getDetailList(commandMap); }
+	 */
 	@Override
-	public List<Map<String, Object>> getDetailList(CommandMap commandMap) throws Exception
+	public List<Map<String, Object>> selectDetail(Map<String, Object> map) throws Exception
 	{
-		return detailDAO.getDetailList(commandMap);
-	}
-	@Override
-	public List<Map<String, Object>> getDetailInfo(Map<String, Object> map) throws Exception
-	{
-		return detailDAO.getDetailInfo(map);
+		return detailDAO.selectDetail(map);
 	}
 	@Override
 	public void insertDetail(Map<String, Object> map) throws Exception
 	{
 		detailDAO.insertDetail(map);
 	}
-	@Override
-	public void updateDetail(Map<String, Object> map) throws Exception
-	{
-		detailDAO.updateDetail(map);
-	}
-	@Override
-	public void deleteDetail(Map<String, Object> map) throws Exception
-	{
-		detailDAO.deleteDetail(map);
-	}
+	/*
+	 * @Override public void updateDetail(Map<String, Object> map) throws Exception
+	 * { detailDAO.updateDetail(map); }
+	 * 
+	 * @Override public void deleteDetail(Map<String, Object> map) throws Exception
+	 * { detailDAO.deleteDetail(map); }
+	 */
 }

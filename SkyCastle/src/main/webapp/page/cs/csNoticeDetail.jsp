@@ -2,6 +2,15 @@
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
+<%@ include file="/WEB-INF/include/include-body.jspf" %>
+<script type="text/javascript" src="/skc/js/jquery.min.js"></script>
+<script src="/skc/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
+<script src="/skc/js/bootsnav.js"></script>
+<script src="/skc/js/main.js"></script>
+<script src="/skc/js/detail.js"></script>
+<script src="/skc/js/common.js"></script>
+<script src="/skc/js/cscenter.js"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <title>Jober Desk | Responsive Job Portal Template</title>
@@ -46,51 +55,82 @@
 		</section>
       
       <table class="table" >
-         <thead>
-         <tr>
-            <th width=70>13234</th>
-            <th width=90>[공지사항]</th>
-            <th>CUPS</th>
-            <th width=100>2019.07.19</th>
-         </tr>
-         </thead>
+      
          <tbody>
          <tr>
-         	<td></td>
-         	<td colspan=3>
-         		I got my ticket for the long way 'round<br>
-         		Two bottle 'a whiskey for the way<br>
-         		And I sure would like some sweet company<br>
-         		And I'm leaving tomorrow, wha-do-ya say?<br>
-         		When I'm gone<br>
-         		When I'm gone<br>
-         		You're gonna miss me when I'm gone<br>
-         		You're gonna miss me by my hair<br>
-         		You're gonna miss me everywhere, oh<br>
-         		You're gonna miss me when I'm gone<br>
-         		I've got my ticket for the long way 'round<br>
-         		The one with the prettiest of views<br>
-         		It's got mountains, it's got rivers, it's got sights to give you shivers<br>
-         		But it sure would be prettier with you<br>
-         		When I'm gone<br>
-         		When I'm gone<br>
-         		You're gonna miss me when I'm gone<br>
-         		You're gonna miss me by my walk<br>
-         		You're gonna miss me by my talk, oh<br>
-         		You're gonna miss me when I'm gone<br>
-         	</td>
+            <th scope="row">글 번호</th>
+			<td>${map.NOTICE_NUM}</td>
+            <th scope="row">작성자</th>
+			<td>${map.ADMIN_ID}</td>
          </tr>
          <tr>
-         	<td colspan=4>
-         		<input type="button" value="뒤로가기" align=left onclick="history.back(-1);">
-         	</td>
+         <th scope="row">작성시간</th>
+		 <td>${map.NOTICE_DATE }</td>
+		 <th scope="row">제목</th>
+		 <td>${map.NOTICE_TITLE}</td>
+         </tr>
+         <tr>
+			 <td>
+		     ${map.NOTICE_BODY }
+		    </td>
+							<td></td>
+						</tr>
+        <tr>
+        <td>
+         
+		<div class="btn_type_03">
+			<a href="/skc/cs/cs" class="btn btnC_03 btnP_04 mr10" id="list"> 
+			<span>목록으로</span>
+			</a> 
+			<a href="" class="btn btnC_03 btnP_04 mr10" id="list"> 
+			<span>수정하기</span>
+			</a> 
+			
+			<form action="/skc/cs/deleteNotice">
+			<input type="hidden" name="NOTICE_NUM" value="${map.NOTICE_NUM}"/>
+			<button>삭제하기</button>
+			</form>
+		</div>
+		</td>
          </tr>
          </tbody>   
       </table>
+      
 	</div>
 </div>
 
+	
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$(document).ready(function(){ 
+		$("#list").on("click", function(e){ //목록으로 버튼
+		e.preventDefault(); 
+		fn_csNoticleList(); 
+	}); 
+		$("#update").on("click", function(e){ //수정하기 버튼 
+		e.preventDefault(); fn_updateNotice(); 
+	}); 
+		$("#delete").on("click", function(e){ //삭제하기 버튼
+		e.preventDefault();
+	fn_deleteNotice();
+	});
+})
+	
+	
+	function fn_updateNotice(){
+	var comSubmit = new ComSubmit("frm"); 
+	comSubmit.setUrl("<c:url value='/cs/updateNotice' />");
+	comSubmit.submit();
+	} 
+	function fn_deleteNotice(){ 
+	var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/cs/deleteNotice' />"); 
+	comSubmit.addParam("NOTICE_NUM", $("#NOTICE_NUM").val()); 
+	comSubmit.submit(); 
+	}
+	</script> 
+	
 <jsp:include page="../side/footer.jsp" flush="false"/>
-<script src="/skc/js/cscenter.js"></script>
+
 </body>
 </html>

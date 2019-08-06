@@ -1,5 +1,198 @@
-#byebye {
-	padding: 0 !important;
+.mpg-content-1 {
+	padding-top: 50px !important;
+}
+
+.mpg-content-2 {
+	float: right !important;
+	padding-top: 50px !important;
+}
+
+.left-bar {
+	padding-top: 50px !important;
+}
+
+.left-menu {
+	list-style: none;
+}
+
+.content {
+	padding: 0 15px 50px;
+	background: white;
+	border: 1px solid #d9d3c8;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+h4 {
+	margin: 30px 0 10px;
+	font-size: 16px;
+	color: #333333;
+	font-weight: 700;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	table-layout: fixed;
+}
+
+.add-table {
+	border-top: 2px solid #333333;
+	border-bottom: 1px solid #999999;
+	color: #333333;
+	font-size: 13px;
+}
+
+.add-table th {
+	width: 91px;
+	background: #f7f6f4;
+	border-bottom: 1px dotted #bbbbbb;
+	font-weight: 700;
+}
+
+.add-table td {
+	padding: 7px 10px;
+	border-bottom: 1px dotted #bbbbbb;
+}
+
+.add-table td .btn-locatino-check {
+	padding: 2px 10px 4px;
+	border: 1px solid gray;
+	border-radius: 5px;
+	box-shadow: 0 -1px 0 #b6b6b6 inset;
+	font-size: 12px;
+}
+
+.add-table td .btn-locatino-check * {
+	vertical-align: middle;
+}
+
+.i-txt {
+	font-size: 12px;
+	color: #666666;
+}
+
+.add-photo {
+	border-top: 2px solid #333333;
+	color: #333333;
+}
+
+.add-photo .item-txt {
+	margin-bottom: 15px;
+	border-bottom: 1px solid #999999;
+	padding: 10px 20px;
+	line-height: 1.8em;
+	color: #666666;
+}
+
+.add-photo .item-photo {
+	width: 100%;
+	height: 300px;
+	overflow: hidden;
+}
+
+.add-photo .item-photo li {
+	position: relative;
+	float: left;
+	width: 108px;
+	height: 81px;
+	margin-right: 13px;
+	margin-bottom: 11px;
+	border: 1px solid #dddddd;
+	overflow: hidden;
+	box-sizing: border-box;
+	text-align: center;
+	background: #f7f6f4;
+}
+
+.add-photo .item-photo li .i-count {
+	position: absolute;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 24px;
+	height: 36px;
+	padding: 0 12px 0 0;
+	background: url(//s.zigbang.com/v1/web/rooms/bg_count.png) no-repeat 0 0;
+	z-index: 1;
+	color: #999999;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+.add-photo .item-photo li .i-btn {
+	position: absolute;
+	top: 28px;
+	left: 33px;
+	padding: 4px 5px 5px;
+	background: white;
+	border: 1px solid #666666;
+	box-shadow: 0 -1px 0 #b6b6b6 inset;
+	border-radius: 5px;
+}
+
+.add-photo .item-photo li .i-tit {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 5px;
+	text-align: center;
+}
+
+.add-container .add-btn {
+	width: 630px;
+	float: left;
+}
+
+.add-container .add-btn .item-caution {
+	position: relative;
+	padding: 13px 15px 10px 75px;
+	margin-bottom: 30px;
+	border: 1px solid #ec5848;
+	font-size: 12px;
+	color: #ec5848;
+}
+
+.add-container .add-btn .item-caution h5 {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	width: 60px;
+	padding-top: 20px;
+	background: #ec5848;
+	color: white;
+	font-size: 17px;
+	text-align: center;
+}
+
+.add-container .add-btn .item-caution em {
+	text-decoration: underline;
+}
+
+.add-container .add-btn button {
+	display: block;
+	width: 260px;
+	height: 46px;
+	margin: 0 auto;
+	background: #f18113;
+	color: white;
+	font-size: 20px;
+	border-radius: 8px;
+}
+
+.btn.btn-orange {
+	height: 44px;
+	padding: 0 40px;
+	line-height: 44px;
+	border: 1px solid #f18113;
+	border-radius: 5px;
+	text-align: center;
+	font-size: 18px;
+	color: white;
+	background: #f18113;
 }
 
 * {
@@ -7,20 +200,6 @@
 	padding: 0;
 	list-style: none;
 	border: none;
-}
-
-.right_body {
-	width: 795px;
-	overflow: hidden;
-}
-
-.area {
-	background-color: #f9f9f9;
-	border: 1px solid #eee;
-	border-radius: 4px 4px 4px 4px;
-	margin-bottom: 20px;
-	padding: 15px 35px 15px 14px;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
 .form-horizontal .controls {
@@ -104,8 +283,6 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 
 /* 탭메뉴 */
 .tab {
-	width: 795px;
-	height: 50px;
 }
 
 .tablinks {
@@ -126,58 +303,51 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 }
 
 /* 쿠폰th */
-#whole .tabcontent .q1 {
-	width: 120px;
+.tabcontent .q1 {
 	height: 43px;
 	line-height: 43px;
 	border-bottom: 2px solid #666c75;
 	border-top: 2px solid #666c75;
 }
 
-#whole .tabcontent .q2 {
-	width: 310px;
+.tabcontent .q2 {
 	line-height: 43px;
 	border-bottom: 2px solid #666c75;
 	border-top: 2px solid #666c75;
 }
 
-#whole .tabcontent .q3 {
+.tabcontent .q3 {
 	line-height: 43px;
-	width: 150px;
 	border-bottom: 2px solid #666c75;
 	border-top: 2px solid #666c75;
 }
 
-#whole .tabcontent .q4 {
+.tabcontent .q4 {
 	line-height: 43px;
-	width: 110px;
 	border-bottom: 2px solid #666c75;
 	border-top: 2px solid #666c75;
 }
 
-#whole .tabcontent .q9 {
+.tabcontent .q9 {
 	line-height: 43px;
-	width: 120px;
 	border-bottom: 2px solid #666c75;
 	border-top: 2px solid #666c75;
 }
 
-#whole .tabcontent .q10 {
+.tabcontent .q10 {
 	line-height: 43px;
-	width: 120px;
 	border-bottom: 2px solid #666c75;
 	border-top: 2px solid #666c75;
 }
 
-#whole .tabcontent .r5 {
+.tabcontent .r5 {
 	text-align: Center;
-	color: #333;
 	font-size: 13px;
 	height: 58px;
 	border-bottom: 1px solid #d4d4d4
 }
 
-#whole .tabcontent .r6 {
+.tabcontent .r6 {
 	font-size: 15px;
 	color: #2d2d2d;
 	border-bottom: 1px solid #d4d4d4;
@@ -185,48 +355,48 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	line-height: 20px;
 }
 
-#whole .tabcontent .r6 span {
+.tabcontent .r6 span {
 	color: #666;
 	font-size: 13px;
 	letter-spacing: -0.025em
 }
 
-#whole .tabcontent .r7 {
+.tabcontent .r7 {
 	text-align: center;
 	color: #333333;
 	font-size: 13px;
 	border-bottom: 1px solid #d4d4d4
 }
 
-#whole .tabcontent .r8 {
+.tabcontent .r8 {
 	text-align: center;
 	color: #333333;
 	font-size: 13px;
 	border-bottom: 1px solid #d4d4d4
 }
 
-#whole .tabcontent .r9 {
+.tabcontent .r9 {
 	border-bottom: 1px solid #d4d4d4;
 	text-align: center;
 	font-size: 13px;
 }
 
-#whole .tabcontent .r10 {
+.tabcontent .r10 {
 	border-bottom: 1px solid #d4d4d4;
 	text-align: center;
 	font-size: 13px;
 }
 
-#whole .tabcontent .r10 span {
+.tabcontent .r10 span {
 	color: #666
 }
 
-#whole .tabcontent .r10 button {
+.tabcontent .r10 button {
 	padding: 7px 8px;
 	border-radius: 3px;
 }
 
-#whole .tabcontent .r11 {
+.tabcontent .r11 {
 	font-weight: 500
 }
 
@@ -331,8 +501,6 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 
 #contenttop {
 	float: right;
-	font-size: 11px;
-	margin-top: 7px;
 }
 
 #contenttop .a1 {
@@ -345,27 +513,24 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 }
 
 /* qnaList */
-#whole #qnalist {
-	width: 795px;
+#qnalist {
 }
 
-#whole #qnalist .k1 {
+#qnalist .k1 {
 	font-size: 23px;
 	font-weight: bold;
 	margin-bottom: 22px;
-	width: 660px;
 	color: #292929
 }
 
-#whole #qnalist .p2 {
+#qnalist .p2 {
 	font-size: 13px;
 	margin-bottom: 41px;
 	color: #666;
 	margin-left: 15px;
 }
 
-#whole #qnalist .r1 {
-	width: 80px;
+#qnalist .r1 {
 	height: 43px;
 	border-top: 2px solid #4e4e4e;
 	border-bottom: 2px solid #4e4e4e;
@@ -373,7 +538,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	text-align: center;
 }
 
-#whole #qnalist .r2 {
+#qnalist .r2 {
 	height: 43px;
 	border-top: 2px solid #4e4e4e;
 	border-bottom: 2px solid #4e4e4e;
@@ -381,8 +546,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	text-align: center;
 }
 
-#whole #qnalist .r3 {
-	width: 140px;
+#qnalist .r3 {
 	height: 43px;
 	border-top: 2px solid #4e4e4e;
 	border-bottom: 2px solid #4e4e4e;
@@ -390,8 +554,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	text-align: center;
 }
 
-#whole #qnalist .r4 {
-	width: 140px;
+#qnalist .r4 {
 	height: 43px;
 	border-top: 2px solid #4e4e4e;
 	border-bottom: 2px solid #4e4e4e;
@@ -399,12 +562,11 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	text-align: center;
 }
 
-#whole #qnalist .ref4 {
+#qnalist .ref4 {
 	border-spacing: 0px;
-	width: 795px;
 }
 
-#whole #qnalist .r5 {
+#qnalist .r5 {
 	height: 38px;
 	font-size: 13px;
 	text-align: Center;
@@ -412,7 +574,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	border-bottom: 1px solid #d4d4d4
 }
 
-#whole #qnalist .r6 {
+#qnalist .r6 {
 	font-size: 13px;
 	text-align: left;
 	color: #666;
@@ -421,11 +583,11 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	cursor: pointer;
 }
 
-#whole #qnalist .r6 a {
+#qnalist .r6 a {
 	color: #666
 }
 
-#whole #qnalist .r7 {
+#qnalist .r7 {
 	font-size: 13px;
 	text-align: center;
 	color: #666;
@@ -434,7 +596,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	line-height: 38px;
 }
 
-#whole #qnalist .r8 {
+#qnalist .r8 {
 	font-size: 13px;
 	text-align: center;
 	color: #666;
@@ -443,23 +605,23 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	line-height: 38px;
 }
 
-#whole #qnalist .reon {
+#qnalist .reon {
 	background-color: #f2f2f2;
 }
 
-#whole #qnalist .r6 span {
+#qnalist .r6 span {
 	color: #6352ba
 }
 
-#whole #qnalist .tdbg {
+#qnalist .tdbg {
 	background-color: #f2f2f2;
 }
 
-#whole #qnalist .reon {
+#qnalist .reon {
 	background-color: #f2f2f2;
 }
 
-#whole #qnalist .qna {
+#qnalist .qna {
 	width: 760px;
 	height: 26px;
 	padding-left: 15px;
@@ -470,19 +632,19 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	margin: 33px 0 0 16px
 }
 
-#whole #qnalist .qna2 {
+#qnalist .qna2 {
 	font-size: 13px;
 	color: #666;
 	margin: 16px 0 29px 55px;
 }
 
-#whole #qnalist .qna3 {
+#qnalist .qna3 {
 	font-size: 13px;
 	color: #666;
 	margin: 16px 0 10px 55px;
 }
 
-#whole #qnalist .qnabox {
+#qnalist .qnabox {
 	float: right;
 	margin-top: 15px;
 	width: 155px;
@@ -495,11 +657,11 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	font-size: 14px;
 }
 
-#whole #qnalist .qnabox a {
-	color: #fc783e; /* padding: 12px 30px 12px 30px*/
+#qnalist .qnabox a {
+	color: #fc783e;
 }
 
-#whole #qnalist .n6 a {
+#qnalist .n6 a {
 	text-align: Center;
 	color: #fff;
 	font-size: 13px;
@@ -508,7 +670,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	line-height: 20px;
 }
 
-#whole #qnalist .n6 {
+#qnalist .n6 {
 	width: 60px;
 	height: 20px;
 	float: left;
@@ -516,7 +678,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 	background-color: #46484f;
 }
 
-#whole #qnalist .n7 {
+#qnalist .n7 {
 	width: 80px;
 	height: 20px;
 	float: right;
@@ -531,7 +693,6 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 #gbye #goodbye {
 	width: 446px;
 	margin: 0 auto;
-	padding: 25px 0 0 0;
 }
 
 #gbye #goodbye .login_t1 {
@@ -720,12 +881,11 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 }
 
 .my_write {
-	width: 795px;
 }
 
 .my_write .list_style_table {
 	margin-top: 7px;
-	width: 795px;
+	width: 100%;
 }
 
 .my_write .table_msg {
@@ -735,7 +895,6 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 }
 
 .list_style_table {
-	width: 769px;
 }
 
 .list_style_table table {
@@ -930,24 +1089,20 @@ td.search-input input[type=submit], .search-input input[type=submit] {
 	height: 19px;
 }
 
-/* 쿠폰리스트(파트너) */
-/* .cartTable td.btnBox a {font-size:12px; font-weight:bold; padding:7px 8px; border-radius:3px;}
-.cartTable td.btnBox a:first-child {color:#000; background:#c6d9e4; margin-right:4px;}
-.cartTable td.btnBox a:last-child {font-weight:normal; background:#e1e1e1; color:#666666;} */
-#whole #qnalist .r8 a {
+#qnalist .r8 a {
 	font-size: 12px;
 	font-weight: bold;
 	padding: 7px 8px;
 	border-radius: 3px;
 }
 
-#whole #qnalist .r8 a:first-child {
+#qnalist .r8 a:first-child {
 	color: #000;
 	background: #c6d9e4;
 	margin-right: 4px;
 }
 
-#whole #qnalist .r8 a:last-child {
+#qnalist .r8 a:last-child {
 	font-weight: normal;
 	background: #e1e1e1;
 	color: #666666;

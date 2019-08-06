@@ -14,11 +14,13 @@
 <link rel="stylesheet" href="/skc/css/detail.css">
 </head>
 <body>
+
 	<jsp:include page="../side/header.jsp" flush="false" />
+	
 	<div class="wrap">
 
 		<div class="centerMasterHead">
-			<div class="centerMasterHead_bg_blur"
+<!-- D_IMG_00 --><div class="centerMasterHead_bg_blur"  
 				style="background: #888 url(https://s3-ap-northeast-2.amazonaws.com/tlx.production/3ZfQxwVL76ELrUkeosxJLXCkEA9TsdYmXpeXIObBe0su9mHOCX7tZI3auvdYdcFk_1980) no-repeat fixed center center; background-size: cover;">
 			</div>
 
@@ -31,18 +33,24 @@
 							<div>
 								<h3>
 									<small class="centerNameLabel">SKY CASTLE 제휴시설</small> <strong>
-										<span class="cnText">고양이 음악학원 <span class="branch">서초교대점</span></span>
+<!-- MB_NICK -->                    <span class="cnText"> ${MB_NICK} <span class="branch">서초교대점</span></span>
 									</strong>
 								</h3>
 
-								<address>서울 서초구 서초대로51길 28 (서초동, 진성빌딩) 진성빌딩 4층</address>
-								0507-1662-3635
+<!-- DTL_ADDR -->				<address> ${DTL_ADDR} </address>
+<!-- DTL_PHONE -->				${DTL_PHONE}
+								
+
 
 								<div class="btn_centerFavorite">
 									<button class="btn btn_favorite off"
 										onclick="location.href='/member/login?next=/center/detail/fc02166'">
 										<i class="fa fa-heart-o"></i><em class="aq">413</em>
 									</button>
+									
+									
+<!-- DTL_SUMM -->					<br>${DTL_SUMM}
+
 									<span class="favoriteAlertMsg"></span>
 								</div>
 							</div>
@@ -66,8 +74,7 @@
 
 												<div class="usePASSListWrap">
 													<span class="events type7"> <span class="itemWrap">
-															<span class="item"> <i class="circle"></i> 냥충이
-																음악학원
+<!-- MB_NICK -->									<span class="item"> <i class="circle"></i> ${MB_NICK}
 														</span>
 													</span>
 													</span>
@@ -82,7 +89,7 @@
 										<div class="csVoiceWrap" id="reviews">
 											<div class="row customerSatisfactionIndex">
 												<h6 class="col-sm-2">
-													회원 리뷰 <a href="#" class="btnOpenTipBox"><i
+<!-- DTL_SCORE -->								회원 리뷰 <a href="#" class="btnOpenTipBox"><i
 														class="fa fa-question-circle"></i></a>
 												</h6>
 												<div class="col-sm-10">
@@ -453,23 +460,23 @@
 									</div>
 
 									<div class="col-lg-4 col-lg-offset-1 col-md-5">
-										<h6>제휴시설 대표번호</h6>
+   				                    	<h6>제휴시설 대표번호</h6>
 										<div class="blogReviews">
 											<ul>
-												<li><strong>010-0000-0000</strong></li>
+<!-- DTL_PHONE -->	   		                <li><strong>${DTL_PHONE}</strong></li>
 											</ul>
 										</div>
 
 										<h6>제휴시설 홈페이지</h6>
 										<div class="blogReviews">
 											<ul>
-												<li><a href="http://blog.naver.com/studiojfit3"
+<!-- DTL_URL -->								<li><a href="${DTL_URL}"
 													target="_blank"> <i class="fa fa-file-text-o"></i> <strong>고양이
 															뮤직 스쿨 서초교대점 블로그</strong>
 												</a></li>
 											</ul>
 										</div>
-										<h6>제휴시설 미리보기</h6>
+<!-- D_IMG_01 -> 12까지 -->				<h6>제휴시설 미리보기</h6>
 										<div class="centerGallery">
 											<div class="row" id="lightgallery">
 												<div class="col-xs-4 col-sm-3 col-md-4" id="img_1">

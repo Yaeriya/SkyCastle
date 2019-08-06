@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -32,20 +35,49 @@
 			<div class="collapse navbar-collapse" id="navbar-menu">
 				<ul class="nav navbar-nav navbar-right" data-in="fadeInDown"
 					data-out="fadeOutUp">
-					<li><a href="../main/index">홈</a></li>
-					<li><a href="../main/login">로그인</a></li>
+					<li><c:choose>
+							<c:when test="${sessionScope.loginInfo != null}">
+								<a id="btnLogout">로그아웃</a>
+								<%-- <a>${sessionScope.userNick}(${sessionScope.userId})님 환영합니다.</a> --%>
+							</c:when>
+							<c:otherwise>
+								<a href="../main/login">로그인</a>
+							</c:otherwise>
+						</c:choose></li>
+					<li><c:choose>
+							<c:when test="${sessionScope.userLevel == 1}">
+								<a href="../mypage/mypage_N">마이페이지</a>
+							</c:when>
+							<c:when test="${sessionScope.userLevel == 4}">
+								<a href="../mypage/mypage_P">마이페이지</a>
+							</c:when>
+							<c:otherwise>
+								<a class="hidden"></a>
+							</c:otherwise>
+
+						</c:choose></li>
 					<li><a href="../main/mapview">지도보기</a></li>
-					<li><a href="../main/event">이벤트</a></li>
+
+					<li><c:choose>
+							<c:when
+								test="${sessionScope.userLevel == 1 || sessionScope.userLevel == 6}">
+								<a href="../main/event">쿠폰발급</a>
+							</c:when>
+							<c:otherwise>
+								<a class="event_limit">쿠폰발급</a>
+							</c:otherwise>
+						</c:choose></li>
+
 					<li class="dropdown"><a href="#" class="dropdown-toggle"
 						data-toggle="dropdown">커뮤니티</a>
 						<ul class="dropdown-menu animated fadeOutUp"
 							style="display: none; opacity: 1;">
-							<li class="active"><a href="../main/board.jsp">자유 게시판</a></li>
-							<li><a href="../main/board.jsp">학부모 게시판</a></li>
-							<li><a href="../main/board.jsp">학생 게시판</a></li>
-							<li><a href="../main/board.jsp">학원 홍보 게시판</a></li>
+							<li class="active"><a href="../main/board">자유 게시판</a></li>
+							<li><a href="../main/board">학부모 게시판</a></li>
+							<li><a href="../main/board">학생 게시판</a></li>
+							<li><a href="../main/board">학원 홍보 게시판</a></li>
 						</ul></li>
-					<li><a href="../main/cs.jsp">고객센터</a></li>
+					<li><a href="../cs/cs">고객센터</a></li>
 				</ul>
 			</div>
 		</div>
@@ -84,26 +116,27 @@
 		</div>
 		<div id="map" class="right"></div>
 	</div>
-	
-	
-	
+
+
+
 
 	<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-		    mapOption = {
-		        center: new kakao.maps.LatLng(37.56682, 126.97865), // 지도의 중심좌표
-		        level: 3, // 지도의 확대 레벨
-		        mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
-		    }; 
+		mapOption = {
+			center : new kakao.maps.LatLng(37.56682, 126.97865), // 지도의 중심좌표
+			level : 3, // 지도의 확대 레벨
+			mapTypeId : kakao.maps.MapTypeId.ROADMAP
+		// 지도종류
+		};
 
 		// 지도를 생성한다 
-		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		var map = new kakao.maps.Map(mapContainer, mapOption);
 
 		// 지도 타입 변경 컨트롤을 생성한다
 		var mapTypeControl = new kakao.maps.MapTypeControl();
 
 		// 지도의 상단 우측에 지도 타입 변경 컨트롤을 추가한다
-		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);	
+		map.addControl(mapTypeControl, kakao.maps.ControlPosition.TOPRIGHT);
 
 		// 지도에 확대 축소 컨트롤을 생성한다
 		var zoomControl = new kakao.maps.ZoomControl();
@@ -112,10 +145,9 @@
 		map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 		// 지도 확대 레벨 변화 이벤트를 등록한다
-		kakao.maps.event.addListener(map, 'zoom_changed', function () {
-			console.log('지도의 현재 확대레벨은 ' + map.getLevel() +'레벨 입니다.');
+		kakao.maps.event.addListener(map, 'zoom_changed', function() {
+			console.log('지도의 현재 확대레벨은 ' + map.getLevel() + '레벨 입니다.');
 		});
-
 	</script>
 </body>
 </html>

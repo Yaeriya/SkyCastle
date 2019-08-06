@@ -63,7 +63,7 @@
 					</tr>
 					<tr class="hidden">
 						<td id="title">레벨</td>
-						<td><input type="text" id="uLevel" name="Level" value="2" /></td>
+						<td><input type="text" id="uLevel" name="Level" value="3" /></td>
 					</tr>
 					<tr class="hidden">
 						<td id="title">승인</td>

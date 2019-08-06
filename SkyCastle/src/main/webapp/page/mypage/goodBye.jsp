@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<!doctype html>
 <html class="no-js" lang="en">
 <head>
 <meta charset="utf-8">
@@ -10,52 +14,90 @@
 <link rel="stylesheet" href="/skc/css/mypage.css">
 </head>
 <body>
-
 	<jsp:include page="../side/header.jsp" flush="false" />
-	<section class="newsletter" id="byebye">
-		<div class="container">
-			<div class="row">
+
+	<div class="container">
+		<div class="row">
+
+			<section class="left-bar col-md-2">
+				<div>
+					<ul class="letf-menu">
+						<li><c:choose>
+								<c:when test="${sessionScope.userLevel == 4}">
+									<a href="mypage_P">정보수정</a>
+								</c:when>
+								<c:otherwise>
+									<a href="mypage_N">정보수정</a>
+								</c:otherwise>
+							</c:choose></li>
+						<li><c:choose>
+								<c:when test="${sessionScope.userLevel == 4}">
+									<a href="infoAcademy">학원관리</a>
+								</c:when>
+								<c:otherwise>
+									<a class="hidden"></a>
+								</c:otherwise>
+							</c:choose></li>
+						<li><a href="history">내 글 관리</a></li>
+						<li><c:choose>
+								<c:when test="${sessionScope.userLevel == 4}">
+									<a href="couponList_P">쿠폰내역</a>
+								</c:when>
+								<c:otherwise>
+									<a href="couponList_N">쿠폰관리</a>
+								</c:otherwise>
+							</c:choose></li>
+						<li><c:choose>
+								<c:when test="${sessionScope.userLevel == 1}">
+									<a href="wishList">즐겨찾기</a>
+								</c:when>
+								<c:otherwise>
+									<a class="hidden"></a>
+								</c:otherwise>
+							</c:choose></li>
+						<li><a href="qnaList">1:1 문의내역</a></li>
+						<li><a href="goodBye">회원탈퇴</a></li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="mpg-content-1 col-md-10">
 				<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
-						<div id="gbye">
-							<div id="goodbye">
-								<p class="login_t1">
-									<img src="/skc/img/gbye.jpg" />
+					<div id="gbye">
+						<div id="goodbye">
+							<div id="loginBox">
+								<p class="t1">비밀번호 재확인</p>
+								<p class="t2">
+									회원탈퇴를 신청하기 전에 비밀번호를 <br />다시 한 번 입력해주시기 바랍니다!
 								</p>
-								<div id="loginBox">
-									<p class="t1">비밀번호 재확인</p>
-									<p class="t2">
-										회원탈퇴를 신청하기 전에 비밀번호를 <br />다시 한 번 입력해주시기 바랍니다!
-									</p>
-									<form id="fmConfirm" name="fmConfirm"
-										action="member_pw_confirm_action.asp" class="__forceUseHttps"
-										method="post" onsubmit="return validateFormElement(this);">
-										<div id="loginform">
-											<ul>
-												<li class="inputPw"><input type="password"
-													name="user_pw" placeholder="비밀번호" fieldName="비밀번호"
-													class=" __required" /></li>
-											</ul>
-										</div>
-									</form>
-									<div id="memberIPserc">
-										<span>비밀번호를 잊으셨나요?</span>
-										<div style="float: right;">
-											<a href="../join/findInfo.jsp">비밀번호 찾기</a>
-										</div>
+								<form id="fmConfirm" name="fmConfirm"
+									action="member_pw_confirm_action.asp" class="__forceUseHttps"
+									method="post" onsubmit="return validateFormElement(this);">
+									<div id="loginform">
+										<ul>
+											<li class="inputPw"><input type="password"
+												name="user_pw" placeholder="비밀번호" class=" __required" /></li>
+										</ul>
+									</div>
+								</form>
+								<div id="memberIPserc">
+									<span>비밀번호를 잊으셨나요?</span>
+									<div style="float: right;">
+										<a href="../join/findInfo.jsp">비밀번호 찾기</a>
 									</div>
 								</div>
-								<p class="btn">
-									<!-- a class="t1">취소</a -->
-									<a href="javascript:;" class="t2" onclick="alert('탈퇴되었습니다.');">확인</a>
-								</p>
 							</div>
+							<p class="btn">
+								<a href="javascript:;" class="t2" onclick="alert('탈퇴되었습니다.');">확인</a>
+							</p>
 						</div>
 					</div>
 				</div>
-			</div>
-	</section>
-
-	<jsp:include page="../side/footer.jsp" flush="false" />
+			</section>
+			
+		</div>
+	</div>
+	
 	<script src="/skc/js/mypage.js"></script>
 </body>
 </html>

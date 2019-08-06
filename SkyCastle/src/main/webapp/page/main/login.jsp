@@ -22,11 +22,6 @@
 
 <div id="login-main">
 
-		<br>
-		<br> <br>
-		<br> <br>
-		<br> <br>
-		<br>
 		<section class="login-wrapper">
 			<div class="container">
 				<div class="col-md-6 col-sm-8 col-md-offset-3 col-sm-offset-2">
@@ -46,14 +41,7 @@
 			</div>
 		</section>
 
-		<br>
-		<br> <br>
-		<br> <br>
-		<br>
-
 </div>
-<!-- login section End -->
-
 <jsp:include page="../side/footer.jsp" flush="false"/>
 </body>
 </html>

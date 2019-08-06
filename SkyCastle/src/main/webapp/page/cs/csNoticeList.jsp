@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="/skc/css/common.css">
 <link rel="stylesheet" href="/skc/css/main.css">
 <link rel="stylesheet" href="/skc/ss/cscenter.css">
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 </head>
 <body>
 
@@ -23,75 +25,31 @@
 <table class="table">
          <thead>
          <tr>
-            <th>no</th>
-            <th>title</th>
-            <th>writer</th>
-            <th>date</th>
-            <th>hitcount</th>
+           <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+            <th>날짜</th>
          </tr>
          </thead>
          <tbody>
-         <tr>
-              <td>1</td>
-              <td><a href="?noticePage=cs/csNoticeDetail.jsp">I'm 25years old</a></td>
-              <td>khj</td>
-              <td>2019.07.18</td>
-              <td>2</td>
-         </tr><tr>
-              <td>2</td>
-              <td>hi i from korea</td>
-              <td>what the</td>
-              <td>2019.07.18</td>
-              <td>4</td>
-         </tr>   <tr>
-              <td>3</td>
-              <td>ABCDEFGHIJKLMN</td>
-              <td>ezenAcademy</td>
-              <td>2019.07.18</td>
-              <td>3</td>
-         </tr>   <tr>
-              <td>4</td>
-              <td>I'm 25years old</td>
-              <td>khj</td>
-              <td>2019.07.18</td>
-              <td>2</td>
-         </tr>   <tr>
-              <td>5</td>
-              <td>I'm 25years old</td>
-              <td>khj</td>
-              <td>2019.07.18</td>
-              <td>2</td>
-         </tr>   <tr>
-              <td>6</td>
-              <td>POIJUFLKJSDF</td>
-              <td>khj</td>
-              <td>2019.07.18</td>
-              <td>2</td>
-         </tr>   <tr>
-              <td>7</td>
-              <td>LET IT GO LET IT GO</td>
-              <td>khj</td>
-              <td>2019.07.18</td>
-              <td>55</td>
-         </tr>   <tr>
-              <td>8</td>
-              <td>BEAUTY AND BEAST</td>
-              <td>BELLE</td>
-              <td>2019.07.18</td>
-              <td>2</td>
-         </tr>   <tr>
-              <td>9</td>
-              <td>DO YOU WANNA BUILD A SNOWMAN</td>
-              <td>WHATTHE</td>
-              <td>2019.07.18</td>
-              <td>4</td>
-         </tr>   <tr>
-              <td>10</td>
-              <td>hihihihihihihihihi</td>
-              <td>khj</td>
-              <td>2019.07.18</td>
-              <td>4</td>
-         </tr>      
+                  <c:choose>
+				<c:when test="${fn:length(list) > 0}">
+					<c:forEach items="${list }" var="row">
+						<tr>
+							<td>${row.NOTICE_NUM }</td>
+							<td class="title"> <a href="#this" name="NOTICE_TITLE">${row.NOTICE_TITLE }</a> 
+								<input type="hidden" id="NOTICE_NUM" value="${row.NOTICE_NUM }"></td> 
+							<td>${row.ADM_ID}</td> 
+							<td>${row.NOTICE_DATE}</td> 
+						</tr>
+					</c:forEach>
+				</c:when>
+				<c:otherwise>
+					<tr>
+						<td colspan="4">조회된 결과가 없습니다.</td>
+					</tr>
+				</c:otherwise>
+			</c:choose>
          </tbody>   
       </table>
    <section class="banner">

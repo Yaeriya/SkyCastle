@@ -46,34 +46,12 @@ ul.tabs li.current{
 
 ul.faq{
 	margin: 0 120px 0 120px;
+	list-style: none;
 }
 
 ul.qnaq{
 	width: 600px;
 	margin: 0 auto 60px;
+	list-style: none;
 }
 
-
-
-
-/* .tab {
-  width: 100%;
-  height: 50px;
-}
-
-.tablinks {
-  float: left;
-  width: 50%;
-  height: 100%;
-  border: none;
-  outline: none;
-  font-size: 16px;
-  font-weight: bold;
-  color: #fff;
-  background-color: #a6a6a6;
-}
-
-.tablinks.active {
-  color: #000;
-  background-color: #fff;
-} */

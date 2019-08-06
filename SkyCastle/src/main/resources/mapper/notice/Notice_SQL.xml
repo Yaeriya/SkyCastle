@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="notice">
+    <select id="selectcsList" parameterType="hashmap" 
+       resultType="hashmap">
+    <![CDATA[ 
+SELECT 
+NOTICE_NUM, NOTICE_TITLE, NOTICE_DATE
+FROM NOTICE
+]]>
+    </select>
+    
+    <insert id="insertNotice" parameterType="hashmap">
+    <![CDATA[
+    INSERT INTO NOTICE(NOTICE_NUM,NOTICE_DATE,NOTICE_TITLE,NOTICE_BODY)
+    VALUES(SEQ_CS_NOTICE_IDX.NEXTVAL,SYSDATE,#{NOTICE_TITLE},#{NOTICE_BODY})
+    ]]>
+    </insert>
+ 
+  <select id="selectcsNoticeDetail" parameterType="hashmap"
+     resultType="hashmap">
+     
+    <![CDATA[
+    SELECT NOTICE_NUM, NOTICE_TITLE,NOTICE_DATE,NOTICE_BODY,NOTICE_IMG01,NOTICE_IMG02,NOTICE_IMG03
+    FROM NOTICE
+    WHERE NOTICE_NUM = #{NOTICE_NUM}
+    ]]>
+     </select>
+ 
+   <update id="updateNotice" parameterType="hashmap">
+   <![CDATA[
+   UPDATE NOTICE
+   SET NOTICE_TITLE = #{NOTICE_TITLE}, NOTICE_BODY = #{NOTICE_BODY}
+   WHERE NOTICE_NUM = #{NOTICE_NUM}
+   ]]>
+   </update>
+ 
+  <delete id="deleteNotice" parameterType="hashmap">
+  <![CDATA[
+   
+   DELETE FROM NOTICE WHERE NOTICE_NUM = #{NOTICE_NUM}
+   
+  ]]>
+  </delete>
+  
+</mapper>

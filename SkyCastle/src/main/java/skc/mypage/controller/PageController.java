@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/main")
 public class PageController {
 	
-	@RequestMapping(value = "/myPage_N", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "/mypage_N", method = {RequestMethod.POST, RequestMethod.GET})
 	public String mypage_N(Locale locale, Model model)
 	{ 	
-		return "/main/myPage_N";
+		return "/main/mypage_N";
 	}
-	@RequestMapping(value = "/myPage_P", method = {RequestMethod.POST, RequestMethod.GET})
+	@RequestMapping(value = "/mypage_P", method = {RequestMethod.POST, RequestMethod.GET})
 	public String mypage_P(Locale locale, Model model)
 	{ 	
-		return "/main/myPage_P";
+		return "/main/mypage_P";
 	}
 	
 	/* ---------- 맵 컨트롤러인데 임시로 넣어놨음 ---------- */
