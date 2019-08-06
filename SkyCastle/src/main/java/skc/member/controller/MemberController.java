@@ -27,6 +27,12 @@ public class MemberController {
 		return "/main/logout";
 	}
 	
+	@RequestMapping(value = "/joinSelect", method = {RequestMethod.POST, RequestMethod.GET})
+	public String joinSelect(Locale locale, Model model)
+	{	// 회원가입
+		return "/main/joinSelect";
+	}
+	
 	/* ---------- 일반회원 ---------- */
 	@RequestMapping(value = "/join", method = {RequestMethod.POST, RequestMethod.GET})
 	public String join_N(Locale locale, Model model)

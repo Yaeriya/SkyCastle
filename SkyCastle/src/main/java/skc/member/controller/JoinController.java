@@ -54,13 +54,13 @@ public class JoinController
 
 		if(result == true)	
 		{	
-			mv.setViewName("/main/index");
+			mv.setViewName("redirect:/main/index");
 			session.setAttribute("loginInfo", result);
 		}
 
 		else	
 		{	
-			mv.setViewName("/main/login");
+			mv.setViewName("redirect:/main/login");
 		}
 		return mv;
 	}

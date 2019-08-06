@@ -3,12 +3,12 @@ $(document).ready(function() {
 		e.preventDefault();
 		fn_signUp();
 	});
-	
+
 	$("#btnLogin").click(function(e) {
 		e.preventDefault();
 		fn_logIn();
 	});
-	
+
 	$("#btnSignup_P").click(function(e) {
 		e.preventDefault();
 		fn_signUp_P();
@@ -34,9 +34,6 @@ function fn_logIn() {
 	comSubmit.setUrl("/skc/member/memberLogin");
 	comSubmit.submit();
 }
-
-
-
 
 function gfn_isNull(str) {
 	if (str == null) return true;
@@ -72,21 +69,6 @@ function ComSubmit(opt_formId) {
 		frm.submit();   
 	};
 }
-
-/*$(document).on('click', '#btnSignup', function(e){
-	e.preventDefault();
-	$("#form").submit();
-});
-
-$(document).on('click', '#btnCancel', function(e){
-	e.preventDefault();
-	$('#uid').val('');
-	$('#name').val('');
-	$('#pwd1').val('');
-	$('#pwd2').val('');
-	$('#email').val('');
-	//location.href="${pageContext.request.contextPath}/home";
-});*/
 
 /*아이디중복확인*/
 function id_check(){
@@ -331,13 +313,13 @@ function ComSubmit(opt_formId) {
 }
 
 function fn_signUp() {
-   var comSubmit = new ComSubmit("form");
-   comSubmit.setUrl("/skc/member/insertMember");
-   comSubmit.submit();
+	var comSubmit = new ComSubmit("form");
+	comSubmit.setUrl("/skc/member/insertMember");
+	comSubmit.submit();
 }
 
 function fn_logIn() {
-   var comSubmit = new ComSubmit("form");
-   comSubmit.setUrl("/skc/member/memberLogin");
-   comSubmit.submit();
+	var comSubmit = new ComSubmit("form");
+	comSubmit.setUrl("/skc/member/memberLogin");
+	comSubmit.submit();
 }
