@@ -47,7 +47,7 @@
 	<![CDATA[
 			INSERT INTO MEMBER (MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LICEN, MB_LEVEL)
 			VALUES (MB_SEQ.nextval, #{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone}, #{Licen}, #{Level})
-	]]><!-- ㅌㅋㅋㅊ -->
+	]]>
 	</insert>
 	<update id="updateMember" parameterType="hashmap">
 	<![CDATA[ 
