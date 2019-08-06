@@ -19,7 +19,7 @@
 		<ul class="tabs">
 			<li class="tab-link current" data-tab="tab-1"><h3>자주 묻는 질문</h3></li>
 			<li class="tab-link" data-tab="tab-2"><h3>1:1 문의하기</h3></li>
-			<li class="tab-link" data-tab="tab-3"><h3>공지사항</h3></li>
+			<li class="tab-link tab-color" data-tab="tab-3"><h3>공지사항</h3></li>
 		</ul>
 		<div id="tab-1" class="tab-content current">
 			<section class="banner">

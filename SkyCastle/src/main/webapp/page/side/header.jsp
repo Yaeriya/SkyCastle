@@ -77,7 +77,7 @@
 					<li><a href="../cs/cs">고객센터</a></li>
 					<li><c:choose>
 							<c:when test="${sessionScope.userLevel == 6}">
-								<a href="../adm/getMemberlist">Admin</a>
+								<a href="../adm/getMemberList">냥냥</a>
 							</c:when>
 							<c:otherwise>
 								<a class="hidden">쿠폰발급</a>
