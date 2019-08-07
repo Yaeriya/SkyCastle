@@ -72,6 +72,20 @@ public class JoinServiceImpl implements JoinService
 		}
 		return result;
 	}
+	@Override
+	public String deleteCheck(Map<String, Object> map, HttpSession session) throws Exception
+	{
+		String result = memberDAO.deleteCheck(map);
+		System.out.println("=== JoinSErvice dcheck ===" + result);
+		
+		/*
+		 * if(result) { //true일 경우 Map<String, Object> smap = (Map<String, Object>)
+		 * memberDAO.getMemberInfo(map);
+		 * 
+		 * session.setAttribute("Nick", smap.get("MB_NICK")); }
+		 */
+		return result; 
+	}
 
 	/* ---------- 일반회원 ---------- */
 	@Override

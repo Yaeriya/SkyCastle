@@ -67,18 +67,6 @@ function update_nick_status(msg,len){
 }
 
 
-function check_member_out(){
-	var f = document.member_out_form;
-
-	if(f.reason1.value == ''){ alert('탈퇴사유를 선택해주세요'); f.reason1.focus(); return false; }
-	if(f.pwd.value == ''){ alert('비밀번호를 선택해주세요'); f.pwd.focus(); return false; }
-
-	if(confirm('정말로 회원 탈퇴를 진행 하시겠습니까?')) document.member_out_form.submit();
-
-	return false;
-}
-
-
 
 $(document).ready(function() {
 
@@ -194,4 +182,112 @@ $(".reonON .r6").on("click",function(){
 })
 function anwerView(idx) {
 	$("#anwer_"+idx).toggle();
+}
+
+
+//회원탈퇴
+
+function check_member_out(){
+	var mb_pw = $("#user_pw").val();
+	var mb_nick = $("#user_nick").val();
+	var mb_data = {"Nick":mb_nick, "Pwd":mb_pw}
+	
+	if(mb_pw.length<1)
+	{
+		
+		alert("비밀번호를 입력해주시기 바랍니다.");
+		$('#user_pw').focus();
+		return false;
+	}
+	else
+	{
+		$.ajax({
+			type: "POST",
+			url: "/skc/mypage/checkDPwd",
+			data: mb_data,
+			dataType : "json",
+			error : function(error){
+				alert("서버가 응답하지 않습니다.\n다시 시도해주시기 바랍니다.");
+				return false;
+			},
+			success: function(result){
+				if(result == 0)
+				{
+					alert("비밀번호가 일치하지 않습니다.");
+					return false;
+				}
+				else if(result == 1)
+				{
+					if(confirm('정말로 회원 탈퇴를 진행 하시겠습니까?'))
+					{
+						fn_CUagain();
+					}
+					return false;
+				}
+				else
+				{
+					alert("에러가 발생하였습니다.");
+					return false;
+				}
+			}
+		});
+	}
+	return false;
+}
+
+/*$(document).ready(function() {
+	$("#byebtn").click(function(e) {
+		if(!$('#user_pw').val()){
+			alert("비밀번호를 입력해주세요");
+			$('#user_pw').focus();
+			return false;
+		}
+		e.preventDefault();
+		fn_CUagain();
+	});
+});*/
+function fn_CUagain() {
+	var comSubmit = new ComSubmit("fmConfirm");
+	var mb_pw = $("#user_pw").val();
+	var mb_nick = $("#user_nick").val();
+	comSubmit.setUrl("/skc/mypage/CUagain");
+	comSubmit.addParam("Nick", mb_nick);
+	comSubmit.addParam("Pwd", mb_pw);
+	comSubmit.submit();
+}
+
+//comSubmit 사용을 위한 공통 부분
+function gfn_isNull(str) {
+	if (str == null) return true;
+	if (str == "NaN") return true;
+	if (new String(str).valueOf() == "undefined") return true;    
+	var chkStr = new String(str);
+	if( chkStr.valueOf() == "undefined" ) return true;
+	if (chkStr == null) return true;    
+	if (chkStr.toString().length == 0 ) return true;   
+	return false; 
+}
+
+function ComSubmit(opt_formId) {
+	this.formId = gfn_isNull(opt_formId) == true ? "commonForm" : opt_formId;
+	this.url = "";
+
+	if(this.formId == "commonForm"){
+		$("#commonForm")[0].reset();
+	}
+
+	this.setUrl = function setUrl(url){
+		this.url = url;
+	};
+
+	this.addParam = function addParam(key, value){
+		$("#"+this.formId).append($("<input type='hidden' name='"+key+"' id='"+key+"' value='"+value+"' >"));
+	};
+
+	this.submit = function submit(){
+		var frm = $("#"+this.formId)[0];
+		frm.action = this.url;
+		frm.method = "post";
+		frm.submit();   
+	};
 }

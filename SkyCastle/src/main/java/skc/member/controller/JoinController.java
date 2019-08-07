@@ -41,8 +41,7 @@ public class JoinController
 
 		mv.addObject("list", list);
 		return mv; 
-	} 
-
+	}
 
 	/* ---------- 로그인 ---------- */
 	@RequestMapping(value = "/memberLogin", method = {RequestMethod.POST, RequestMethod.GET})

@@ -18,6 +18,7 @@ public interface JoinService
 	void deleteMember(Map<String, Object> map) throws Exception;
 	void updateLevel(Map<String, Object> map) throws Exception;
 	boolean loginCheck(Map<String, Object> map, HttpSession session) throws Exception;
+	String deleteCheck(Map<String, Object> map, HttpSession session) throws Exception;
 
 
 	/* ---------- 일반회원 ---------- */

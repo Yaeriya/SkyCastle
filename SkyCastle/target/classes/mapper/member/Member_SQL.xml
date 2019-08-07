@@ -72,7 +72,12 @@
 			WHERE MB_ID = #{Id} AND MB_PW = #{Pwd}
 		]]>
 	</select>
-	
+	<select id="deleteCheck" parameterType="Hashmap" resultType="Hashmap">
+		<![CDATA[
+			SELECT COUNT(MB_NICK) AS RESULT FROM MEMBER 
+			WHERE MB_NICK = #{Nick} AND MB_PW = #{Pwd}
+		]]>
+	</select>
 	<select id="selectMemberId" resultType="Hashmap" parameterType="Hashmap">
 		<![CDATA[
 			SELECT COUNT(MB_ID) AS RESULT FROM MEMBER 

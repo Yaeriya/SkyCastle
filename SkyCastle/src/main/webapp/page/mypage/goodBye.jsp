@@ -68,15 +68,17 @@
 							<div id="loginBox">
 								<p class="t1">비밀번호 재확인</p>
 								<p class="t2">
-									회원탈퇴를 신청하기 전에 비밀번호를 <br />다시 한 번 입력해주시기 바랍니다!
+									회원탈퇴를 진행하기 전에 비밀번호를 <br />다시 한 번 입력해주시기 바랍니다!
 								</p>
-								<form id="fmConfirm" name="fmConfirm"
+								<form action="/skc/mypage/CUagain" id="fmConfirm" name="fmConfirm"
 									action="member_pw_confirm_action.asp" class="__forceUseHttps"
-									method="post" onsubmit="return validateFormElement(this);">
+									method="post">
 									<div id="loginform">
 										<ul>
-											<li class="inputPw"><input type="password"
-												name="user_pw" placeholder="비밀번호" class=" __required" /></li>
+											<li class="inputPw">
+												<input type="password" name="user_pw" id="user_pw" placeholder="비밀번호" class=" __required">
+												<input type="hidden" id="user_nick" value="<%=session.getAttribute("userNick")%>">
+											</li>
 										</ul>
 									</div>
 								</form>
@@ -88,7 +90,7 @@
 								</div>
 							</div>
 							<p class="btn">
-								<a href="javascript:;" class="t2" onclick="alert('탈퇴되었습니다.');">확인</a>
+								<a href="/skc/mypage/CUagain" class="t2" id="byebtn" onclick="return check_member_out();">확인</a>
 							</p>
 						</div>
 					</div>

@@ -54,6 +54,19 @@ public class MemberDAO extends AbstractDAO
 		return (name == null) ? false : true;
 	}
 	
+	@SuppressWarnings("unchecked")
+	public String deleteCheck(Map<String, Object> map) throws Exception
+	{
+		System.out.println("=== memberDAO deleteCheck ===" + map);
+		Map<String, Object> resultMap = (Map<String, Object>)selectOne("member.deleteCheck",map);
+		
+		String result = resultMap.get("RESULT").toString();
+		
+		System.out.println("=== memberDAO deleteCheck result ===" + result);
+		
+		return result;
+	}
+	
 	public void updateLevel(Map<String, Object> map) throws Exception
 	{
 		update("member.updateLevel", map);
