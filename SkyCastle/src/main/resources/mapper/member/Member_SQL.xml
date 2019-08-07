@@ -51,6 +51,12 @@
 	</insert>
 	<update id="updateMember" parameterType="hashmap">
 	<![CDATA[ 
+			UPDATE MEMBER SET MB_NICK = #{Nick}, MB_PW = #{Pwd}, 
+			MB_EMAIL = #{Email}, MB_PHONE = #{Phone} WHERE MB_ID = #{Id}
+	]]>
+	</update>
+	<update id="updateMember_P" parameterType="hashmap">
+	<![CDATA[ 
 			UPDATE MEMBER SET MB_NICK = #{Nick}, MB_ID = #{Id}, MB_PW = #{Pwd}, MB_NAME = #{Name}, 
 			MB_EMAIL = #{Email}, MB_PHONE = #{Phone}, MB_LICEN = #{Licen} WHERE MB_NICK = #{Nick}
 	]]>

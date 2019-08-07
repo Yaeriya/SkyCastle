@@ -1,6 +1,8 @@
 package skc.mypage.controller;
 
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -24,15 +26,37 @@ public class MyPageController {
 	private JoinService joinService;
 	
 	@RequestMapping(value = "/mypage_N", method = {RequestMethod.POST, RequestMethod.GET})
-	public String mypage_N(Locale locale, Model model)
-	{ 	
-		return "/mypage/mypage_N";
+	public ModelAndView mypage_N(CommandMap commandMap, HttpSession session) throws Exception
+	{
+		commandMap.put("Id", session.getAttribute("userId"));
+		System.out.println("======수정맨====== : " + commandMap.getMap());
+
+		ModelAndView mv = new ModelAndView();
+		Map<String, Object> map = joinService.getMemberInfo(commandMap.getMap());
+		
+		System.out.println("======수정맨2====== : " + map);
+		
+		mv.setViewName("/mypage/mypage_N");
+		mv.addObject("Map", map);
+		
+		
+		return mv;
 	}
 	
 	@RequestMapping(value = "/mypage_P", method = {RequestMethod.POST, RequestMethod.GET})
 	public String mypage_P(Locale locale, Model model)
 	{ 	
 		return "/mypage/mypage_P";
+	}
+	
+	@RequestMapping(value = "/memberUpdate_N", method = {RequestMethod.POST, RequestMethod.GET})
+	public String mbUpdate(CommandMap commandMap) throws Exception
+	{
+		System.out.println("=== 정수정 === : " + commandMap.getMap());
+		
+		joinService.updateMember(commandMap.getMap());
+		
+		return "redirect:/main/index";
 	}
 	
 	@RequestMapping(value = "/history", method = {RequestMethod.POST, RequestMethod.GET})

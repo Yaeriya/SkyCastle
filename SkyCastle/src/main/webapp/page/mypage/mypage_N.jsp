@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
@@ -17,14 +17,14 @@
 		<div class="row">
 
 			<section class="left-bar col-md-2">
-				<div>
-					<ul class="letf-menu">
-						<li><a href="mypage_N">정보수정</a></li>
-						<li><a href="history">내 글 관리</a></li>
-						<li><a href="couponList_N">쿠폰관리</a></li>
-						<li><a href="wishList">즐겨찾기</a></li>
-						<li><a href="qnaList">1:1 문의내역</a></li>
-						<li><a href="goodBye">회원탈퇴</a></li>
+				<div class="left-menu">
+					<ul>
+						<li><a class="menuLink" href="mypage_N">정보수정</a></li>
+						<li><a class="menuLink" href="history">내 글 관리</a></li>
+						<li><a class="menuLink" href="couponList_N">쿠폰관리</a></li>
+						<li><a class="menuLink" href="wishList">즐겨찾기</a></li>
+						<li><a class="menuLink" href="qnaList">1:1 문의내역</a></li>
+						<li><a class="menuLink" href="goodBye">회원탈퇴</a></li>
 					</ul>
 				</div>
 			</section>
@@ -35,12 +35,13 @@
 
 						<!-- 회원정보 -->
 						<div class="area">
-							<form>
+							<form id="updatefrm" action="/skc/mypage/memberUpdate_N">
 								<div class="heading"></div>
 								<div class="control-group">
 									<label class="control-label">아이디</label>
+									<input type="hidden" value="${Map.MB_ID}" name="Id">
 									<div class="controls">
-										<p class="txt">heraresq</p>
+										<p class="txt">${Map.MB_ID}</p>
 									</div>
 
 								</div>
@@ -48,12 +49,10 @@
 									<label class="control-label" for="join_form_nick">닉네임</label>
 									<div class="controls">
 										<input type="text" id='join_form_nick'
-											oncontextmenu="return false" value="아시겠어" name='nick'
+											oncontextmenu="return false" value="${Map.MB_NICK}" name='Nick'
 											maxlength='16' onkeydown="return check_alt_ctrl(event)"
 											autocomplete=off class="form-control"
-											placeholder="게시물 작성시 표시되는 필명" style="width: 230px"><br />
-
-										<p id="p_error_nick" style="color: #999"></p>
+											placeholder="게시물 작성시 표시되는 필명">
 
 									</div>
 								</div>
@@ -61,11 +60,9 @@
 									<label class="control-label" for="join_form_tel">전화번호</label>
 									<div class="controls">
 										<input type="text" id='join_form_tel'
-											oncontextmenu="return false" value="" name='nick'
+											oncontextmenu="return false" value="${Map.MB_PHONE}" name='Phone'
 											maxlength='16' onkeydown="return check_alt_ctrl(event)"
-											autocomplete=off class="form-control" style="width: 230px"><br />
-
-										<p id="p_error_nick" style="color: #999"></p>
+											autocomplete=off class="form-control">
 
 									</div>
 								</div>
@@ -73,7 +70,8 @@
 									<label class="control-label" for="join_form_email">Email</label>
 									<div class="controls">
 										<p>
-											<input type="text" id="inputEmail" name="inputEmail"
+											<input type="text" id="inputEmail" name="Email" value="${Map.MB_EMAIL}" style="width: 230px">
+											<!-- <input type="text" id="inputEmail" name="inputEmail"
 												placeholder="가입확인용" style="width: 110px"> @ <input
 												type="text" id="inputEmail2" name="inputEmail2"
 												style="width: 100px; display: none"> <select
@@ -83,7 +81,7 @@
 												<option value="nate">nate.com</option>
 												<option value="hanmail">hanmail.net</option>
 												<option value="custom">직접입력</option>
-											</select>
+											</select> -->
 										</p>
 									</div>
 								</div>
@@ -91,7 +89,7 @@
 									<label class="control-label" for="join_form_pwd">비밀번호</label>
 									<div class="controls">
 										<p>
-											<input type="password" class="form-control" name='pwd1'
+											<input type="password" class="form-control" name='Pwd'
 												id="join_form_pwd" placeholder="비밀번호 변경시 입력" maxlength='50'
 												style="width: 230px">
 										</p>
@@ -102,7 +100,7 @@
 										확인</label>
 									<div class="controls">
 										<p>
-											<input type="password" class="form-control" name='pwd2'
+											<input type="password" class="form-control" name='Pwd2'
 												id="join_form_pwd2" placeholder="" maxlength='50'
 												style="width: 230px">
 										</p>
@@ -110,8 +108,8 @@
 								</div>
 								<div class="control-group">
 									<div class="controls">
-										<button type="button" class="btn btn-success"
-											onclick="check_progress()">정보수정 완료</button>
+										<button class="btn btn-success"
+											id="btnMBupdate">정보수정 완료</button>
 										<button type="button" class="btn btn-default"
 											onclick="window.location.href='/'">정보수정 취소</button>
 									</div>

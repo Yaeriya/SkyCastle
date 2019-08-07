@@ -103,14 +103,14 @@ function openTab(evt, tabName)
 }
 
 
-var email_info = 'heraresq@naver.com';
+/*var email_info = 'heraresq@naver.com';
 var email_info_split = email_info.split('@');
 $(function(){
     inputPlaceholder(document.getElementById('join_form_pwd'),'');
     inputPlaceholder(document.getElementById('join_form_nick'),'');
     inputPlaceholder(document.getElementById('join_form_email'),'');
 });
-
+*/
  
 
      //console.debug(email_info_split);
@@ -235,17 +235,6 @@ function check_member_out(){
 	return false;
 }
 
-/*$(document).ready(function() {
-	$("#byebtn").click(function(e) {
-		if(!$('#user_pw').val()){
-			alert("비밀번호를 입력해주세요");
-			$('#user_pw').focus();
-			return false;
-		}
-		e.preventDefault();
-		fn_CUagain();
-	});
-});*/
 function fn_CUagain() {
 	var comSubmit = new ComSubmit("fmConfirm");
 	var mb_pw = $("#user_pw").val();
@@ -253,6 +242,21 @@ function fn_CUagain() {
 	comSubmit.setUrl("/skc/mypage/CUagain");
 	comSubmit.addParam("Nick", mb_nick);
 	comSubmit.addParam("Pwd", mb_pw);
+	comSubmit.submit();
+}
+
+
+//회원정보수정
+$(document).ready(function() {
+	$("#btnMBupdate").click(function(e) {
+		e.preventDefault();
+		fn_mbUpdate();
+	});
+});
+
+function fn_mbUpdate() {
+	var comSubmit = new ComSubmit("updatefrm");
+	comSubmit.setUrl("/skc/mypage/memberUpdate_N");
 	comSubmit.submit();
 }
 
