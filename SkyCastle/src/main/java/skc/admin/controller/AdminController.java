@@ -35,7 +35,7 @@ public class AdminController
 		List<Map<String,Object>> list_Bm = joinService.getMemberBlock(commandMap.getMap());
 		List<Map<String,Object>> list_Bp = joinService.getPartnerBlock(commandMap.getMap());
 		
-		mv.setViewName("redirect:/adm/memberList");
+		mv.setViewName("/adm/memberList");
 		mv.addObject("list_M", list_M);
 		mv.addObject("list_P", list_P);
 		mv.addObject("list_Q", list_Q);

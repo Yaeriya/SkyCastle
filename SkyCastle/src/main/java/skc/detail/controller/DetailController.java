@@ -39,8 +39,7 @@ public class DetailController
 			mv.setViewName("/map/detail");
 			mv.addObject("list", list);
 			return mv; 
-		} 
-
+		}
 		
 		@RequestMapping(value = "/insertDetail", method = {RequestMethod.POST, RequestMethod.GET}) 
 		public String insertDetail(CommandMap commandMap) throws Exception 
@@ -48,6 +47,6 @@ public class DetailController
 			System.out.println("======2========= : " + commandMap.getMap());
 			detailService.insertDetail(commandMap.getMap()); 
 			
-			return "/main/index";
+			return "redirect:/main/index";
 		}
 }
