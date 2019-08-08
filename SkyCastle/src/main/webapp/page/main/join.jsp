@@ -8,7 +8,6 @@
 <title>SKYCASTLE 프리미엄 학원입시정보</title>
 
 <link rel="stylesheet" href="/skc/css/join.css">
-<!-- <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script> -->
 <script type="text/javascript" src="/skc/js/jquery.min.js"></script>
 <script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/skc/js/join.js"></script>
@@ -18,21 +17,21 @@
 <body class="join-main">
 <jsp:include page="../side/header.jsp" flush="false" />
 	<div class="join-back">
-		<b> <font size="6" color="gray">회원가입</font></b> <br> <br> <br>
+		<b> <font size="6" color="gray">회원가입</font></b>
 		<div class="join-body">
 			<form name="form" id="form" class="form-signup" role="form"
 				method="post">
 				<table>
-					<tr>
+				<tr>
 						<td id="title">아이디</td>
 						<td><input type="text" id="uId" name="Id" maxlength="10">
-							<input type="button" value="중복확인"></td>
+							<input type="button" onclick="id_check()" value="중복확인"></td>
 					</tr>
 
-					<tr>
+						<tr>
 						<td id="title">별명</td>
 						<td><input type="text" id="uNick" name="Nick" maxlength="10">
-							<input type="button" value="중복확인"></td>
+							<input type="button" onclick="nick_check1()" value="중복확인"></td>
 					</tr>
 
 					<tr>
@@ -40,7 +39,7 @@
 						<td><input type="text" id="uName" name="Name" maxlength="40"></td>
 					</tr>
 
-					<tr>
+						<tr>
 						<td id="title">비밀번호</td>
 						<td><input type="password" id="uPwd" name="Pwd"
 							maxlength="15"></td>
@@ -52,15 +51,15 @@
 						</td>
 					</tr>
 
-					<tr>
+						<tr>
 						<td id="title">이메일</td>
-						<td><input type="text" id="uEmail" name="Email"
+						<td><input type="email" id="uEmail" name="Email"
 							maxlength="30">
 				</td>
 					</tr>
-					<tr>
+							<tr>
 						<td id="title">휴대전화</td>
-						<td><input type="text" id="uPhone" name="Phone" /></td>
+						<td><input type="tel" id="uPhone" name="Phone" /></td>
 					</tr>
 					
 					<tr class="hidden">

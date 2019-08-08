@@ -1,16 +1,7 @@
-/*------------------------------------------------------------------
-
-Project:	Jober Desk
-Version:	1.0
-Last change:	7/08/17
-Primary use:	Online Job Portal Theme
--------------------------------------------------------------------*/
 @import
 	url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,600,700')
 	;
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
+	
 body {
 	background: #ffffff;
 	font-family: 'Montserrat', sans-serif;
@@ -566,7 +557,7 @@ a.instagram {
 
 /*-----------------------counter Section start-------------------------*/
 .counter {
-	background: #da0833;
+	background: #000;
 	padding: 20px 0;
 }
 
@@ -759,7 +750,7 @@ button.btn.btn-package:hover, button.btn.btn-package:focus {
 }
 
 .newsletter button.btn.btn-default {
-	background: #da0833;
+	background: #000;
 	text-transform: uppercase;
 	border-color: #da0833;
 	color: #ffffff;
@@ -834,7 +825,7 @@ section.login-wrapper img {
 
 /*------------------footer design-------------------------*/
 footer {
-	background: #242c36;
+	background: #000;
 	padding: 60px 0 0 0;
 }
 
@@ -987,9 +978,14 @@ footer .form-control::-webkit-input-placeholder {
 }
 
 
+@media only screen and (max-width: 767px) {
+	.counter {
+		display: none;
+	}
+}
 
-
-
-
-
-
+@media only screen and (min-width: 767px) {
+	.counter {
+		display: block;
+	}
+}

@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -29,6 +30,8 @@
 				</div>
 			</section>
 
+			<section class="pageborder"></section>
+
 			<section class="mpg-content-1 col-md-10">
 				<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
 					<div class="content left-content">
@@ -38,8 +41,8 @@
 							<form id="updatefrm" action="/skc/mypage/memberUpdate_N">
 								<div class="heading"></div>
 								<div class="control-group">
-									<label class="control-label">아이디</label>
-									<input type="hidden" value="${Map.MB_ID}" name="Id">
+									<label class="control-label">아이디</label> <input type="hidden"
+										value="${Map.MB_ID}" name="Id">
 									<div class="controls">
 										<p class="txt">${Map.MB_ID}</p>
 									</div>
@@ -49,10 +52,10 @@
 									<label class="control-label" for="join_form_nick">닉네임</label>
 									<div class="controls">
 										<input type="text" id='join_form_nick'
-											oncontextmenu="return false" value="${Map.MB_NICK}" name='Nick'
-											maxlength='16' onkeydown="return check_alt_ctrl(event)"
-											autocomplete=off class="form-control"
-											placeholder="게시물 작성시 표시되는 필명">
+											oncontextmenu="return false" value="${Map.MB_NICK}"
+											name='Nick' maxlength='16'
+											onkeydown="return check_alt_ctrl(event)" autocomplete=off
+											class="form-control" placeholder="게시물 작성시 표시되는 필명">
 
 									</div>
 								</div>
@@ -60,9 +63,10 @@
 									<label class="control-label" for="join_form_tel">전화번호</label>
 									<div class="controls">
 										<input type="text" id='join_form_tel'
-											oncontextmenu="return false" value="${Map.MB_PHONE}" name='Phone'
-											maxlength='16' onkeydown="return check_alt_ctrl(event)"
-											autocomplete=off class="form-control">
+											oncontextmenu="return false" value="${Map.MB_PHONE}"
+											name='Phone' maxlength='16'
+											onkeydown="return check_alt_ctrl(event)" autocomplete=off
+											class="form-control">
 
 									</div>
 								</div>
@@ -70,7 +74,8 @@
 									<label class="control-label" for="join_form_email">Email</label>
 									<div class="controls">
 										<p>
-											<input type="text" id="inputEmail" name="Email" value="${Map.MB_EMAIL}" style="width: 230px">
+											<input type="text" id="inputEmail" name="Email"
+												value="${Map.MB_EMAIL}" style="width: 230px">
 											<!-- <input type="text" id="inputEmail" name="inputEmail"
 												placeholder="가입확인용" style="width: 110px"> @ <input
 												type="text" id="inputEmail2" name="inputEmail2"
@@ -108,8 +113,8 @@
 								</div>
 								<div class="control-group">
 									<div class="controls">
-										<button class="btn btn-success"
-											id="btnMBupdate">정보수정 완료</button>
+										<button class="btn btn-success" id="btnMBupdate">정보수정
+											완료</button>
 										<button type="button" class="btn btn-default"
 											onclick="window.location.href='/'">정보수정 취소</button>
 									</div>
@@ -119,7 +124,7 @@
 					</div>
 				</div>
 			</section>
-			
+
 		</div>
 	</div>
 

@@ -1,5 +1,6 @@
 .mpg-content-1 {
 	padding-top: 50px !important;
+	padding-bottom: 0 !important;
 }
 
 .mpg-content-2 {
@@ -13,6 +14,71 @@
 
 .left-menu {
 	list-style: none;
+}
+
+.left-menu li {
+	list-style: none;
+	color: white;
+	background-color: #000000;
+	float: left;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.left-menu .menuLink {
+	text-decoration: none;
+	color: white;
+	display: block;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", Dotum, Arial;
+}
+
+.left-menu .menuLink:hover {
+	color: #000;
+	background-color: #fff;
+}
+
+@media only screen and (min-width: 925px) {
+	.pageborder {
+			padding: 0px !important;
+	margin: 0px !important;
+	width: 1%;
+	border-right: 1px solid #111;
+	min-height: 650px;
+	position: relative;
+	float: left;
+	}
+}
+
+@media only screen and (max-width: 925px) {
+	.pageborder {
+		display: none;
+	}
+}
+.control-group {
+	width: 100%;
+}
+
+.control-label {
+	float: left;
+	width: 25% !important;
+}
+
+.controls {
+	width: 75%;
+	padding-left: 25% !important;
+}
+
+.control-check {
+	text-algin: center;
+}
+
+.mycoupon {
+	padding-bottom: 50px;
+	font-size: 25px;
 }
 
 .content {
@@ -283,6 +349,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 
 /* 탭메뉴 */
 .tab {
+	
 }
 
 .tablinks {
@@ -514,6 +581,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 
 /* qnaList */
 #qnalist {
+	
 }
 
 #qnalist .k1 {
@@ -881,6 +949,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 }
 
 .my_write {
+	
 }
 
 .my_write .list_style_table {
@@ -895,6 +964,7 @@ textarea, input[type="text"], input[type="password"], input[type="email"],
 }
 
 .list_style_table {
+	
 }
 
 .list_style_table table {

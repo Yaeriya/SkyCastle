@@ -38,7 +38,6 @@
 					<li><c:choose>
 							<c:when test="${sessionScope.loginInfo != null}">
 								<a id="btnLogout">로그아웃</a>
-								<%-- <a>${sessionScope.userNick}(${sessionScope.userId})님 환영합니다.</a> --%>
 							</c:when>
 							<c:otherwise>
 								<a href="../main/login">로그인</a>

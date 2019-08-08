@@ -14,21 +14,23 @@
 </head>
 <body>
 	<jsp:include page="../side/header.jsp" flush="false" />
-	
+
 	<div class="container">
 		<div class="row">
 			<section class="left-bar col-md-2">
-				<div>
-					<ul class="letf-menu">
-						<li><a href="mypage_N">정보수정</a></li>
-						<li><a href="infoAcademy">학원관리</a></li>
-						<li><a href="history">내 글 관리</a></li>
-						<li><a href="couponList_P">쿠폰내역</a></li>
-						<li><a href="qnaList">1:1 문의내역</a></li>
-						<li><a href="goodBye">회원탈퇴</a></li>
+				<div class="left-menu">
+					<ul>
+						<li><a class="menuLink" href="mypage_N">정보수정</a></li>
+						<li><a class="menuLink" href="infoAcademy">학원관리</a></li>
+						<li><a class="menuLink" href="history">내 글 관리</a></li>
+						<li><a class="menuLink" href="couponList_P">쿠폰내역</a></li>
+						<li><a class="menuLink" href="qnaList">1:1 문의내역</a></li>
+						<li><a class="menuLink" href="goodBye">회원탈퇴</a></li>
 					</ul>
 				</div>
 			</section>
+
+			<section class="pageborder"></section>
 
 			<section class="mpg-content-1 col-md-10">
 				<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
@@ -134,7 +136,7 @@
 					</div>
 				</div>
 			</section>
-			
+
 		</div>
 	</div>
 
