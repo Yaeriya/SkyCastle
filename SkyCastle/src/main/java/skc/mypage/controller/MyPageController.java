@@ -56,7 +56,7 @@ public class MyPageController {
 		
 		joinService.updateMember(commandMap.getMap());
 		
-		return "redirect:/main/index";
+		return "redirect:/mypage/mypage_N";
 	}
 	
 	@RequestMapping(value = "/history", method = {RequestMethod.POST, RequestMethod.GET})
