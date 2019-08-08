@@ -1,4 +1,4 @@
-<%@page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html class="no-js" lang="en">
@@ -14,7 +14,14 @@
 <jsp:include page="../side/header.jsp" flush="false"/>
 
 <!-- memberList section start -->
-
+<c:choose>
+	<c:when test="${sessionScope.userLevel != 6}">
+		<div>
+			<h1>접근 권한이 없습니다.</h1>
+			<button type="button" onclick="history.go(-1)">뒤로</button>
+		</div>
+	</c:when>
+	<c:otherwise>
 <div class="row">
 	<div class="col-md-12 mt">
 		<div class="content-panel">
@@ -226,6 +233,8 @@
 	</div><!-- /col-md-12 -->
 </div>
 <!-- login section End -->
+	</c:otherwise>
+</c:choose>
 
 <jsp:include page="../side/footer.jsp" flush="false"/>
 </body>

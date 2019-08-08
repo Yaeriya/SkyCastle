@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cs">
+	<select id="selectQNAList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+			SELECT 
+			Q.Q_NUM, Q.Q_TITLE, Q.Q_DATE , Q.Q_CHECK, Q.Q_BODY, 
+			A.A_NUM, A.A_TITLE, A.A_DATE, A.A_BODY 
+			FROM ANSWER A 
+			FULL OUTER JOIN QUESTION Q 
+			ON A.A_NUM = Q.Q_NUM 
+			WHERE Q.MB_NICK = #{Nick}
+		]]>
+	</select>
+
+	<!-- 확인 -->
+	<select id="selectQNum" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+			SELECT Q_NUM FROM QUESTION WHERE MB_NICK = #{Nick}
+		]]>
+	</select>
+
+	<insert id="insertQ" parameterType="hashmap">
+		<![CDATA[
+			INSERT INTO QUESTION(Q_NUM, Q_TITLE, Q_BODY, Q_DATE, MB_NICK) VALUES(Q_SEQ.NEXTVAL, #{Q_TITLE}, #{Q_BODY}, SYSDATE, 'ad' )
+		]]>
+	</insert>
+
+	<insert id="insertA" parameterType="hashmap">
+		<![CDATA[
+			INSERT INTO ANSWER(Q_NUM, A_TITLE, A_BODY, A_DATE, MB_NICK) VALUES(SEQ_ANSWER_IDX.NEXTVAL, #{A_TITLE}, #{A_BODY}, SYSDATE, 'ad' )
+		]]>
+	</insert>
+
+	<update id="updateHitCnt" parameterType="hashmap">
+		<![CDATA[
+			UPDATE FREE SET FREE_HIT = NVL(FREE_HIT, 0) + 1 WHERE FREE_NUM = #{FREE_NUM}
+		]]>
+	</update>
+
+	<select id="selectBoardDetail" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+			SELECT FREE_NUM, FREE_TITLE, MB_NICK, FREE_DATE, FREE_HIT FROM FREE WHERE FREE_NUM=#{FREE_NUM}
+		]]>
+	</select>
+
+	<update id="updateBoard" parameterType="hashmap">
+		<![CDATA[
+			UPDATE FREE SET FREE_TITLE = #{FREE_TITLE}, FREE_BODY = #{FREE_BODY} WHERE FREE_NUM = #{FREE_NUM}
+		]]>
+	</update>
+</mapper>
