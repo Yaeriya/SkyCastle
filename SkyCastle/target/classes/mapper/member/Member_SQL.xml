@@ -3,26 +3,62 @@
 <mapper namespace="member">
 	<select id="getMemberInfo" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN, MB_LIMIT, MB_LEVEL FROM
-			MEMBER WHERE MB_NICK = #{Nick}
+			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LICEN, MB_LEVEL FROM
+			MEMBER WHERE MB_ID LIKE #{Id}
 		]]>
 	</select>
-	<select id="selectMemberList" parameterType="hashmap" resultType="hashmap">
+	<select id="getMemberList" parameterType="hashmap" resultType="hashmap">
 		<![CDATA[ 
-			SELECT MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LIMIT, MB_LEVEL FROM
-			MEMBER
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL FROM
+			MEMBER WHERE MB_LEVEL = 1 ORDER BY MB_NUM DESC
+		]]>
+	</select>
+	<select id="getMemberBlock" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[ 
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL FROM
+			MEMBER WHERE MB_LEVEL = 2 ORDER BY MB_NUM DESC
+		]]>
+	</select>
+	<select id="getPartnerQue" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[ 
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL, MB_LICEN FROM
+			MEMBER WHERE MB_LEVEL = 3 ORDER BY MB_NUM ASC
+		]]>
+	</select>
+	<select id="getPartnerList" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[ 
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL, MB_LICEN FROM
+			MEMBER WHERE MB_LEVEL = 4 ORDER BY MB_NUM DESC
+		]]>
+	</select>
+	<select id="getPartnerBlock" parameterType="hashmap" resultType="hashmap">
+		<![CDATA[ 
+			SELECT MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME , MB_EMAIL , MB_PHONE, MB_LEVEL, MB_LICEN FROM
+			MEMBER WHERE MB_LEVEL = 5 ORDER BY MB_NUM DESC
 		]]>
 	</select>
 	<insert id="insertMember" parameterType="hashmap">
 	<![CDATA[
-			INSERT INTO MEMBER (MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE)
-			VALUES (#{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone})
+			INSERT INTO MEMBER (MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LEVEL)
+			VALUES (MB_SEQ.nextval, #{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone}, #{Level})
+	]]>
+	</insert>
+	<insert id="insertMember_P" parameterType="hashmap">
+	<![CDATA[
+			INSERT INTO MEMBER (MB_NUM, MB_NICK, MB_ID, MB_PW, MB_NAME, MB_EMAIL, MB_PHONE, MB_LICEN, MB_LEVEL)
+			VALUES (MB_SEQ.nextval, #{Nick}, #{Id}, #{Pwd}, #{Name}, #{Email}, #{Phone}, #{Licen}, #{Level})
 	]]>
 	</insert>
 	<update id="updateMember" parameterType="hashmap">
 	<![CDATA[ 
+			UPDATE MEMBER SET MB_NICK = #{Nick}, MB_PW = #{Pwd}, 
+			MB_EMAIL = #{Email}, MB_PHONE = #{Phone} WHERE MB_ID = #{Id}
+	]]>
+	</update>
+	<update id="updateMember_P" parameterType="hashmap">
+	<![CDATA[ 
 			UPDATE MEMBER SET MB_NICK = #{Nick}, MB_ID = #{Id}, MB_PW = #{Pwd}, MB_NAME = #{Name}, 
-			MB_EMAIL = #{Email}, MB_PHONE = #{Phone} WHERE MB_NICK = #{Nick}
+			MB_EMAIL = #{Email}, MB_PHONE = #{Phone}, MB_LICEN = #{Licen} WHERE MB_NICK = #{Nick}
 	]]>
 	</update>
 	<delete id="deleteMember" parameterType="hashmap">
@@ -31,4 +67,34 @@
 			WHERE MB_NICK = #{Nick}
 		]]>
 	</delete>
+	<update id="updateLevel" parameterType="hashmap">
+		<![CDATA[
+			UPDATE MEMBER SET MB_LEVEL = #{Level} WHERE MB_NICK = #{Nick}
+		]]>
+	</update>
+	<select id="loginCheck" parameterType="Hashmap" resultType="String">
+		<![CDATA[
+			SELECT MB_NICK FROM MEMBER 
+			WHERE MB_ID = #{Id} AND MB_PW = #{Pwd}
+		]]>
+	</select>
+	<select id="deleteCheck" parameterType="Hashmap" resultType="Hashmap">
+		<![CDATA[
+			SELECT COUNT(MB_NICK) AS RESULT FROM MEMBER 
+			WHERE MB_NICK = #{Nick} AND MB_PW = #{Pwd}
+		]]>
+	</select>
+	<select id="selectMemberId" resultType="Hashmap" parameterType="Hashmap">
+		<![CDATA[
+			SELECT COUNT(MB_ID) AS RESULT FROM MEMBER 
+			WHERE MB_ID = #{Id}
+		]]>
+	</select>
+
+	<select id="selectMemberNick" resultType="Hashmap" parameterType="Hashmap">
+		<![CDATA[
+			SELECT COUNT(MB_NICK) AS RESULT FROM MEMBER 
+			WHERE MB_ID = #{Nick}
+		]]>
+	</select>
 </mapper>

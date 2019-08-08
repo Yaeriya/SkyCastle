@@ -29,7 +29,7 @@ public class AcademyController {
 	{ 
 		detailService.insertDetail(commandMap.getMap()); 
 		
-		return "redirect:/main/index"; 
+		return "/main/index"; 
 	} 
 	
 

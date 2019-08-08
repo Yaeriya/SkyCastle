@@ -71,7 +71,7 @@ public class JoinController
 		System.out.println("======2========= : " + commandMap.getMap());
 		joinService.insertMember(commandMap.getMap()); 
 
-		return "redirect:/main/index";
+		return "/main/index";
 	}
 
 	/* ---------- 파트너회원 ---------- */
@@ -81,7 +81,7 @@ public class JoinController
 		System.out.println("======2========= : " + commandMap.getMap());
 		joinService.insertMember_P(commandMap.getMap()); 
 
-		return "redirect:/main/index";
+		return "/main/index";
 	}
 
 }

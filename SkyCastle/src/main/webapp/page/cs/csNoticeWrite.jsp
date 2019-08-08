@@ -55,7 +55,7 @@
 
 	<div class="epWBtn anim-btn">
 		<a href="#this"  id="write" class="epOk btn g">등록하기</a> 
-		<a href="/skc/cs/cs_main" onclick="goBackList('epilogue_list_all.asp');" class="epNo btn gray">취소하기</a>
+		<a href="/skc/cs/cs" onclick="goBackList('epilogue_list_all.asp');" class="epNo btn gray">취소하기</a>
 	</div>
 
 	<script>

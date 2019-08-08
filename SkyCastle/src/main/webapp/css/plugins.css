@@ -12499,7 +12499,6 @@ nav.navbar.bootsnav {
 	border-radius: 0;
 	background-color: #000;
 	border: none;
-	border-bottom: solid 1px #e0e0e0;
 	z-index: 9
 }
 
@@ -12912,7 +12911,7 @@ nav.navbar.bootsnav.no-background {
 	position: absolute;
 	width: 100%;
 	left: 0;
-	top: 0
+	top: 0;
 }
 
 .wrap-sticky nav.navbar.bootsnav.sticked {

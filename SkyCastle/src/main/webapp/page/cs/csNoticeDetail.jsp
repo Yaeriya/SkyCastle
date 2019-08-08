@@ -1,9 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
-<%@ include file="/WEB-INF/include/include-body.jspf"%>
+<%@ include file="/WEB-INF/include/include-body.jspf" %>
 <script type="text/javascript" src="/skc/js/jquery.min.js"></script>
 <script src="/skc/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/skc/js/owl.carousel.min.js"></script>
@@ -21,89 +20,100 @@
 </head>
 <body>
 
-	<jsp:include page="../side/header.jsp" flush="false" />
+<jsp:include page="../side/header.jsp" flush="false"/>
 
-		
-
-		  <div class="container">
-		    <div class="row">
-	
-		    <section class="left-bar col-md-2">
-		       <div>
-					<u1 class="left-menu">
-					<li><a href="cs_main">공지사항</a></li>
-					<li><a href="cs_qna">1:1문의</a></li>
-					<li><a href="cs_faq">자주묻는질문</a></li>
-					</u1>
-				</div>
-		    </section>
-
-
-			<section class="mpg-content-1 col-md-10">
-				<div class="col-md-10 col-sm-10 col-md-offset-1 col-sm-offset-1">
-					<section class="banner">
-						<h1>공지사항</h1>
-					</section>
-
-					<table class="table">
-
-						<tbody>
-							<tr>
-								<th scope="row">글 번호</th>
-								<td>${map.NOTICE_NUM}</td>
-
-							</tr>
-							<tr>
-								<th scope="row">작성시간</th>
-								<td>${map.NOTICE_DATE }</td>
-								<th scope="row">제목</th>
-								<td>${map.NOTICE_TITLE}</td>
-							</tr>
-							<tr>
-								<td>${map.NOTICE_BODY }</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td><c:choose>
-										<c:when test="${sessionScope.userLevel == 6}">
-											<a href="/skc/cs/cs_main" class="btn btnC_03 btnP_04 mr10"
-												id="list"> <span>목록으로</span>
-											</a>
-
-
-                                            <a href="#this" class="btn" id="update">저장하기</a>
-
-											<!-- <form action="/skc/cs/updateNotice">
-												<input type="hidden" name="" />
-												<button>수정하기</button>
-											</form> -->
-
-											<form action="/skc/cs/deleteNotice">
-												<input type="hidden" name="NOTICE_NUM"
-													value="${map.NOTICE_NUM}" />
-												<button>삭제하기</button>
-											</form>
-										</c:when>
-										<c:otherwise>
-											<a class="hidden"></a>
-										</c:otherwise>
-									</c:choose></td>
-							</tr>
-						</tbody>
-					</table>
-</div>
-</section>
-				</div>
+<div class="tab-container">
+	<ul class="tabs">
+		<li class="tab-link" data-tab="tab-1"><h3>자주 묻는 질문</h3></li>
+		<li class="tab-link" data-tab="tab-2"><h3>1:1 문의하기</h3></li>
+		<li class="tab-link current" data-tab="tab-3"><h3>공지사항</h3></li>
+	</ul>
+	<div id="tab-1" class="tab-content">
+	<section class="banner">
+		<h1>자주 묻는 질문</h1>
+		</section>
+		<a class="btn01" onclick="document.getElementById('hiddenContent').style.display=(document.getElementById('hiddenContent').style.display=='block') ? 'none' : 'block';">
+			제목
+		</a>
+		<div id="hiddenContent" class="example01" style="display: none;">
+			내용
 		</div>
+	</div>
+	<div id="tab-2" class="tab-content">
+	<section class="banner">
+		<h1>1:1 문의</h1>
+		</section>
+		<ul>
+			<li>제목<input type=text></li>
+			<li>내용<input type=text></li>
+			<li><input type=submit></li>
+		</ul>
+	</div>
+	<div id="tab-3" class="tab-content current">
+		<section class="banner">
+		<h1>공지사항</h1>
+		</section>
+      
+      <table class="table" >
+      
+         <tbody>
+         <tr>
+            <th scope="row">글 번호</th>
+			<td>${map.NOTICE_NUM}</td>
+            <th scope="row">작성자</th>
+			<td>${map.ADMIN_ID}</td>
+         </tr>
+         <tr>
+         <th scope="row">작성시간</th>
+		 <td>${map.NOTICE_DATE }</td>
+		 <th scope="row">제목</th>
+		 <td>${map.NOTICE_TITLE}</td>
+         </tr>
+         <tr>
+			 <td>
+		     ${map.NOTICE_BODY }
+		    </td>
+							<td></td>
+						</tr>
+        <tr>
+        <td>
+         
+		<div class="btn_type_03">
+			<a href="/skc/cs/cs" class="btn btnC_03 btnP_04 mr10" id="list"> 
+			<span>목록으로</span>
+			</a> 
+			<a href="" class="btn btnC_03 btnP_04 mr10" id="list"> 
+			<span>수정하기</span>
+			</a> 
+			
+			<form action="/skc/cs/deleteNotice">
+			<input type="hidden" name="NOTICE_NUM" value="${map.NOTICE_NUM}"/>
+			<button>삭제하기</button>
+			</form>
+		</div>
+		</td>
+         </tr>
+         </tbody>   
+      </table>
+      
+	</div>
+</div>
 
-
-	<script type="text/javascript"> 
-$(document).ready(function(){
 	
+<script type="text/javascript"> 
+$(document).ready(function(){
+	$(document).ready(function(){ 
+		$("#list").on("click", function(e){ //목록으로 버튼
+		e.preventDefault(); 
+		fn_csNoticleList(); 
+	}); 
 		$("#update").on("click", function(e){ //수정하기 버튼 
 		e.preventDefault(); fn_updateNotice(); 
 	}); 
-
+		$("#delete").on("click", function(e){ //삭제하기 버튼
+		e.preventDefault();
+	fn_deleteNotice();
+	});
 })
 	
 	
@@ -111,11 +121,16 @@ $(document).ready(function(){
 	var comSubmit = new ComSubmit("frm"); 
 	comSubmit.setUrl("<c:url value='/cs/updateNotice' />");
 	comSubmit.submit();
+	} 
+	function fn_deleteNotice(){ 
+	var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/cs/deleteNotice' />"); 
+	comSubmit.addParam("NOTICE_NUM", $("#NOTICE_NUM").val()); 
+	comSubmit.submit(); 
 	}
-
-	</script>
-
-	<jsp:include page="../side/footer.jsp" flush="false" />
+	</script> 
+	
+<jsp:include page="../side/footer.jsp" flush="false"/>
 
 </body>
 </html>

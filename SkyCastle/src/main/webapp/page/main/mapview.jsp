@@ -38,6 +38,7 @@
 					<li><c:choose>
 							<c:when test="${sessionScope.loginInfo != null}">
 								<a id="btnLogout">로그아웃</a>
+								<%-- <a>${sessionScope.userNick}(${sessionScope.userId})님 환영합니다.</a> --%>
 							</c:when>
 							<c:otherwise>
 								<a href="../main/login">로그인</a>
@@ -117,6 +118,21 @@
 					<hr>
 					<ul id="placesList"></ul>
 					<div id="pagination"></div>
+					
+					<c:forEach var="aca" varStatus="i" items="${list}">
+									<ul>
+										<li>
+										<span class="a-count"> ● </span>
+										<button class="a-btn" type="button" > <!-- 클릭하면 클릭한 학원 상세 페이지 detail.jsp 로 간다 -->
+										 ${aca.MB_NICK}<br>
+										 ${aca.SAMPLE6_ADDRESS}, ${aca.SAMPLE6_DETAILADDRESS}<br>
+										 ${aca.DTL_PHONE}<br>
+										</button>
+										</li>
+		
+						
+									</ul>
+					</c:forEach>
 				</div>
 			</div>
 		</div>

@@ -12,11 +12,8 @@ import skc.common.dao.AbstractDAO;
 @Repository("detailDAO")
 public class DetailDAO extends AbstractDAO
 {
-	/*
-	 * @SuppressWarnings("unchecked") public List<Map<String, Object>>
-	 * getDetailList(CommandMap commandMap) throws Exception { return
-	 * (List<Map<String, Object>>)selectList("detail.getDetailList", commandMap); }
-	 */
+	
+	 
 	@SuppressWarnings("unchecked")
 	public List<Map<String, Object>> selectDetail(Map<String, Object> map) throws Exception
 	{

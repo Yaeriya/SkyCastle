@@ -16,10 +16,8 @@ public class DetailServiceImpl implements DetailService
 	@Resource(name="detailDAO")
 	private DetailDAO detailDAO;
 	
-	/*
-	 * @Override public List<Map<String, Object>> getDetailList(CommandMap
-	 * commandMap) throws Exception { return detailDAO.getDetailList(commandMap); }
-	 */
+	
+ 
 	@Override
 	public List<Map<String, Object>> selectDetail(Map<String, Object> map) throws Exception
 	{

@@ -28,7 +28,7 @@
 					</ul>
 				</div>
 			</section>
-			
+
 			<section class="pageborder"></section>
 
 			<section class="mpg-content-1 col-md-10">
@@ -77,6 +77,9 @@
 			</section>
 		</div>
 	</div>
+
 	<script src="skc/js/mypage.js"></script>
+
+	<jsp:include page="../side/footer.jsp" flush="false" />
 </body>
 </html>

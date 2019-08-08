@@ -11,7 +11,7 @@
 
    <!-- 컨트롤러를 자동으로 등록할 수 있도록 -->
 
-   <context:component-scan base-package="share" />
+   <context:component-scan base-package="sky" />
    
   
    <!-- Map을 이용해 데이터를 주고 받을 수 있도록 -->

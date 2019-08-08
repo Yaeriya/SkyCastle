@@ -20,16 +20,6 @@ public class DetailController
 		@Resource(name="DetailService")
 		private DetailService detailService;
 		
-		
-	/*
-	 * @RequestMapping(value = "/getDetailList", method = {RequestMethod.POST,
-	 * RequestMethod.GET}) public ModelAndView getDetailList(CommandMap commandMap)
-	 * throws Exception { ModelAndView mv = new ModelAndView("/getDetailList");
-	 * List<Map<String,Object>> list = detailService.getDetailList(commandMap);
-	 * 
-	 * mv.addObject("list", list); return mv; }
-	 */
-		
 
 		@RequestMapping(value = "/selectDetail", method = {RequestMethod.POST, RequestMethod.GET}) 
 		public ModelAndView selectDetail(CommandMap commandMap) throws Exception
@@ -39,7 +29,8 @@ public class DetailController
 			mv.setViewName("/map/detail");
 			mv.addObject("list", list);
 			return mv; 
-		}
+		} 
+
 		
 		@RequestMapping(value = "/insertDetail", method = {RequestMethod.POST, RequestMethod.GET}) 
 		public String insertDetail(CommandMap commandMap) throws Exception 
@@ -47,6 +38,6 @@ public class DetailController
 			System.out.println("======2========= : " + commandMap.getMap());
 			detailService.insertDetail(commandMap.getMap()); 
 			
-			return "redirect:/main/index";
+			return "/main/index";
 		}
 }

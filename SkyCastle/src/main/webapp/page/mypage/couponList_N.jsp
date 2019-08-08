@@ -121,5 +121,7 @@
 	</div>
 
 	<script src="/skc/js/mypage.js"></script>
+
+	<jsp:include page="../side/footer.jsp" flush="false" />
 </body>
 </html>

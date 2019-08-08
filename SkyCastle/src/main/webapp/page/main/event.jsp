@@ -44,8 +44,7 @@
 									<img src="/skc/img/coupons.jpg" class="../../img-responsive"
 										alt="" />
 									<p>
-										<input type="button" class="btn brows-btn"
-											value="Get A Coupon" />
+									<button type="button" class="btn btn-sm btn-primary" id="btnGetCoupon" onclick="location.href='../main/couponnum'">쿠폰발급</button>
 									</p>
 									<p>
 										<span class="company-name"><i class="fa fa-briefcase"></i>※

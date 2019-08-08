@@ -22,13 +22,6 @@ public class PageController {
 		return "/main/mypage_P";
 	}
 	
-	/* ---------- 맵 컨트롤러인데 임시로 넣어놨음 ---------- */
-	@RequestMapping(value = "/mapview", method = {RequestMethod.POST, RequestMethod.GET})
-	public String mapView(Locale locale, Model model)
-	{ 	
-		return "/main/mapview";
-	}
-	
 	/* ---------- 이벤트 컨트롤러인데 임시로 넣어놨음 ---------- */
 	@RequestMapping(value = "/event", method = {RequestMethod.POST, RequestMethod.GET})
 	public String event(Locale locale, Model model)
