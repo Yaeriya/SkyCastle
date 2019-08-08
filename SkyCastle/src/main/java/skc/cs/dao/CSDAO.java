@@ -47,7 +47,8 @@ public class CSDAO extends AbstractDAO
 	{
 		return (Map<String, Object>) selectOne("cs.selectQnaDetail", map);
 	}
-	
+
+	/* 삭제 */
 	public void deleteQna(Map<String, Object> map) throws Exception
 	{
 		delete("cs.deleteQ", map);

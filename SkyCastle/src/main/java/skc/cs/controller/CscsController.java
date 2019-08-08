@@ -62,6 +62,7 @@ public class CscsController {
 		
 	}
 
+	/* 삭제 */
 	@RequestMapping(value="/deleteQna")
 	public ModelAndView deleteQna(CommandMap commandMap) throws Exception
 	{

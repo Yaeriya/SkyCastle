@@ -53,7 +53,7 @@ public class CSServiceImpl implements CSService
 		Map<String, Object> resultMap = csDAO.selectQnaDetail(map);
 		return resultMap;
 	}
-	
+	/* 삭제 */
 	@Override
 	public void deleteQna(Map<String, Object> map) throws Exception
 	{
