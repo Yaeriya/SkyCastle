@@ -74,7 +74,7 @@
 							<li><a href="../main/board">학생 게시판</a></li>
 							<li><a href="../main/board">학원 홍보 게시판</a></li>
 						</ul></li>
-					<li><a href="../cs/cs">고객센터</a></li>
+					<li><a href="../cs/cs_main">고객센터</a></li>
 					<li><c:choose>
 							<c:when test="${sessionScope.userLevel == 6}">
 								<a href="../adm/getMemberList">냥냥</a>
