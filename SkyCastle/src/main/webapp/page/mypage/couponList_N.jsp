@@ -65,7 +65,6 @@
 					</div>
 				</div>
 			</section>
-
 			<section class="mpg-content-2 col-md-10">
 				<div id="qnalist">
 					<p class="k1">나의 쿠폰신청내역</p>
