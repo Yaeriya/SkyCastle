@@ -31,7 +31,7 @@ public class NoticeServiceImpl implements NoticeService{
 	}
 	
 	@Override
-	public void updateNotice(Map<String,Object> map) throws Exception{
+	public void updateNotice(Map<String, Object> map) throws Exception{
 		noticeDAO.updateNotice(map);
 	}
 	

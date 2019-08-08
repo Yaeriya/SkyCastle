@@ -10,11 +10,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <link rel="stylesheet" href="/skc/css/boardwrite.css">
-	<jsp:include page="../side/header.jsp" flush="false" />
-<script src="/skc/js/common.js"></script>
+
 </head>
 <body>
-
+	<jsp:include page="../side/header.jsp" flush="false" />
 
 
 
@@ -24,65 +23,64 @@
 			<input name="pg" value="" type="hidden" />
 		</form>
 		<div id="epilogueWrite">
-			<form id="fmInsertContent" name="fmInsertContent">
+			<form id="fmInsertContent" name="fmInsertContent" enctype="multipart/form-data" method="post">
 
 				<div class="epiWBox">
 
 					<dl class="eptt cf">
 						<dt class="req">제목</dt>
 						<dd>
-							<input type="text" id="NOTICE_TITLE" name="NOTICE_TITLE" fieldName="제목" maxlength="100"
+							<input type="text" id="STU_TITLE" name="STU_TITLE" fieldName="제목" maxlength="100"
 								restrictBytes="100" class="__required" />
 						</dd>
 					</dl>
 					<dl class="warea cf">
 						<dt class="req">내용</dt>
 						<dd>
-							<textarea fieldName="내용" class="__required" id="NOTICE_BODY" name="NOTICE_BODY"></textarea>
+							<textarea fieldName="내용" class="__required" id="STU_BODY" name="STU_BODY"></textarea>
 						</dd>
 					</dl>
-				<!-- 	<table>
+			<table>
 						<tr>
 							<th scope="row" />
-							<td><input Class="txt" type="file" name="img1"
-								accept="image/*" /></td>
+							<td><input Class="txt" type="file" name="file"/></td>
 						</tr>
-					</table> -->
+					</table>
 				</div>
 			</form>
 		</div>
 	</div>
 
 	<div class="epWBtn anim-btn">
-		<a href="#this"  id="write" class="epOk btn g">등록하기</a> 
-		<a href="/skc/cs/cs_main" onclick="goBackList('epilogue_list_all.asp');" class="epNo btn gray">취소하기</a>
+		<a href="#this" id="write" class="epOk btn g">등록하기</a> 
+		<a href="#this" id="list" class="epOk btn g">목록가기</a> <a href="boardList.jsp"
+			onclick="goBackList('epilogue_list_all.asp');" class="epNo btn gray">취소하기</a>
 	</div>
 
 	<script>
 $(document).ready(function(){
 	$("#list").on("click", function(e){ 
 		e.preventDefault();
-		fn_cs(); 
+		fn_openStudentBoardList(); 
 	});
 	
 	$("#write").on("click", function(e){ //작성하기 버튼 
 		e.preventDefault(); 
-		fn_insertNotice(); 
+		fn_insertStudentBoard(); 
 	});
 });
 	
-function fn_cs(){
-	var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/cs/cs' />"); 
+function fn_openStudentBoardList(){
+	var comSubmit = new ComSubmit();
+	comSubmit.setUrl("<c:url value='/studentboard/boardStudentList' />"); 
 	comSubmit.submit();
 }
-function fn_insertNotice(){ 
+
+function fn_insertStudentBoard(){ 
 	var comSubmit = new ComSubmit("fmInsertContent");  
-	comSubmit.setUrl("<c:url value='/cs/insertNotice'/>"); 
+	comSubmit.setUrl("<c:url value='/studentboard/insertStudentBoard'/>"); 
 	comSubmit.submit();
 }
-
-
 </script>
 	<jsp:include page="../side/footer.jsp" flush="false" />
 </body>

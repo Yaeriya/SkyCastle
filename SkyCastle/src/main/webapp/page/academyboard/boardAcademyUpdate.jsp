@@ -23,7 +23,7 @@
 <body>
 	
 	<h1>STUDENT</h1>
-	<form id = "frm">
+	<form id = "frm" name ="frm">
 	<div id="wrap">
 		<div class="container">
 			<div class="tbl_type_01">
@@ -35,28 +35,28 @@
 					<tbody>
 						<tr>
 							<th scope="row">글 번호</th>
-							<td>${map.FREE_NUM } 
-							<input type="hidden" id="FREE_NUM" name="FREE_NUM" value="${map.FREE_NUM }">
+							<td>${map.ACA_NUM } 
+							<input type="hidden" id="ACA_NUM" name="ACA_NUM" value="${map.ACA_NUM }">
 
 							<th scope="row">조회수</th>
-							<td>${map.FREE_HIT}</td>
+							<td>${map.ACA_HIT }</td>
 						</tr>
 						<tr>
 							<th scope="row">작성자</th>
 							<td>${map.MB_NICK }</td>
 							<th scope="row">작성시간</th>
-							<td>${map.FREE_DATE }</td>
+							<td>${map.ACA_DATE }</td>
 							<td></td>
 						</tr>
 						<tr>
 							<th scope="row">제목</th>
 							<td><colspan="3">
-			<input type="text" id="FREE_TITLE" name="FREE_TITLE" class="wdp_90" value="${map.FREE_TITLE }"/>
+							<input type="text" id="ACA_TITLE" name="ACA_TITLE" class="wdp_90" value="${map.ACA_TITLE }"/>
 
 						</tr>
 						<tr>
 							<td colspan="4" class="view_text"> 
-				<textarea rows="20" cols="100" title="내용" id="FREE_BODY" name="FREE_BODY">${map.FREE_BODY }</textarea>
+							<textarea rows="20" cols="100" title="내용" id="ACA_BODY" name="ACA_BODY">${map.ACA_BODY }</textarea>
 
 							<td></td>
 						</tr>
@@ -65,11 +65,11 @@
 			</div>
 		</div>
 	</div>
-
+</form>
 	<div class="container">
 		<div class="btn_type_03">
 			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="list"> 
-			<span>Back To FreeBoard</span>
+			<span>Back To AcademyBoard</span>
 			</a> 
 			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="update"> 
 			<span>Save the Board</span>
@@ -94,7 +94,6 @@
 			</c:if>
 		</div>
 	</div>
-</form>
 	<!-- 댓글작성 -->
 	<div class="cmtlog">
 		<c:if test="">
@@ -151,31 +150,32 @@
 	$(document).ready(function(){ 
 		$("#list").on("click", function(e){ //목록으로 버튼
 		e.preventDefault(); 
-		fn_openBoardList(); 
+		fn_openAcademyBoardList(); 
 	}); 
 		$("#update").on("click", function(e){ //저장하기 버튼 
 		e.preventDefault(); 
-	fn_updateBoard(); 
+		fn_updateAcademyBoard(); 
 	}); 
 		$("#delete").on("click", function(e){ //삭제하기 버튼
 		e.preventDefault();
-	fn_deleteBoard();
+		fn_deleteAcademyBoard();
 	});
-	
 	});
-	function fn_openBoardList(){
+	function fn_openAcademyBoardList(){
 	var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/board/boardList' />");
+	comSubmit.setUrl("<c:url value='/academyboard/boardAcademyList' />");
 	comSubmit.submit();
 	} 
-	function fn_updateBoard(){ var comSubmit = new ComSubmit("frm"); 
-	comSubmit.setUrl("<c:url value='/board/boardUpdate' />");
-	comSubmit.addParam("FREE_NUM", $("#FREE_NUM").val()); 
+	function fn_updateAcademyBoard(){ 
+	var comSubmit = new ComSubmit("frm"); 
+	comSubmit.setUrl("<c:url value='/academyboard/updateAcademyBoard' />");
+	
 	comSubmit.submit();
 	} 
-	function fn_deleteBoard(){ var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/board/deleteBoard' />"); 
-	comSubmit.addParam("FREE_NUM", $("#FREE_NUM").val()); 
+	function fn_deleteAcademyBoard(){ 
+	var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/academyboard/deleteAcademyBoard' />"); 
+	comSubmit.addParam("ACA_NUM", $("#ACA_NUM").val()); 
 	comSubmit.submit(); 
 	}
 	</script>

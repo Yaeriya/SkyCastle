@@ -87,12 +87,12 @@
 				<c:when test="${fn:length(list) > 0}">
 					<c:forEach items="${list }" var="row">
 						<tr>
-							<td>${row.FREE_NUM }</td>
-							<td class="title"> <a href="#this" name="FREE_TITLE">${row.FREE_TITLE }</a>
-								<input type="hidden" id="FREE_NUM" value="${row.FREE_NUM }"></td>
+							<td>${row.ACA_NUM }</td>
+							<td class="title"> <a href="#this" name="ACA_TITLE">${row.ACA_TITLE }</a>
+								<input type="hidden" id="ACA_NUM" value="${row.ACA_NUM }"></td>
 							<td>${row.MB_NICK}</td> 
-							<td>${row.FREE_DATE}</td> 
-         					<td>${row.FREE_HIT}</td>  
+							<td>${row.ACA_DATE}</td> 
+         					<td>${row.ACA_HIT}</td>  
 
 	<%-- <td>${row.FREE_NUM }</td> 
          <td>${row.FREE_TITLE }</td> 
@@ -139,18 +139,7 @@
 <!-- footer start -->
 <footer>
 	<div class="container">
-		<div class="col-md-3 col-sm-6">
-			<h4>Featured Job</h4>
-			<ul>
-				<li><a href="#">Browse Jobs</a></li>
-				<li><a href="#">Premium MBA Jobs</a></li>
-				<li><a href="#">Access Database</a></li>
-				<li><a href="#">Manage Responses</a></li>
-				<li><a href="#">Report a Problem</a></li>
-				<li><a href="#">Mobile Site</a></li>
-				<li><a href="#">Jobs by Skill</a></li>
-			</ul>
-		</div>
+		
 
 		<div class="col-md-3 col-sm-6">
 			<h4>Latest Job</h4>
@@ -210,23 +199,23 @@
 $(document).ready(function(){
 	$("#write").on("click", function(e){//글쓰기 버튼
 		e.preventDefault(); 
-		fn_openBoardWrite(); 
+		fn_openAcademyBoardWrite(); 
 	});
 
-	$("a[name='FREE_TITLE']").on("click", function(e){ //제목
+	$("a[name='ACA_TITLE']").on("click", function(e){ //제목
 		e.preventDefault();
-		fn_openBoardDetail($(this)); 
+		fn_openAcademyBoardDetail($(this)); 
 	});
 	});
-	function fn_openBoardWrite(){ 
+	function fn_openAcademyBoardWrite(){ 
 		var comSubmit = new ComSubmit(); 
-		comSubmit.setUrl("<c:url value='/board/openBoardWrite' />"); 
+		comSubmit.setUrl("<c:url value='/academyboard/openAcademyBoardWrite' />"); 
 		comSubmit.submit(); 
 		} 
-	function fn_openBoardDetail(obj){
+	function fn_openAcademyBoardDetail(obj){
 		var comSubmit = new ComSubmit(); 
-		comSubmit.setUrl("<c:url value='/board/openBoardDetail' />"); 
-		comSubmit.addParam("FREE_NUM", obj.parent().find("#FREE_NUM").val()); 
+		comSubmit.setUrl("<c:url value='/academyboard/openAcademyBoardDetail' />"); 
+		comSubmit.addParam("ACA_NUM", obj.parent().find("#ACA_NUM").val()); 
 		comSubmit.submit();
 		}
 </script>

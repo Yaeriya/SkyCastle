@@ -23,7 +23,7 @@
 <body>
 	
 	<h1>STUDENT</h1>
-	<form id = "frm">
+	<form id = "frm" name ="frm">
 	<div id="wrap">
 		<div class="container">
 			<div class="tbl_type_01">
@@ -35,9 +35,11 @@
 					<tbody>
 						<tr>
 							<th scope="row">글 번호</th>
-							<td>${map.FREE_TITLE}</td>
+							<td>${map.FREE_NUM } 
+							<input type="hidden" id="FREE_NUM" name="FREE_NUM" value="${map.FREE_NUM }">
+
 							<th scope="row">조회수</th>
-							<td>${map.FREE_HIT}</td>
+							<td>${map.FREE_HIT }</td>
 						</tr>
 						<tr>
 							<th scope="row">작성자</th>
@@ -49,12 +51,12 @@
 						<tr>
 							<th scope="row">제목</th>
 							<td><colspan="3">
-			<input type="text" id="FREE_TITLE" name="FREE_TITLE" class="wdp_90" value="${map.FREE_TITLE }"/>
+							<input type="text" id="FREE_TITLE" name="FREE_TITLE" class="wdp_90" value="${map.FREE_TITLE }"/>
 
 						</tr>
 						<tr>
 							<td colspan="4" class="view_text"> 
-				<textarea rows="20" cols="100" title="내용" id="FREE_BODY" name="FREE_BODY">${map.FREE_BODY }</textarea>
+							<textarea rows="20" cols="100" title="내용" id="FREE_BODY" name="FREE_BODY">${map.FREE_BODY }</textarea>
 
 							<td></td>
 						</tr>
@@ -63,18 +65,17 @@
 			</div>
 		</div>
 	</div>
-
+</form>
 	<div class="container">
 		<div class="btn_type_03">
-
 			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="list"> 
-			<span>Back To List</span>
+			<span>Back To FreeBoard</span>
 			</a> 
 			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="update"> 
-			<span>Update My Board</span>
+			<span>Save the Board</span>
 			</a> 
 			<a href="#this" class="btn btnC_03 btnP_04 mr10" id="delete"> 
-			<span>Delete My Board</span>
+			<span>Delete the Board</span>
 			</a>
 
 
@@ -93,7 +94,6 @@
 			</c:if>
 		</div>
 	</div>
-</form>
 	<!-- 댓글작성 -->
 	<div class="cmtlog">
 		<c:if test="">
@@ -150,28 +150,31 @@
 	$(document).ready(function(){ 
 		$("#list").on("click", function(e){ //목록으로 버튼
 		e.preventDefault(); 
-		fn_openBoardList(); 
+		fn_openFreeBoardList(); 
 	}); 
 		$("#update").on("click", function(e){ //저장하기 버튼 
-		e.preventDefault(); fn_updateBoard(); 
+		e.preventDefault(); 
+		fn_updateFreeBoard(); 
 	}); 
 		$("#delete").on("click", function(e){ //삭제하기 버튼
 		e.preventDefault();
-	fn_deleteBoard();
+		fn_deleteFreeBoard();
 	});
-	
 	});
-	function fn_openBoardList(){
+	function fn_openFreeBoardList(){
 	var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/board/boardList' />");
+	comSubmit.setUrl("<c:url value='/freeboard/boardFreeList' />");
 	comSubmit.submit();
 	} 
-	function fn_updateBoard(){ var comSubmit = new ComSubmit("frm"); 
-	comSubmit.setUrl("<c:url value='/board/boardUpdate' />");
+	function fn_updateFreeBoard(){ 
+	var comSubmit = new ComSubmit("frm"); 
+	comSubmit.setUrl("<c:url value='/freeboard/updateFreeBoard' />");
+	
 	comSubmit.submit();
 	} 
-	function fn_deleteBoard(){ var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/board/deleteBoard' />"); 
+	function fn_deleteFreeBoard(){ 
+	var comSubmit = new ComSubmit(); 
+	comSubmit.setUrl("<c:url value='/freeboard/deleteFreeBoard' />"); 
 	comSubmit.addParam("FREE_NUM", $("#FREE_NUM").val()); 
 	comSubmit.submit(); 
 	}

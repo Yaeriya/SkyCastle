@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="academyboard">
+	<select id="selectAcademyBoardList" parameterType="hashmap"
+		resultType="hashmap"> 
+<![CDATA[ 
+SELECT 
+ACA_NUM, ACA_TITLE, MB_NICK, ACA_DATE, ACA_HIT 
+FROM ACADEMY
+]]>
+	</select>
+
+<insert id="insertAcademyBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="ACA_NUM">
+		<selectKey keyProperty="ACA_NUM" resultType="string" order="BEFORE">
+			SELECT SEQ_TB_ACADEMY_IDX.NEXTVAL FROM DUAL
+		</selectKey>
+
+<![CDATA[
+ INSERT INTO ACADEMY(ACA_NUM, ACA_TITLE, ACA_BODY, ACA_HIT,MB_NICK )
+  VALUES(#{ACA_NUM}, #{ACA_TITLE}, #{ACA_BODY}, 0,'우동' )
+   ]]>
+
+	</insert>
+
+	<update id="updateAcademyHitCnt" parameterType="hashmap">
+	<![CDATA[ 
+UPDATE ACADEMY
+SET ACA_HIT = NVL(ACA_HIT, 0) + 1
+WHERE ACA_NUM = #{ACA_NUM}
+]]>
+	</update>
+
+	<select id="selectAcademyBoardDetail" parameterType="hashmap"
+		resultType="hashmap">
+
+<![CDATA[ 
+SELECT ACA_NUM, ACA_TITLE, MB_NICK, ACA_DATE, ACA_HIT ,ACA_BODY
+FROM ACADEMY
+WHERE ACA_NUM=#{ACA_NUM}
+]]>
+	</select>
+
+	<update id="updateAcademyBoard" parameterType="hashmap"> 
+<![CDATA[ 
+UPDATE ACADEMY 
+SET ACA_TITLE = #{ACA_TITLE}, ACA_BODY = #{ACA_BODY} 
+WHERE ACA_NUM = #{ACA_NUM}	
+]]>
+	</update>
+
+	<delete id="deleteAcademyBoard" parameterType="hashmap">
+ <![CDATA[ 
+DELETE FROM ACADEMY
+WHERE ACA_NUM = #{ACA_NUM}
+ ]]>
+	</delete>
+	<delete id="deleteAcademyFile" parameterType="hashmap">
+ <![CDATA[ 
+DELETE FROM TB_FILE
+WHERE ACA_NUM = #{ACA_NUM}
+ ]]>
+	</delete>
+
+	<insert id="insertAcademyFile" parameterType="hashmap"> 
+<![CDATA[ 
+INSERT INTO TB_FILE ( 
+ACA_NUM, BOARD_IDX, ORIGINAL_FILE_NAME, 
+STORED_FILE_NAME, FILE_SIZE, CREA_ID
+) 
+VALUES 
+( 
+SEQ_TB_FILE_IDX.NEXTVAL, #{BOARD_IDX}, 
+#{ORIGINAL_FILE_NAME}, #{STORED_FILE_NAME}, 
+#{FILE_SIZE}, 'Admin'
+ )
+ ]]>
+	</insert>
+	<select id="selectAcademyFileList" parameterType="hashmap"
+		resultType="hashmap">
+  <![CDATA[
+  SELECT ACA_NUM, ORIGINAL_FILE_NAME, ROUND(FILE_SIZE/1024,1) AS FILE_SIZE 
+  FROM TB_FILE WHERE BOARD_IDX = #{ACA_NUM} AND DEL_GB = 'N'
+  ]]>
+	</select>
+
+</mapper>
+

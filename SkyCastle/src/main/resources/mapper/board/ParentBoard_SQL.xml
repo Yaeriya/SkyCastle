@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="parentboard">
+	<select id="selectParentBoardList" parameterType="hashmap"
+		resultType="hashmap"> 
+<![CDATA[ 
+SELECT 
+PAR_NUM, PAR_TITLE, MB_NICK, PAR_DATE, PAR_HIT 
+FROM PARENT
+]]>
+	</select>
+
+<insert id="insertParentBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="PAR_NUM">
+		<selectKey keyProperty="PAR_NUM" resultType="string" order="BEFORE">
+			SELECT SEQ_TB_PARENT_IDX.NEXTVAL FROM DUAL
+		</selectKey>
+
+<![CDATA[
+ INSERT INTO PARENT(PAR_NUM, PAR_TITLE, PAR_BODY, PAR_HIT,MB_NICK ) 
+  VALUES(#{PAR_NUM}, #{PAR_TITLE}, #{PAR_BODY}, 0,'우동' )
+   ]]>
+
+	</insert>
+
+	<update id="updateParentHitCnt" parameterType="hashmap">
+	<![CDATA[ 
+UPDATE PARENT
+SET PAR_HIT = NVL(PAR_HIT, 0) + 1
+WHERE PAR_NUM = #{PAR_NUM}
+]]>
+	</update>
+
+	<select id="selectParentBoardDetail" parameterType="hashmap"
+		resultType="hashmap">
+
+<![CDATA[ 
+SELECT PAR_NUM, PAR_TITLE, MB_NICK, PAR_DATE, PAR_HIT ,PAR_BODY
+FROM PARENT
+WHERE PAR_NUM = #{PAR_NUM}
+]]>
+	</select>
+
+	<update id="updateParentBoard" parameterType="hashmap"> 
+<![CDATA[ 
+UPDATE PARENT 
+SET PAR_TITLE = #{PAR_TITLE}, PAR_BODY = #{PAR_BODY} 
+WHERE PAR_NUM = #{PAR_NUM}	
+]]>
+	</update>
+
+	<delete id="deleteParentBoard" parameterType="hashmap">
+ <![CDATA[ 
+DELETE FROM PARENT
+WHERE PAR_NUM = #{PAR_NUM}
+ ]]>
+	</delete>
+	<delete id="deleteParentFile" parameterType="hashmap">
+ <![CDATA[ 
+DELETE FROM TB_FILE
+WHERE PAR_NUM = #{PAR_NUM}
+ ]]>
+	</delete>
+
+	<insert id="insertParentFile" parameterType="hashmap"> 
+<![CDATA[ 
+INSERT INTO TB_FILE ( 
+PAR_NUM, BOARD_IDX, ORIGINAL_FILE_NAME, 
+STORED_FILE_NAME, FILE_SIZE, CREA_ID
+) 
+VALUES 
+( 
+SEQ_TB_FILE_IDX.NEXTVAL, #{BOARD_IDX}, 
+#{ORIGINAL_FILE_NAME}, #{STORED_FILE_NAME}, 
+#{FILE_SIZE}, 'Admin'
+ )
+ ]]>
+	</insert>
+	<select id="selectParentFileList" parameterType="hashmap"
+		resultType="hashmap">
+  <![CDATA[
+  SELECT PAR_NUM, ORIGINAL_FILE_NAME, ROUND(FILE_SIZE/1024,1) AS FILE_SIZE 
+  FROM TB_FILE 
+  WHERE BOARD_IDX = #{PAR_NUM} AND DEL_GB = 'N'
+  ]]>
+	</select>
+
+</mapper>
+

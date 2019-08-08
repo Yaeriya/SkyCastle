@@ -1,24 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?> 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="detail">
-	
-
-	
 	<insert id="insertDetail" parameterType="hashmap">
 <![CDATA[
 		INSERT INTO DETAIL
-		(MB_NICK, DTL_SUMM, DTL_ADDR, DTL_URL, DTL_PHONE, DTL_INFO, DTL_SCORE)
+		(MB_NICK, DTL_SUMM, DTL_ADDR, DTL_URL, DTL_PHONE, DTL_INFO, DTL_SCORE, DTL_CPNTYPE)
 		VALUES
-		(#{MB_NICK}, #{DTL_SUMM}, 0, #{DTL_URL}, #{DTL_PHONE}, #{DTL_INFO}, 0)
+		(#{MB_NICK}, #{DTL_SUMM}, 0, #{DTL_URL}, #{DTL_PHONE}, #{DTL_INFO}, 0, 0) 
 ]]>
-
 	</insert>
-	
-	
-	<select id="selectDetail" parameterType="hashmap" resultType="hashmap">
-		<![CDATA[ 
-			SELECT MB_NICK, DTL_SUMM, DTL_ADDR, DTL_URL, DTL_PHONE, DTL_INFO, DTL_SCORE FROM
-			DETAIL WHERE MB_NICK = #{MB_NICK}
-		]]>
-	</select>
 </mapper>

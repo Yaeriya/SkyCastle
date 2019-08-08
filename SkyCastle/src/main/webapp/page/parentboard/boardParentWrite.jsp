@@ -23,30 +23,29 @@
 			<input name="pg" value="" type="hidden" />
 		</form>
 		<div id="epilogueWrite">
-			<form id="fmInsertContent" name="fmInsertContent">
+			<form id="fmInsertContent" name="fmInsertContent" enctype="multipart/form-data" method="post">
 
 				<div class="epiWBox">
 
 					<dl class="eptt cf">
 						<dt class="req">제목</dt>
 						<dd>
-							<input type="text" id="FREE_TITLE" name="FREE_TITLE" fieldName="제목" maxlength="100"
+							<input type="text" id="PAR_TITLE" name="PAR_TITLE" fieldName="제목" maxlength="100"
 								restrictBytes="100" class="__required" />
 						</dd>
 					</dl>
 					<dl class="warea cf">
 						<dt class="req">내용</dt>
 						<dd>
-							<textarea fieldName="내용" class="__required" id="FREE_BODY" name="FREE_BODY"></textarea>
+							<textarea fieldName="내용" class="__required" id="PAR_BODY" name="PAR_BODY"></textarea>
 						</dd>
 					</dl>
-				<!-- 	<table>
+			<table>
 						<tr>
 							<th scope="row" />
-							<td><input Class="txt" type="file" name="img1"
-								accept="image/*" /></td>
+							<td><input Class="txt" type="file" name="file"/></td>
 						</tr>
-					</table> -->
+					</table>
 				</div>
 			</form>
 		</div>
@@ -62,27 +61,26 @@
 $(document).ready(function(){
 	$("#list").on("click", function(e){ 
 		e.preventDefault();
-		fn_openBoardList(); 
+		fn_openParentBoardList(); 
 	});
 	
 	$("#write").on("click", function(e){ //작성하기 버튼 
 		e.preventDefault(); 
-		fn_insertBoard(); 
+		fn_insertParentBoard(); 
 	});
 });
 	
-function fn_openBoardList(){
-	var comSubmit = new ComSubmit(); 
-	comSubmit.setUrl("<c:url value='/board/boardList' />"); 
+function fn_openParentBoardList(){
+	var comSubmit = new ComSubmit();
+	comSubmit.setUrl("<c:url value='/parentboard/boardParentList' />"); 
 	comSubmit.submit();
 }
-function fn_insertBoard(){ 
+
+function fn_insertParentBoard(){ 
 	var comSubmit = new ComSubmit("fmInsertContent");  
-	comSubmit.setUrl("<c:url value='/board/insertBoard'/>"); 
+	comSubmit.setUrl("<c:url value='/parentboard/insertParentBoard'/>"); 
 	comSubmit.submit();
 }
-
-
 </script>
 	<jsp:include page="../side/footer.jsp" flush="false" />
 </body>

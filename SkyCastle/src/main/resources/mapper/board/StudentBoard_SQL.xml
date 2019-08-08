@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="studentboard">
+	<select id="selectStudentBoardList" parameterType="hashmap"
+		resultType="hashmap"> 
+<![CDATA[ 
+SELECT 
+STU_NUM, STU_TITLE, MB_NICK, STU_DATE, STU_HIT 
+FROM STUDENT
+]]>
+	</select>
+
+<insert id="insertStudentBoard" parameterType="hashmap" useGeneratedKeys="true" keyProperty="STU_NUM">
+		<selectKey keyProperty="STU_NUM" resultType="string" order="BEFORE">
+			SELECT SEQ_TB_STUDENT_IDX.NEXTVAL FROM DUAL
+		</selectKey>
+
+<![CDATA[
+ INSERT INTO STUDENT(STU_NUM, STU_TITLE, STU_BODY, STU_HIT,MB_NICK ) 
+  VALUES(#{STU_NUM}, #{STU_TITLE}, #{STU_BODY}, 0,'우동' )
+   ]]>
+
+	</insert>
+
+	<update id="updateStudentHitCnt" parameterType="hashmap">
+	<![CDATA[ 
+UPDATE STUDENT
+SET STU_HIT = NVL(STU_HIT, 0) + 1
+WHERE STU_NUM = #{STU_NUM}
+]]>
+	</update>
+
+	<select id="selectStudentBoardDetail" parameterType="hashmap"
+		resultType="hashmap">
+
+<![CDATA[ 
+SELECT STU_NUM, STU_TITLE, MB_NICK, STU_DATE, STU_HIT ,STU_BODY
+FROM STUDENT
+WHERE STU_NUM = #{STU_NUM}
+]]>
+	</select>
+
+	<update id="updateStudentBoard" parameterType="hashmap"> 
+<![CDATA[ 
+UPDATE STUDENT 
+SET STU_TITLE = #{STU_TITLE}, STU_BODY = #{STU_BODY} 
+WHERE STU_NUM = #{STU_NUM}	
+]]>
+	</update>
+
+	<delete id="deleteStudentBoard" parameterType="hashmap">
+ <![CDATA[ 
+DELETE FROM STUDENT
+WHERE STU_NUM = #{STU_NUM}
+ ]]>
+	</delete>
+	<delete id="deleteStudentFile" parameterType="hashmap">
+ <![CDATA[ 
+DELETE FROM TB_FILE
+WHERE STU_NUM = #{STU_NUM}
+ ]]>
+	</delete>
+
+	<insert id="insertStudentFile" parameterType="hashmap"> 
+<![CDATA[ 
+INSERT INTO TB_FILE ( 
+STU_NUM, BOARD_IDX, ORIGINAL_FILE_NAME, 
+STORED_FILE_NAME, FILE_SIZE, CREA_ID
+) 
+VALUES 
+( 
+SEQ_TB_FILE_IDX.NEXTVAL, #{BOARD_IDX}, 
+#{ORIGINAL_FILE_NAME}, #{STORED_FILE_NAME}, 
+#{FILE_SIZE}, 'Admin'
+ )
+ ]]>
+	</insert>
+	<select id="selectStudentFileList" parameterType="hashmap"
+		resultType="hashmap">
+  <![CDATA[
+  SELECT STU_NUM, ORIGINAL_FILE_NAME, ROUND(FILE_SIZE/1024,1) AS FILE_SIZE 
+  FROM TB_FILE 
+  WHERE BOARD_IDX = #{STU_NUM} AND DEL_GB = 'N'
+  ]]>
+	</select>
+
+</mapper>
+
