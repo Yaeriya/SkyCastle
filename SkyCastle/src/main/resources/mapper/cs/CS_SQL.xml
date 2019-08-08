@@ -32,21 +32,16 @@
 		]]>
 	</insert>
 
-	<update id="updateHitCnt" parameterType="hashmap">
-		<![CDATA[
-			UPDATE FREE SET FREE_HIT = NVL(FREE_HIT, 0) + 1 WHERE FREE_NUM = #{FREE_NUM}
-		]]>
-	</update>
-
-	<select id="selectBoardDetail" resultType="hashmap" parameterType="hashmap">
-		<![CDATA[
-			SELECT FREE_NUM, FREE_TITLE, MB_NICK, FREE_DATE, FREE_HIT FROM FREE WHERE FREE_NUM=#{FREE_NUM}
-		]]>
-	</select>
-
-	<update id="updateBoard" parameterType="hashmap">
-		<![CDATA[
-			UPDATE FREE SET FREE_TITLE = #{FREE_TITLE}, FREE_BODY = #{FREE_BODY} WHERE FREE_NUM = #{FREE_NUM}
-		]]>
-	</update>
+	<delete id = "deleteQ" parameterType="hashmap">
+<![CDATA[
+ DELETE FROM QUESTION 
+ WHERE Q_NUM=#{Q_NUM}
+]]>
+	</delete>
+	<delete id = "deleteA" parameterType="hashmap">
+<![CDATA[
+ DELETE FROM ANSWER 
+ WHERE A_NUM=#{A_NUM}
+]]>
+	</delete>
 </mapper>

@@ -13,6 +13,5 @@ public interface CSService {
 	void insertQ(Map<String, Object> map) throws Exception;
 	void insertA(Map<String, Object> map) throws Exception;
 	Map<String, Object> selectQnaDetail(Map<String, Object> map) throws Exception;
-	void deleteQ(Map<String, Object> map) throws Exception;
-	void deleteA(Map<String, Object> map) throws Exception;
+	void deleteQna(Map<String, Object> map) throws Exception;
 }

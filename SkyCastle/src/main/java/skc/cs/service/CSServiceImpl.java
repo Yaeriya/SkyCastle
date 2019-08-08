@@ -55,13 +55,8 @@ public class CSServiceImpl implements CSService
 	}
 	
 	@Override
-	public void deleteQ(Map<String, Object> map) throws Exception
+	public void deleteQna(Map<String, Object> map) throws Exception
 	{
-		csDAO.deleteQ(map);
-	}
-	@Override
-	public void deleteA(Map<String, Object> map) throws Exception
-	{
-		csDAO.deleteA(map);
+		csDAO.deleteQna(map);
 	}
 }
