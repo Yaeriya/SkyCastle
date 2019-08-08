@@ -14,7 +14,6 @@ $(document).ready(function() {
 		fn_signUp_P();
 	});
 
-
 });
 
 function fn_signUp() {
