@@ -56,63 +56,22 @@ public class CscsController {
 				
 		return mv;
 		
-		/*System.out.println("=== qnaList session inject === : " + commandMap.getMap());
-		System.out.println("=== qnaList Qnum === : " + list_Qnum);
-		
-		int Qlength = list_Qnum.size();
-		System.out.println("=== Qnum === : " + Qlength);
-		for(int i = 0; i <= (Qlength - 1); i++)
-		{
-			List<Map<String,Object>> list_Q = csService.selectQList(list_Qnum);
-		}*/
-		
-		/*
-		mv.setViewName("/cs/qnaList");
-		Map<String, Object> map = new HashMap<String, Object>();
-		
-		Map.Entry<String, Object> entry = null;
-		String key = entry.getKey();
-		Object value = entry.getValue();
-		map.put(key, value);
-		*/
-		/*// 1-2. Map에 배열 넣기
-		Map< String, String[] > arrMap = new HashMap<>();
-		map.put("key01", valueArr[0]);
-		map.put("key02", valueArr[1]);
-		map.put("key03", valueArr[2]);
-		
-		// 2-1. Map에 List 넣기
-		LinkedList<String> valueList = new LinkedList<String>();
-		valueList.add("AAA");
-		valueList.add("BBB");
-		valueList.add("CCC");
-		 
-		// 2-2. Map에 List 넣기
-		Map< String, LinkedList<String> > listMap = new HashMap<>();
-		listMap.put("key04", valueList.get(0));
-		listMap.put("key05", valueList.get(1));
-		listMap.put("key06", valueList.get(2));*/
-		
-		/*int i = 0;
-		for(Map<String, Object> map1 : list_Qnum)
-		{
-			String k = Integer.toString(i);
-			i++;
-			for(Map.Entry<String, Object> entry : map1.entrySet())
-			{
-				//String key = entry.getKey()+k;
-				
-				String key = k;
-				Object value = entry.getValue();
-				map1.put(key, value);
-				System.out.println("=== map1 === : " + map1);
-			}
-			System.out.println("=== map12 === : " + map1);
-			map = map1;
-		}*/
 		
 		
 		
-	} 
+		
+	}
+
+	/* 삭제 */
+	@RequestMapping(value="/deleteQna")
+	public ModelAndView deleteQna(CommandMap commandMap) throws Exception
+	{
+		ModelAndView mv = new ModelAndView("redirect:/mypage/qnaList");
+		System.out.println("--------delete------"+commandMap.getMap());
+		csService.deleteQna(commandMap.getMap());
+		
+		return mv;
+	}
+
 	
 }
