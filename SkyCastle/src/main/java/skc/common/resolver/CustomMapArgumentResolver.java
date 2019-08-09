@@ -12,7 +12,7 @@ import org.springframework.web.method.support.ModelAndViewContainer;
 
 import skc.common.common.CommandMap;
 
-public class CustomMapArgumentResolver implements HandlerMethodArgumentResolver{
+public class CustomMapArgumentResolver implements HandlerMethodArgumentResolver {
 	@Override
 	public boolean supportsParameter(MethodParameter parameter) {
 		return CommandMap.class.isAssignableFrom(parameter.getParameterType());
@@ -27,10 +27,10 @@ public class CustomMapArgumentResolver implements HandlerMethodArgumentResolver{
 		
 		String key = null;
 		String[] values = null;
-		while(enumeration.hasMoreElements()){
+		while(enumeration.hasMoreElements()) {
 			key = (String) enumeration.nextElement();
 			values = request.getParameterValues(key);
-			if(values != null){
+			if(values != null) {
 				commandMap.put(key, (values.length > 1) ? values:values[0] );
 			}
 		}

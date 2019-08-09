@@ -1,4 +1,74 @@
 @charset "UTF-8";
-#container .paging {margin:0 auto;}
 
-.cmtlog {text-align:center;}
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: none;
+}
+
+.mpg-content-1 {
+	padding-top: 50px !important;
+	padding-bottom: 0 !important;
+}
+
+.mpg-content-2 {
+	float: right !important;
+	padding-top: 50px !important;
+}
+
+.left-bar {
+	padding-top: 50px !important;
+}
+
+.left-menu {
+	list-style: none;
+}
+
+.left-menu li {
+	list-style: none;
+	color: white;
+	background-color: #000000;
+	float: left;
+	line-height: 30px;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.left-menu .menuLink {
+	text-decoration: none;
+	color: white;
+	display: block;
+	width: 150px;
+	font-size: 12px;
+	font-weight: bold;
+	font-family: "Trebuchet MS", Dotum, Arial;
+}
+
+.left-menu .menuLink:hover {
+	color: #000;
+	background-color: #fff;
+}
+
+@media only screen and (min-width: 925px) {
+	.pageborder {
+		padding: 0px !important;
+		margin: 0px !important;
+		width: 1%;
+		border-right: 1px solid #111;
+		min-height: 650px;
+		position: relative;
+		float: left;
+	}
+}
+
+@media only screen and (max-width: 925px) {
+	.pageborder {
+		display: none;
+	}
+}
+
+.table-hover {
+	width: 100%;
+	text-align: center;
+}

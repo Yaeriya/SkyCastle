@@ -16,7 +16,7 @@ public class FileUtils {
 	private static final String filePath = "C:\\dev\\file\\"; 
 
 	public List<Map<String,Object>> parseFreeInsertFileInfo(Map<String,Object> map,
-			HttpServletRequest request) throws Exception{ 
+			HttpServletRequest request) throws Exception { 
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)request; 
 		Iterator<String> iterator = multipartHttpServletRequest.getFileNames(); 
 		MultipartFile multipartFile = null; 
@@ -27,13 +27,13 @@ public class FileUtils {
 		Map<String, Object> listMap = null; 
 		String boardIdx = (String)map.get("FREE_NUM"); 
 		File file = new File(filePath); 
-			
-		if(file.exists() == false){ 
+
+		if(file.exists() == false) { 
 			file.mkdirs(); 
 		} 
-		while(iterator.hasNext()){ 
+		while(iterator.hasNext()) { 
 			multipartFile = multipartHttpServletRequest.getFile(iterator.next()); 
-			if(multipartFile.isEmpty() == false){ 
+			if(multipartFile.isEmpty() == false) { 
 				originalFileName = multipartFile.getOriginalFilename(); 
 				originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf(".")); 
 				storedFileName = CommonUtils.getRandomString() + originalFileExtension; 
@@ -47,7 +47,7 @@ public class FileUtils {
 		return list; 
 	} 
 	public List<Map<String,Object>> parseAcademyInsertFileInfo(Map<String,Object> map,
-			HttpServletRequest request) throws Exception{ 
+			HttpServletRequest request) throws Exception { 
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)request; 
 		Iterator<String> iterator = multipartHttpServletRequest.getFileNames(); 
 		MultipartFile multipartFile = null; 
@@ -58,13 +58,13 @@ public class FileUtils {
 		Map<String, Object> listMap = null; 
 		String boardIdx = (String)map.get("ACA_NUM"); 
 		File file = new File(filePath); 
-			
-		if(file.exists() == false){ 
+
+		if(file.exists() == false) { 
 			file.mkdirs(); 
 		} 
-		while(iterator.hasNext()){ 
+		while(iterator.hasNext()) { 
 			multipartFile = multipartHttpServletRequest.getFile(iterator.next()); 
-			if(multipartFile.isEmpty() == false){ 
+			if(multipartFile.isEmpty() == false) { 
 				originalFileName = multipartFile.getOriginalFilename(); 
 				originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf(".")); 
 				storedFileName = CommonUtils.getRandomString() + originalFileExtension; 
@@ -89,13 +89,13 @@ public class FileUtils {
 		Map<String, Object> listMap = null; 
 		String boardIdx = (String)map.get("PAR_NUM"); 
 		File file = new File(filePath); 
-			
-		if(file.exists() == false){ 
+
+		if(file.exists() == false) { 
 			file.mkdirs(); 
 		} 
-		while(iterator.hasNext()){ 
+		while(iterator.hasNext()) { 
 			multipartFile = multipartHttpServletRequest.getFile(iterator.next()); 
-			if(multipartFile.isEmpty() == false){ 
+			if(multipartFile.isEmpty() == false) { 
 				originalFileName = multipartFile.getOriginalFilename(); 
 				originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf(".")); 
 				storedFileName = CommonUtils.getRandomString() + originalFileExtension; 
@@ -109,7 +109,7 @@ public class FileUtils {
 		return list; 
 	} 
 	public List<Map<String,Object>> parseStudentInsertFileInfo(Map<String,Object> map,
-			HttpServletRequest request) throws Exception{ 
+			HttpServletRequest request) throws Exception { 
 		MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest)request; 
 		Iterator<String> iterator = multipartHttpServletRequest.getFileNames(); 
 		MultipartFile multipartFile = null; 
@@ -120,13 +120,13 @@ public class FileUtils {
 		Map<String, Object> listMap = null; 
 		String boardIdx = (String)map.get("STU_NUM"); 
 		File file = new File(filePath); 
-			
-		if(file.exists() == false){ 
+
+		if(file.exists() == false) { 
 			file.mkdirs(); 
 		} 
-		while(iterator.hasNext()){ 
+		while(iterator.hasNext()) { 
 			multipartFile = multipartHttpServletRequest.getFile(iterator.next()); 
-			if(multipartFile.isEmpty() == false){ 
+			if(multipartFile.isEmpty() == false) { 
 				originalFileName = multipartFile.getOriginalFilename(); 
 				originalFileExtension = originalFileName.substring(originalFileName.lastIndexOf(".")); 
 				storedFileName = CommonUtils.getRandomString() + originalFileExtension; 

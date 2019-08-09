@@ -43,13 +43,13 @@
 
 @media only screen and (min-width: 925px) {
 	.pageborder {
-			padding: 0px !important;
-	margin: 0px !important;
-	width: 1%;
-	border-right: 1px solid #111;
-	min-height: 650px;
-	position: relative;
-	float: left;
+		padding: 0px !important;
+		margin: 0px !important;
+		width: 1%;
+		border-right: 1px solid #111;
+		min-height: 650px;
+		position: relative;
+		float: left;
 	}
 }
 
@@ -58,6 +58,7 @@
 		display: none;
 	}
 }
+
 .control-group {
 	width: 100%;
 }

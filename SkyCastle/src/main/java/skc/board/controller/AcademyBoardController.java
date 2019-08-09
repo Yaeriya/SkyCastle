@@ -1,9 +1,7 @@
 package skc.board.controller;
 
-import java.util.Iterator;
 import java.util.List; 
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -18,25 +16,28 @@ import skc.common.util.FileUtils;
 
 @Controller
 public class AcademyBoardController { 
+
 	@Resource(name="boardAcademyService")
 	private AcademyBoardService boardAcademyService; 
-	
+
 	@Resource(name="fileUtils") 
 	private FileUtils fileUtils;
 
 	@RequestMapping(value="/academyboard/boardAcademyList" ) 
 	public ModelAndView boardList(Map<String,Object> commandMap) 
 			throws Exception{ ModelAndView mv = new ModelAndView("/academyboard/boardAcademyList"); 
-			
+
 			List<Map<String,Object>> list = boardAcademyService.selectBoardList(commandMap);
-			
+
 			mv.addObject("list", list); return mv;
 	} 
+
 	@RequestMapping(value="/academyboard/openAcademyBoardWrite") 
 	public ModelAndView openBoardWrite(CommandMap commandMap) throws Exception{ 
 		ModelAndView mv = new ModelAndView("/academyboard/boardAcademyWrite");
 		return mv;
 	}
+
 	@RequestMapping(value="/academyboard/insertAcademyBoard",method = RequestMethod.POST)
 	public ModelAndView insertBoard(CommandMap commandMap, HttpServletRequest request) throws Exception{
 		ModelAndView mv = new ModelAndView("redirect:/academyboard/boardAcademyList");
@@ -44,6 +45,7 @@ public class AcademyBoardController {
 		System.out.println(commandMap.getMap());
 		return mv;
 	}
+
 	@RequestMapping(value="/academyboard/openAcademyBoardDetail")
 	public ModelAndView openBoardDetail(CommandMap commandMap) throws Exception{
 		ModelAndView mv = new ModelAndView("/academyboard/boardAcademyDetail");
@@ -61,7 +63,8 @@ public class AcademyBoardController {
 		mv.addObject("map",map.get("map"));
 		mv.addObject("list", map.get("list"));
 		return mv;
-		}
+	}
+
 	@RequestMapping(value="/academyboard/updateAcademyBoard") 
 	public ModelAndView updateBoard(CommandMap commandMap) throws Exception{ 
 		ModelAndView mv = new ModelAndView("redirect:/academyboard/openAcademyBoardDetail");
@@ -70,7 +73,8 @@ public class AcademyBoardController {
 		boardAcademyService.updateBoard(commandMap.getMap()); 
 		mv.addObject("ACA_NUM", commandMap.get("ACA_NUM")); 
 		return mv;
-		}
+	}
+
 	@RequestMapping(value="/academyboard/deleteAcademyBoard")
 	public ModelAndView deleteBoard(CommandMap commandMap) throws Exception{
 		ModelAndView mv = new ModelAndView("redirect:/academyboard/boardAcademyList");

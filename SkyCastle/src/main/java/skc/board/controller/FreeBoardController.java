@@ -1,9 +1,7 @@
 package skc.board.controller;
 
-import java.util.Iterator;
 import java.util.List; 
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -18,6 +16,7 @@ import skc.common.util.FileUtils;
 
 @Controller
 public class FreeBoardController { 
+	
 	@Resource(name="boardFreeService")
 	private FreeBoardService boardService; 
 	

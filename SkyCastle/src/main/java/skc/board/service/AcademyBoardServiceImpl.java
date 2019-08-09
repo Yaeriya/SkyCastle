@@ -3,15 +3,11 @@ package skc.board.service;
 import java.util.HashMap;
 import java.util.List; 
 import java.util.Map;
-import java.util.logging.Logger;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.text.html.HTMLDocument.Iterator;
 
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import skc.board.dao.AcademyBoardDAO;
 import skc.common.util.FileUtils;

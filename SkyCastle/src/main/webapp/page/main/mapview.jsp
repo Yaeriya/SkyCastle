@@ -59,7 +59,8 @@
 					<li><a href="../main/mapview">지도보기</a></li>
 
 					<li><c:choose>
-							<c:when test="${sessionScope.userLevel == 1 || sessionScope.userLevel == 6}">
+							<c:when
+								test="${sessionScope.userLevel == 1 || sessionScope.userLevel == 6}">
 								<a href="../main/event">쿠폰발급</a>
 							</c:when>
 							<c:otherwise>
@@ -67,14 +68,14 @@
 							</c:otherwise>
 						</c:choose></li>
 
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown"><a href="../freeboard/boardFreeList" class="dropdown-toggle"
 						data-toggle="dropdown">커뮤니티</a>
-						<ul class="dropdown-menu animated fadeOutUp"
-							style="display: none; opacity: 1;">
-							<li class="active"><a href="../main/board">자유 게시판</a></li>
-							<li><a href="../main/board">학부모 게시판</a></li>
-							<li><a href="../main/board">학생 게시판</a></li>
-							<li><a href="../main/board">학원 홍보 게시판</a></li>
+						<ul class="dropdown-menu animated fadeOutUp">
+							<li><a href="../freeboard/boardFreeList">자유 게시판</a></li>
+							<li><a href="../parentboard/boardParentList">학부모 게시판</a></li>
+							<li><a href="../studentboard/boardStudentList">학생 게시판</a></li>
+							<li><a href="../academyboard/boardAcademyList">학원 홍보 게시판</a>
+							</li>
 						</ul></li>
 					<li><a href="../cs/cs">고객센터</a></li>
 					<li><c:choose>
@@ -118,20 +119,18 @@
 					<hr>
 					<ul id="placesList"></ul>
 					<div id="pagination"></div>
-					
+
 					<c:forEach var="aca" varStatus="i" items="${list}">
-									<ul>
-										<li>
-										<span class="a-count"> ● </span>
-										<button class="a-btn" type="button" > <!-- 클릭하면 클릭한 학원 상세 페이지 detail.jsp 로 간다 -->
-										 ${aca.MB_NICK}<br>
-										 ${aca.SAMPLE6_ADDRESS}, ${aca.SAMPLE6_DETAILADDRESS}<br>
-										 ${aca.DTL_PHONE}<br>
-										</button>
-										</li>
-		
-						
-									</ul>
+						<ul>
+							<li><span class="a-count"> ● </span>
+								<button class="a-btn" type="button">
+									<!-- 클릭하면 클릭한 학원 상세 페이지 detail.jsp 로 간다 -->
+									${aca.MB_NICK}<br> ${aca.SAMPLE6_ADDRESS},
+									${aca.SAMPLE6_DETAILADDRESS}<br> ${aca.DTL_PHONE}<br>
+								</button></li>
+
+
+						</ul>
 					</c:forEach>
 				</div>
 			</div>
@@ -154,6 +153,8 @@
 		// 지도를 생성한다 
 		var map = new kakao.maps.Map(mapContainer, mapOption);
 
+		var markerPosition = new kakao.maps.LatLng(33.450701, 126.570667);
+
 		// 지도 타입 변경 컨트롤을 생성한다
 		var mapTypeControl = new kakao.maps.MapTypeControl();
 
@@ -170,6 +171,24 @@
 		kakao.maps.event.addListener(map, 'zoom_changed', function() {
 			console.log('지도의 현재 확대레벨은 ' + map.getLevel() + '레벨 입니다.');
 		});
+
+		function displayMarker(place) {
+
+			// 마커를 생성하고 지도에 표시합니다
+			var marker = new kakao.maps.Marker({
+				map : map,
+				position : new kakao.maps.LatLng(place.y, place.x)
+			});
+
+			// 마커에 클릭이벤트를 등록합니다
+			kakao.maps.event.addListener(marker, 'click', function() {
+				// 마커를 클릭하면 장소명이 인포윈도우에 표출됩니다
+				infowindow
+						.setContent('<div style="padding:5px;font-size:12px;">'
+								+ place.place_name + '</div>');
+				infowindow.open(map, marker);
+			});
+		}
 	</script>
 </body>
 </html>

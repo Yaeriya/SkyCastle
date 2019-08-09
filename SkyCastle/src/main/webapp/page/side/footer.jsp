@@ -15,7 +15,7 @@
         <div class="footer-top-section">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12 footer-menu-list">
                         <div class="single-fta">
                             <img src="/skc/img/logo.png" alt="">
                             <ul class="fta-list">
@@ -25,7 +25,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12 footer-menu-list">
                         <div class="single-fta footer-lo">
                             <ul class="fta-list">
                                 <li><a href="#">Finacial Planning</a></li>
@@ -34,7 +34,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12 footer-menu-list">
                         <div class="single-fta footer-lo">
                             <ul class="fta-list">
                                 <li><a href="#">Finacial Planning</a></li>
@@ -43,7 +43,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="col-md-3 col-sm-6 col-xs-12 footer-menu-list">
                         <div class="single-fta">
                             <h3 class="fta-title">Contact Us</h3>
                             <ul class="fta-list">

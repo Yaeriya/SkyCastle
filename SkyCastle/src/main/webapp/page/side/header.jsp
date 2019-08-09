@@ -57,7 +57,8 @@
 					<li><a href="../main/mapview">지도보기</a></li>
 
 					<li><c:choose>
-							<c:when test="${sessionScope.userLevel == 1 || sessionScope.userLevel == 6}">
+							<c:when
+								test="${sessionScope.userLevel == 1 || sessionScope.userLevel == 6}">
 								<a href="../main/event">쿠폰발급</a>
 							</c:when>
 							<c:otherwise>
@@ -65,14 +66,14 @@
 							</c:otherwise>
 						</c:choose></li>
 
-					<li class="dropdown"><a href="#" class="dropdown-toggle"
+					<li class="dropdown"><a href="../freeboard/boardFreeList" class="dropdown-toggle"
 						data-toggle="dropdown">커뮤니티</a>
-						<ul class="dropdown-menu animated fadeOutUp"
-							style="display: none; opacity: 1;">
-							<li class="active"><a href="../main/board">자유 게시판</a></li>
-							<li><a href="../main/board">학부모 게시판</a></li>
-							<li><a href="../main/board">학생 게시판</a></li>
-							<li><a href="../main/board">학원 홍보 게시판</a></li>
+						<ul class="dropdown-menu animated fadeOutUp">
+							<li><a href="../freeboard/boardFreeList">자유 게시판</a></li>
+							<li><a href="../parentboard/boardParentList">학부모 게시판</a></li>
+							<li><a href="../studentboard/boardStudentList">학생 게시판</a></li>
+							<li><a href="../academyboard/boardAcademyList">학원 홍보 게시판</a>
+							</li>
 						</ul></li>
 					<li><a href="../cs/cs">고객센터</a></li>
 					<li><c:choose>
@@ -95,6 +96,7 @@
 	<script src="/skc/js/owl.carousel.min.js" type="text/javascript"></script>
 	<script src="/skc/js/bootsnav.js"></script>
 	<script src="/skc/js/main.js"></script>
+	<script src="/skc/js/common.js"></script>
 	<!-- Script JS End -->
 
 </body>

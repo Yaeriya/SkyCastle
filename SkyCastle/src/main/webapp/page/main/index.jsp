@@ -12,9 +12,9 @@
 
 </head>
 <body>
-
 	<div class="slideshow-container">
 		<jsp:include page="../side/header.jsp" flush="false" />
+		
 		<div class="mySlides fade-slide fade">
 			<img class="slide-img" src="/skc/img/slide06.jpg" style="width: 100%">
 		</div>
